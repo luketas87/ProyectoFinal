@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using BLL;
+using BE;
+using Seguridad;
+using Servicios;
 
 namespace ProyectoFinal
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
     
-        public Form1()
+        public Login()
         {
             InitializeComponent();
         }
@@ -32,11 +36,6 @@ namespace ProyectoFinal
         //PASO 1: se declaran variables globales
         public int xClick = 0, yClick = 0;
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Paint(object sender, PaintEventArgs e)
         {
             
@@ -56,9 +55,30 @@ namespace ProyectoFinal
         }
         #endregion
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void lblRecuperarC_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                BECuentaUsuario mCuentaUsuario = BLCuentaUsuario.ValidarUsuario(TxtUsuario.Text, TxtContrasenia.Text);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
 
     }

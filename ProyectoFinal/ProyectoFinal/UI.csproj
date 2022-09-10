@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>ProyectoFinal</RootNamespace>
     <AssemblyName>ProyectoFinal</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -50,11 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdministrarUsuarios.cs">
+    <Compile Include="AltaUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdministrarUsuarios.Designer.cs">
-      <DependentUpon>AdministrarUsuarios.cs</DependentUpon>
+    <Compile Include="AltaUsuario.Designer.cs">
+      <DependentUpon>AltaUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -70,8 +70,8 @@
     <Compile Include="ReseteoContraseña.Designer.cs">
       <DependentUpon>ReseteoContraseña.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AdministrarUsuarios.resx">
-      <DependentUpon>AdministrarUsuarios.cs</DependentUpon>
+    <EmbeddedResource Include="AltaUsuario.resx">
+      <DependentUpon>AltaUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

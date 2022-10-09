@@ -48,7 +48,7 @@ namespace Seguridad
         {
             byte[] iv = new byte[16];
             byte[] array;
-            string clave = "cerveurquiza2021";
+            string clave = "Patitas2022";
             using (Aes aes = Aes.Create())
             {
                 aes.Key = Encoding.UTF8.GetBytes(clave);
@@ -73,7 +73,7 @@ namespace Seguridad
         {
             byte[] iv = new byte[16];
             byte[] buffer = Convert.FromBase64String(cipherText);
-            string clave = "cerveurquiza2021";
+            string clave = "Patitas2022";
             using (Aes aes = Aes.Create())
             {
                 aes.Key = Encoding.UTF8.GetBytes(clave);

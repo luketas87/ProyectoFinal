@@ -55,7 +55,19 @@ namespace BE
             Cuenta_usuario_id = pId;
         }
 
-      
+        public int GetCuentaCliente()
+        {
+            int aux;
+            if (Cuenta_cliente == true) { aux = 1; }
+            else { aux = 0; }
+            return aux;
+        }
+
+        public string GetFechaAltaToString()
+        {
+            string aux = Cuenta_fecha_alta.Year + "-" + Cuenta_fecha_alta.Month + "-" + Cuenta_fecha_alta.Day;
+            return aux;
+        }
 
         // private bool IsAdmin { get; set; }
 

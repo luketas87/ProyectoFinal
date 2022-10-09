@@ -17,7 +17,10 @@ namespace BLL
         public static BECuentaUsuario Obtener(string mUser)
         {
             BECuentaUsuario mCuentaUsuario = CuentaUsuarioDAL.Obtener(mUser);
-            if (mCuentaUsuario is null) { mCuentaUsuario = new BECuentaUsuario(); }
+            if (mCuentaUsuario is null) 
+            { 
+                mCuentaUsuario = new BECuentaUsuario(); 
+            }
             return mCuentaUsuario;
         }
 

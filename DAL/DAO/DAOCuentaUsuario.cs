@@ -15,6 +15,7 @@ namespace DAL.DAO
 
         public DataSet ExecuteDataSet(string pCadenaComando)
         {
+            //Inserto filas en la base de datos
             DataSet mDs = new DataSet();
             SqlDataAdapter mDa = new SqlDataAdapter(pCadenaComando, mCon);
             mDa.Fill(mDs);

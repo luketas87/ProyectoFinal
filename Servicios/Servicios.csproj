@@ -41,8 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Excepciones\LoginException.cs" />
+    <Compile Include="LoginResult.cs" />
+    <Compile Include="NuevaCadena.cs" />
     <Compile Include="ConexionBD.cs" />
     <Compile Include="ControlArchivos.cs" />
+    <Compile Include="Excepciones\ConectionStringFaltanteException.cs" />
     <Compile Include="Excepciones\ContraseniaIncorrectaException.cs" />
     <Compile Include="Excepciones\CuentaBloqueadaException.cs" />
     <Compile Include="Excepciones\UsuarioInexistenteException.cs" />

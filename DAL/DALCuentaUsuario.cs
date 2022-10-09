@@ -26,7 +26,7 @@ namespace DAL
             if (mId == 0)
             {
                 DAO.DAOCuentaUsuario mDAObject = new DAO.DAOCuentaUsuario();
-                mId = mDAObject.ObtenerId("Cuenta_usuario");
+                mId = mDAObject.ObtenerId("CuentaUsuario");
             }
             mId += 1;
             return mId;
@@ -35,7 +35,7 @@ namespace DAL
         public static BECuentaUsuario Obtener(string mUser)
         {
             DAO.DAOCuentaUsuario mDAObject = new DAO.DAOCuentaUsuario();
-            DataSet mDs = mDAObject.ExecuteDataSet("select Cuenta_usuario_id, Cuenta_usuario_username, Cuenta_usuario_password, Cuenta_usuario_intentos_login, year(Cuenta_fecha_alta) as anio, month(Cuenta_fecha_alta) as mes, day(Cuenta_fecha_alta) as dia, Cuenta_cliente, Cuenta_usuario_empleado_id, Cuenta_usuario_cliente_id, cuenta_usuario_activa from cuenta_usuario where cuenta_usuario_username = '" + mUser + "' ");
+            DataSet mDs = mDAObject.ExecuteDataSet("select Cuenta_usuario_id, Cuenta_usuario_username, Cuenta_usuario_password, Cuenta_usuario_intentos_login, year(Cuenta_fecha_alta) as anio, month(Cuenta_fecha_alta) as mes, day(Cuenta_fecha_alta) as dia, Cuenta_cliente, Cuenta_usuario_empleado_id, Cuenta_usuario_cliente_id, cuenta_usuario_activa from Usuarios where Usuario = '" + mUser + "' ");
             if (mDs.Tables.Count > 0 && mDs.Tables[0].Rows.Count > 0)
             {
                 int pId = int.Parse(mDs.Tables[0].Rows[0]["cuenta_usuario_id"].ToString());

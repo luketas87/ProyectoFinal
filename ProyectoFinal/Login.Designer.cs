@@ -111,9 +111,9 @@
             this.label1.ForeColor = System.Drawing.Color.Silver;
             this.label1.Location = new System.Drawing.Point(8, 167);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 21);
+            this.label1.Size = new System.Drawing.Size(51, 21);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Usuario";
+            this.label1.Text = "Email";
             // 
             // label2
             // 
@@ -191,10 +191,10 @@
             // cmbIdioma
             // 
             this.cmbIdioma.FormattingEnabled = true;
-            this.cmbIdioma.Location = new System.Drawing.Point(325, 35);
+            this.cmbIdioma.Location = new System.Drawing.Point(121, 410);
             this.cmbIdioma.Margin = new System.Windows.Forms.Padding(2);
             this.cmbIdioma.Name = "cmbIdioma";
-            this.cmbIdioma.Size = new System.Drawing.Size(34, 21);
+            this.cmbIdioma.Size = new System.Drawing.Size(115, 21);
             this.cmbIdioma.TabIndex = 9;
             this.cmbIdioma.Text = "Seleccionar Idioma";
             // 

@@ -5,6 +5,7 @@ using BLL;
 using BE;
 using Seguridad;
 using Servicios;
+using Servicios.Excepciones;
 
 namespace ProyectoFinal
 {
@@ -73,13 +74,29 @@ namespace ProyectoFinal
             {
                 BECuentaUsuario mCuentaUsuario = BLCuentaUsuario.ValidarUsuario(TxtUsuario.Text, TxtContrasenia.Text);
             }
-            catch (Exception)
+            catch (ConectionStringFaltanteException)
             {
 
-                throw;
+                MessageBox.Show("No se encuentra el string de conexion, hable con el administrador del sistema","Error de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ConectionString aConctionString = new ConectionString();
+                aConctionString.Show();
             }
-            
-        }
 
+            catch (LoginException error)
+            {
+                switch (error.Result)
+                {
+                    case LoginResult.InvalidUsername:
+                        MessageBox.Show("Usuario incorrecto");
+                        break;
+                    case LoginResult.InvalidPassword:
+                        MessageBox.Show("Password Incorrecto");
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+        }
     }
 }

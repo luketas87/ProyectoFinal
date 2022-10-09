@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Seguridad;
+using Servicios.Excepciones;
 
 namespace Servicios
 {
@@ -14,9 +15,18 @@ namespace Servicios
 
         public void ObtenerCadena()
         {
-            ControlArchivos mControl = new ControlArchivos();
-            string CadenaConexionAux = mControl.LeerArchivo(@"CadenaConexion.txt");
-            CadenaConexion = new Encriptador().Desencriptar(CadenaConexionAux);
+            try
+            {
+                ControlArchivos mControl = new ControlArchivos();
+                string CadenaConexionAux = mControl.LeerArchivo(@"CadenaConexion.txt");
+                CadenaConexion = new Encriptador().Desencriptar(CadenaConexionAux);
+            }
+            catch (Exception)
+            {
+
+                throw new ConectionStringFaltanteException();
+            }
+
         }
 
         public ConexionBD()
@@ -25,10 +35,6 @@ namespace Servicios
         }
 
 
-        public void ActualizarCadena(string pCadena)
-        {
-            string CadenaConexionAux = new Encriptador().EncriptarReversible(pCadena);
-            ControlArchivos.EscribirArchivo("", "CadenaConexion.txt", CadenaConexionAux);
-        }
+
     }
 }

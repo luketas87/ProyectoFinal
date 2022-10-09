@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>ProyectoFinal</RootNamespace>
     <AssemblyName>ProyectoFinal</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -56,12 +56,6 @@
     <Compile Include="AltaUsuario.Designer.cs">
       <DependentUpon>AltaUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConctionString.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ConctionString.Designer.cs">
-      <DependentUpon>ConctionString.cs</DependentUpon>
-    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,9 +72,6 @@
     </Compile>
     <EmbeddedResource Include="AltaUsuario.resx">
       <DependentUpon>AltaUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ConctionString.resx">
-      <DependentUpon>ConctionString.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -126,10 +117,6 @@
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{34ed90d9-360a-436d-8aca-60966904f496}</Project>
       <Name>BLL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CustomControls\CustomControls\CustomControls.csproj">
-      <Project>{9c7bed6d-65a8-4d7c-b1f6-4337228c4c90}</Project>
-      <Name>CustomControls</Name>
     </ProjectReference>
     <ProjectReference Include="..\Seguridad\Seguridad.csproj">
       <Project>{55600f19-d80f-4d7c-ab7f-e0466980d43e}</Project>

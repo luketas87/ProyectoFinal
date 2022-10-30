@@ -11,23 +11,7 @@ namespace Servicios
     public class ConexionBD
     {
         public string CadenaConexion { get; set; }
-
-
-        public void ObtenerCadena()
-        {
-            try
-            {
-                ControlArchivos mControl = new ControlArchivos();
-                string CadenaConexionAux = mControl.LeerArchivo(@"CadenaConexion.txt");
-                CadenaConexion = new Encriptador().Desencriptar(CadenaConexionAux);
-            }
-            catch (Exception)
-            {
-
-                throw new ConectionStringFaltanteException();
-            }
-
-        }
+        Encriptador encriptadora = new Encriptador();
 
         public ConexionBD()
         {
@@ -35,6 +19,25 @@ namespace Servicios
         }
 
 
+        public void ObtenerCadena()
+        {
+           // try
+            //{
+            ControlArchivos mControl = new ControlArchivos();
+            string CadenaConexionAux = mControl.LeerArchivo(@"CadenaConexion.txt");
+            string cadenaEncriptada = encriptadora.EncriptarReversible(CadenaConexionAux);
+            string cadenaDesencriptada = encriptadora.Desencriptar(CadenaConexionAux);
+            CadenaConexion = CadenaConexionAux;
+                
+               // CadenaConexion = new Encriptador().Desencriptar(CadenaConexionAux);
+           // }
+         /*   catch (Exception)
+            {
+
+                throw new ConectionStringFaltanteException();
+            }*/
+
+        }
 
     }
 }

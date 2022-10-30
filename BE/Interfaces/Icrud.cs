@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace BE.Interfaces
 {
-    public interface ICrud<T> where T : IEntity
+    public interface ICrud<T> 
     {
-        T GetById(Guid id);
-        IList<T> GetAll();
-        void Save(T entity);
-        void Delete(T entity);
-
+        bool Crear(T objAlta);
+        List<T> Cargar();
+        bool Borrar(T objDel);
+        bool Actualizar(T objUpd);
     }
 }

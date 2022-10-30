@@ -103,6 +103,7 @@
             this.TxtUsuario.Name = "TxtUsuario";
             this.TxtUsuario.Size = new System.Drawing.Size(350, 20);
             this.TxtUsuario.TabIndex = 1;
+            this.TxtUsuario.Text = "asd";
             // 
             // label1
             // 
@@ -137,6 +138,7 @@
             this.TxtContrasenia.PasswordChar = '*';
             this.TxtContrasenia.Size = new System.Drawing.Size(350, 20);
             this.TxtContrasenia.TabIndex = 3;
+            this.TxtContrasenia.Text = "asd";
             // 
             // lblRecordar
             // 
@@ -194,9 +196,9 @@
             this.cmbIdioma.Location = new System.Drawing.Point(121, 410);
             this.cmbIdioma.Margin = new System.Windows.Forms.Padding(2);
             this.cmbIdioma.Name = "cmbIdioma";
-            this.cmbIdioma.Size = new System.Drawing.Size(115, 21);
+            this.cmbIdioma.Size = new System.Drawing.Size(138, 21);
             this.cmbIdioma.TabIndex = 9;
-            this.cmbIdioma.Text = "Seleccionar Idioma";
+            this.cmbIdioma.SelectedIndexChanged += new System.EventHandler(this.cmbIdioma_SelectedIndexChanged);
             // 
             // Login
             // 
@@ -217,7 +219,6 @@
             this.Controls.Add(this.TituloBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
-            this.Opacity = 0.85D;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Login_Load);
             this.TituloBar.ResumeLayout(false);

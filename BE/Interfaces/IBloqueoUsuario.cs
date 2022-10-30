@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BE.Interfaces
 {
-   public interface IEntity
+    public interface IBloqueoUsuario
     {
-        Guid Id
-        {
-            get;
-        }
+        void Show();
+
+        DialogResult ShowDialog();
     }
 }

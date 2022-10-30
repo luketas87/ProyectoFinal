@@ -1,1 +1,0 @@
-﻿Server=localhost;Database=VeterinariaPatitas;Trusted_Connection=True;

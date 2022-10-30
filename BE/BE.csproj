@@ -36,6 +36,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -52,6 +53,7 @@
     <Compile Include="Implementacion\BEFamiliaPatente.cs" />
     <Compile Include="Implementacion\BENuevaCadena.cs" />
     <Compile Include="Implementacion\BEProducto.cs" />
+    <Compile Include="Implementacion\BETraductor.cs" />
     <Compile Include="Implementacion\BEUsuarioFamilia.cs" />
     <Compile Include="Implementacion\BEUsuarioPatente.cs" />
     <Compile Include="Implementacion\BEVenta.cs" />
@@ -69,13 +71,23 @@
     <Compile Include="Interfaces\IBloqueoProductos.cs" />
     <Compile Include="Interfaces\IBloqueoUsuario.cs" />
     <Compile Include="Interfaces\IClientes.cs" />
+    <Compile Include="Interfaces\IDatosUsuario.cs" />
+    <Compile Include="Interfaces\IDetalleRefForm.cs" />
+    <Compile Include="Interfaces\IDetalleVenta.cs" />
+    <Compile Include="Interfaces\IFamilias.cs" />
     <Compile Include="Interfaces\IIdioma.cs" />
     <Compile Include="Interfaces\IABMUsuario.cs" />
     <Compile Include="Interfaces\IDigitoVerificador.cs" />
     <Compile Include="Interfaces\Icrud.cs" />
     <Compile Include="Interfaces\IFormControl.cs" />
+    <Compile Include="Interfaces\INegarPat.cs" />
+    <Compile Include="Interfaces\InputBox.cs" />
+    <Compile Include="Interfaces\IPatente.cs" />
     <Compile Include="Interfaces\IPrincipal.cs" />
+    <Compile Include="Interfaces\IProductos.cs" />
+    <Compile Include="Interfaces\IRestore.cs" />
     <Compile Include="Interfaces\ITraductor.cs" />
+    <Compile Include="Interfaces\IVenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Implementacion\BETraduccionFormulario.cs" />
   </ItemGroup>

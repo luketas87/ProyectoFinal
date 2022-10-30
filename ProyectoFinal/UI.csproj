@@ -39,8 +39,8 @@
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac, Version=6.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <HintPath>..\packages\Autofac.6.0.0\lib\netstandard2.0\Autofac.dll</HintPath>
+    <Reference Include="Autofac, Version=6.4.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.6.4.0\lib\netstandard2.0\Autofac.dll</HintPath>
     </Reference>
     <Reference Include="Autofac.Configuration, Version=6.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.Configuration.6.0.0\lib\netstandard2.0\Autofac.Configuration.dll</HintPath>
@@ -139,6 +139,7 @@
     <Compile Include="ConctionString.Designer.cs">
       <DependentUpon>ConctionString.cs</DependentUpon>
     </Compile>
+    <Compile Include="IoCContainer.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +227,10 @@
     <ProjectReference Include="..\CustomControls\CustomControls\CustomControls.csproj">
       <Project>{9c7bed6d-65a8-4d7c-b1f6-4337228c4c90}</Project>
       <Name>CustomControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{86dbcb7f-9051-4ef3-9785-353796ea138a}</Project>
+      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Seguridad\Seguridad.csproj">
       <Project>{55600f19-d80f-4d7c-ab7f-e0466980d43e}</Project>

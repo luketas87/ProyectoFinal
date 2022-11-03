@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace BE.Interfaces
 {
-    interface IBitacora
+    public interface IBitacora
     {
         Form MdiParent { get; set; }
 

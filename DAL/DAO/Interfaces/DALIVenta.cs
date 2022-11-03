@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BE.Implementacion;
+using BE.Interfaces;
 
 namespace DAL.DAO.Interfaces
 {
-    public interface DALIVentas
+    public interface DALIVenta : ICrud<BEVenta>
     {
         int ObtenerUltimoIdVenta();
 

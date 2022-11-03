@@ -11,10 +11,10 @@ namespace Seguridad
 {
     public class Encriptador
     {
-        string cipherData;
-        byte[] cipherBytes;
-        byte[] plainBytes;
-        byte[] plainKey;
+        readonly string cipherData;
+        readonly byte[] cipherBytes;
+        readonly byte[] plainBytes;
+        readonly byte[] plainKey;
 
         HashAlgorithm sha;
         SymmetricAlgorithm desObj;

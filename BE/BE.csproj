@@ -64,7 +64,7 @@
     <Compile Include="Implementacion\BEPatente.cs" />
     <Compile Include="Implementacion\BELineaDetalle.cs" />
     <Compile Include="Interfaces\IAdminFam.cs" />
-    <Compile Include="Interfaces\IAdminPat.cs" />
+    <Compile Include="Interfaces\IAdminPatentes.cs" />
     <Compile Include="Interfaces\IAdminPatFamilia.cs" />
     <Compile Include="Interfaces\IBackup.cs" />
     <Compile Include="Interfaces\IBitacora.cs" />

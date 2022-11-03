@@ -90,7 +90,7 @@ namespace DAL.DAO.Implementacion
         }*/
     }
     #endregion
-    public class DAOCuentaUsuario
+    public class DALCuentaUsuario
     {
         public SqlConnection mCon = new SqlConnection(new ConexionBD().CadenaConexion);
 

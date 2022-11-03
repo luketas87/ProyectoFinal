@@ -8,10 +8,11 @@ using DAL.DAO;
 using log4net;
 using System.Collections.Generic;
 using DAL.Utilidades;
+using DAL.DAO.Interfaces;
 
-namespace BLL
+namespace BLL.implementacion
 {
-    public class BLCuentaUsuario
+    public class BLLCuentaUsuario
     {
         public class UsuarioBLL : ICrud<BECuentaUsuario>, BLLICuentaUsuario
         {

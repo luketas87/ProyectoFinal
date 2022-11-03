@@ -9,8 +9,10 @@ using BLL.implementacion;
 using BE.Interfaces;
 using DAL.DAO.Implementacion;
 using DAL.DAO.Interfaces;
-
-
+using ProyectoFinal.Formularios;
+using BE.Implementacion;
+using BLL.Interfaces;
+using ProyectoFinal;
 
 namespace UI.Interfaces
 {
@@ -23,63 +25,63 @@ namespace UI.Interfaces
         }
 
         //Suplantar por el que esta comentado
-        private static IContainer CreateContainer()
+      /*  private static IContainer CreateContainer()
         {
             throw new NotImplementedException();
-        }
+        }*/
 
         public static T Resolve<T>()
         {
             return container.Resolve<T>();
         }
 
-        /*private static IContainer CreateContainer()
+        private static IContainer CreateContainer()
          {
              ////contBuilder.Register((ctx) => Principal.GetInstancia()).As<IPrincipal>().SingleInstance();
              var contBuilder = new ContainerBuilder();
-             contBuilder.RegisterType<Principal>().As<IPrincipal>().SingleInstance();
+             contBuilder.RegisterType<MenuPrincipal>().As<IPrincipal>().SingleInstance();
              contBuilder.RegisterType<DALCuentaUsuario>().As<DALICuentaUsuario>().SingleInstance();
-             contBuilder.RegisterType<UsuarioBLL>().As<IUsuarioBLL>().SingleInstance();
-             contBuilder.RegisterType<VentaBLL>().As<IVentaBLL>().SingleInstance();
-             contBuilder.RegisterType<VentaDAL>().As<IVentaDAL>().SingleInstance();
-             contBuilder.RegisterType<FormControlBLL>().As<IFormControlBLL>().SingleInstance();
-             contBuilder.RegisterType<FormControlDAL>().As<IFormControlDAL>().SingleInstance();
-             contBuilder.RegisterType<DigitoVerificador>().As<IDigitoVerificador>().InstancePerDependency();
-             contBuilder.RegisterType<DetalleVentaUI>().As<IDetalleVenta>().SingleInstance();
+             contBuilder.RegisterType<BLLCuentaUsuario>().As<BLLICuentaUsuario>().SingleInstance();
+             contBuilder.RegisterType<BLLVenta>().As<BLLIVenta>().SingleInstance();
+             contBuilder.RegisterType<DALVenta>().As<DALIVenta>().SingleInstance();
+             contBuilder.RegisterType<BLLFormControl>().As<BLLIFormControl>().SingleInstance();
+             contBuilder.RegisterType<DALFormControl>().As<DALIFormControl>().SingleInstance();
+             contBuilder.RegisterType<DALDigitoVerificador>().As<IDigitoVerificador>().InstancePerDependency();
+             contBuilder.RegisterType<BEDetalleVenta>().As<IDetalleVenta>().SingleInstance();
              contBuilder.RegisterType<ABMusuario>().As<IABMUsuario>().SingleInstance();
-             contBuilder.RegisterType<BitacoraUI>().As<IBitacoraUI>().SingleInstance();
-             contBuilder.RegisterType<BitacoraBLL>().As<IBitacoraBLL>().InstancePerDependency();
-             contBuilder.RegisterType<BitacoraDAL>().As<IBitacoraDAL>().InstancePerDependency();
+             contBuilder.RegisterType<BEBitacora>().As<IBitacora>().SingleInstance();
+             contBuilder.RegisterType<BLLBitacora>().As<BLLIBitacora>().InstancePerDependency();
+             contBuilder.RegisterType<DALBitacora>().As<DALIBitacora>().InstancePerDependency();
              contBuilder.RegisterType<FormControl>().As<IFormControl>().SingleInstance();
-             contBuilder.RegisterType<Familias>().As<IFamilias>().SingleInstance();
-             contBuilder.RegisterType<FamiliaBLL>().As<IFamiliaBLL>().InstancePerDependency();
-             contBuilder.RegisterType<FamiliaDAL>().As<IFamiliaDAL>().InstancePerDependency();
-             contBuilder.RegisterType<PatenteBLL>().As<IPatenteBLL>().InstancePerDependency();
-             contBuilder.RegisterType<PatenteDAL>().As<IPatenteDAL>().InstancePerDependency();
-             contBuilder.RegisterType<ProductoBLL>().As<IProductoBLL>().SingleInstance();
-             contBuilder.RegisterType<ProductoDAL>().As<IProductoDAL>().SingleInstance();
+             contBuilder.RegisterType<BEFamilia>().As<IFamilias>().SingleInstance();
+             contBuilder.RegisterType<BLLFamilia>().As<BLLIFamilia>().InstancePerDependency();
+             contBuilder.RegisterType<DALFamilia>().As<DALIFamilia>().InstancePerDependency();
+             contBuilder.RegisterType<BLLPatente>().As<BLLIPatente>().InstancePerDependency();
+             contBuilder.RegisterType<DALPatente>().As<DALIPatente>().InstancePerDependency();
+             contBuilder.RegisterType<BLLProducto>().As<BLLIProducto>().SingleInstance();
+             contBuilder.RegisterType<DALProducto>().As<DALIProducto>().SingleInstance();
              contBuilder.RegisterType<Productos>().As<IProductos>().SingleInstance();
-             contBuilder.RegisterType<AdminPatFamilia>().As<IAdminPatFamilia>().SingleInstance();
+             contBuilder.RegisterType<AdmPatenteFamilia>().As<IAdminPatFamilia>().SingleInstance();
              contBuilder.RegisterType<DatosUsuario>().As<IDatosUsuario>().SingleInstance();
              contBuilder.RegisterType<Clientes>().As<IClientes>().SingleInstance();
-             contBuilder.RegisterType<ClienteBLL>().As<IClienteBLL>().SingleInstance();
-             contBuilder.RegisterType<ClienteDAL>().As<IClienteDAL>().SingleInstance();
-             contBuilder.RegisterType<BackupUI>().As<IBackupUI>().SingleInstance();
-             contBuilder.RegisterType<RestoreUI>().As<IRestoreUI>().SingleInstance();
-             contBuilder.RegisterType<IdiomaBLL>().As<IIdiomaBLL>().SingleInstance();
-             contBuilder.RegisterType<IdiomaDAL>().As<IIdiomaDAL>().SingleInstance();
-             contBuilder.RegisterType<DigitoVerificador>().As<IDigitoVerificador>().SingleInstance();
+             contBuilder.RegisterType<BLLCliente>().As<BLLICliente>().SingleInstance();
+             contBuilder.RegisterType<DALCliente>().As<DALICliente>().SingleInstance();
+             contBuilder.RegisterType<Backup>().As<IBackup>().SingleInstance();
+             contBuilder.RegisterType<Restore>().As<IRestore>().SingleInstance();
+             contBuilder.RegisterType<BLLIdioma>().As<BLLIIdioma>().SingleInstance();
+             contBuilder.RegisterType<DALIdioma>().As<DALIIdioma>().SingleInstance();
+             contBuilder.RegisterType<DALDigitoVerificador>().As<IDigitoVerificador>().SingleInstance();
              contBuilder.RegisterType<BloqueoProductos>().As<IBloqueoProductos>().SingleInstance();
              contBuilder.RegisterType<BloqueoUsuario>().As<IBloqueoUsuario>().SingleInstance();
-             contBuilder.RegisterType<AdminFamUsuario>().As<IAdminFam>().SingleInstance();
-             contBuilder.RegisterType<AdminPatUsuario>().As<IAdminPat>().SingleInstance();
-             contBuilder.RegisterType<NegarPatUsuario>().As<INegarPat>().SingleInstance();
-             contBuilder.RegisterType<DetalleVentaDAL>().As<IDetalleVentaDAL>().SingleInstance();
-             contBuilder.RegisterType<DetalleVentaBLL>().As<IDetalleVentaBLL>().SingleInstance();
+             contBuilder.RegisterType<AdminFamiliaUsuario>().As<IAdminFam>().SingleInstance();
+             contBuilder.RegisterType<AdminPatenteUsuario>().As<IAdminPatentes>().SingleInstance();
+             contBuilder.RegisterType<NegarPatenteUsuario>().As<INegarPat>().SingleInstance();
+             contBuilder.RegisterType<DALDetalleVenta>().As<DALIDetalleVenta>().SingleInstance();
+             contBuilder.RegisterType<BLLDetalleVenta>().As<BLLIDetalleVenta>().SingleInstance();
              contBuilder.RegisterType<Traductor>().As<ITraductor>().SingleInstance();
-             contBuilder.RegisterType<VentaUI>().As<IVentaUI>().SingleInstance();
+             contBuilder.RegisterType<Venta>().As<IVenta>().SingleInstance();
              contBuilder.RegisterType<DetalleRefForm>().As<IDetalleRefForm>().SingleInstance();
              return contBuilder.Build();
-    }*/
+        }
     }
 }

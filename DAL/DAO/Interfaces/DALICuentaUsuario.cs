@@ -9,7 +9,7 @@ using Servicios;
 using BE.Interfaces;
 using BE.Implementacion;
 
-namespace DAL.DAO
+namespace DAL.DAO.Interfaces
 {
     #region Old
     /*public class DAOCuentaUsuario

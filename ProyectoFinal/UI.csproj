@@ -119,37 +119,133 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Backup.cs">
+    <Compile Include="Formularios\ABMusuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Backup.Designer.cs">
+    <Compile Include="Formularios\ABMusuario.Designer.cs">
+      <DependentUpon>ABMusuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\AdminFamiliaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\AdminFamiliaUsuario.Designer.cs">
+      <DependentUpon>AdminFamiliaUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\AdminPatenteUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\AdminPatenteUsuario.Designer.cs">
+      <DependentUpon>AdminPatenteUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\AdmPatenteFamilia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\AdmPatenteFamilia.Designer.cs">
+      <DependentUpon>AdmPatenteFamilia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Backup.Designer.cs">
       <DependentUpon>Backup.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\Alert.cs" />
-    <Compile Include="AltaUsuario.cs">
+    <Compile Include="Formularios\AltaUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AltaUsuario.Designer.cs">
+    <Compile Include="Formularios\AltaUsuario.Designer.cs">
       <DependentUpon>AltaUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\OptionBox.cs" />
-    <Compile Include="ConctionString.cs">
+    <Compile Include="Formularios\BloqueoProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConctionString.Designer.cs">
+    <Compile Include="Formularios\BloqueoProductos.Designer.cs">
+      <DependentUpon>BloqueoProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\BloqueoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\BloqueoUsuario.Designer.cs">
+      <DependentUpon>BloqueoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Clientes.Designer.cs">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ConctionString.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ConctionString.Designer.cs">
       <DependentUpon>ConctionString.cs</DependentUpon>
     </Compile>
-    <Compile Include="IoCContainer.cs" />
-    <Compile Include="Login.cs">
+    <Compile Include="Formularios\DatosUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="Formularios\DatosUsuario.Designer.cs">
+      <DependentUpon>DatosUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\DetalleRefForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\DetalleRefForm.Designer.cs">
+      <DependentUpon>DetalleRefForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormControl.Designer.cs">
+      <DependentUpon>FormControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\LadingSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\LadingSystem.Designer.cs">
+      <DependentUpon>LadingSystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\NegarPatenteUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\NegarPatenteUsuario.Designer.cs">
+      <DependentUpon>NegarPatenteUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Productos.Designer.cs">
+      <DependentUpon>Productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Restore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Restore.Designer.cs">
+      <DependentUpon>Restore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Traductor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Traductor.Designer.cs">
+      <DependentUpon>Traductor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Venta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Venta.Designer.cs">
+      <DependentUpon>Venta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IoCContainer.cs" />
+    <Compile Include="Formularios\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuPrincipal.cs">
+    <Compile Include="Formularios\MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuPrincipal.Designer.cs">
+    <Compile Include="Formularios\MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -159,23 +255,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Español.resx</DependentUpon>
     </Compile>
-    <Compile Include="ReseteoContraseña.cs">
+    <Compile Include="Formularios\ReseteoContraseña.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReseteoContraseña.Designer.cs">
+    <Compile Include="Formularios\ReseteoContraseña.Designer.cs">
       <DependentUpon>ReseteoContraseña.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AltaUsuario.resx">
+    <EmbeddedResource Include="Formularios\AltaUsuario.resx">
       <DependentUpon>AltaUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConctionString.resx">
+    <EmbeddedResource Include="Formularios\ConctionString.resx">
       <DependentUpon>ConctionString.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="Formularios\LadingSystem.resx">
+      <DependentUpon>LadingSystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuPrincipal.resx">
+    <EmbeddedResource Include="Formularios\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Restore.resx">
+      <DependentUpon>Restore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -191,7 +293,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Español.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReseteoContraseña.resx">
+    <EmbeddedResource Include="Formularios\ReseteoContraseña.resx">
       <DependentUpon>ReseteoContraseña.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
@@ -240,6 +342,9 @@
       <Project>{dabc4297-cf8f-45ea-bae6-2eedf1c014dd}</Project>
       <Name>Servicios</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\veterinariaPatitas.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

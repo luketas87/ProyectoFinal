@@ -8,7 +8,6 @@ using BLL.implementacion;
 using BLL.Interfaces;
 using Seguridad;
 using Servicios;
-using System.Linq; 
 using Servicios.Excepciones;
 
 namespace ProyectoFinal
@@ -17,18 +16,18 @@ namespace ProyectoFinal
     {
         private const string nombreFormulario = "Login";
 
-        private log4net.ILog log;
+        //private log4net.ILog log;
         private IPrincipal PrincipalForm;
-        private BLLICuentaUsuario usuarioBLL;
+        private BLLIUsuario usuarioBLL;
         private IFormControl formControl;
         private readonly BLLIIdioma idiomaBLL;
         private readonly IDigitoVerificador digitoVerificador;
         private readonly ITraductor traductor;
-        private BLLIPatente patenteBLL;
-        private BLLIVenta ventaBLL;
-        private BLLIBitacora bitacoraBLL;
+        //private IPatenteBLL patenteBLL;
+        //private IVentaBLL ventaBLL;
+        //private IBitacoraBLL bitacoraBLL;
 
-        public Login(BLLIIdioma idiomaBLL, IDigitoVerificador digitoVerificador, ITraductor traductor)
+        public Login(BLLIIdioma idiomaBLL, /*IDigitoVerificador digitoVerificador,*/ ITraductor traductor)
         {
             //this.digitoVerificador = digitoVerificador;
             this.idiomaBLL = idiomaBLL;
@@ -104,16 +103,8 @@ namespace ProyectoFinal
 
         private void Login_Load(object sender, EventArgs e)
         {
-            this.AcceptButton = btnLogin;
-            log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-            //PrincipalForm = IoCContainer.Resolve<IPrincipal>();
-            //usuarioBLL = IoCContainer.Resolve<IUsuarioBLL>();
-            //patenteBLL = IoCContainer.Resolve<IPatenteBLL>();
-            //ventaBLL = IoCContainer.Resolve<IVentaBLL>();
-            //bitacoraBLL = IoCContainer.Resolve<IBitacoraBLL>();
-            //formControl = IoCContainer.Resolve<IFormControl>();
             CargarCombo();
-            formControl.LenguajeSeleccionado = (BEIdioma)cmbIdioma.SelectedItem;
+            formControl.LenguajeSeleccionado = (Idioma)cmbIdioma.SelectedItem;
             Traduccir();
             ComprobarBD();
             /* cmbIdioma.Items.Add("Seleccione un idioma");
@@ -124,8 +115,6 @@ namespace ProyectoFinal
              TxtContrasenia.Text = "abc";*/
         }
 
-        /*COMPROBACION DE INTEGRIDAD
-        SI DIGITO VERIFICADOR ES DISTINTO AL ASIGNADO EN LA BASE ARROJA CARTEL DE PROBLEMA DE INTEGRIDAD.*/
         private void ComprobarBD()
         {
             if(!digitoVerificador.ComprobarIntegridad())
@@ -144,42 +133,15 @@ namespace ProyectoFinal
                     formControl.GuardarDatosSesionUsuario(usuario);
                     formControl.ObtenerPermisosUsuario();
                     usuario = formControl.ObtenerInfoUsuario();
-                    
-                    if (usuario.Patentes.Any(x => x.Descripcion == "RecalcularDV"))
-                    {
-                        if (usuarioBLL.Login(input.Items["Usuario"], input.Items["Contrasenia"]))
-                        {
-                            //Esto solo recalcula el DVVertical en caso de que borren una row
-                            digitoVerificador.ActualizarDVVertical("Usuario");
-                            digitoVerificador.ActualizarDVVertical("Bitacora");
-                            digitoVerificador.ActualizarDVVertical("Patente");
-                            digitoVerificador.ActualizarDVVertical("Venta");
-                            usuarioBLL.CargarDVHPatentes();
-                            patenteBLL.CargarDVHPatentes();
-                            bitacoraBLL.CargarDVHBitacora();
-                            ventaBLL.CargarDVHVenta();
-                        }
-                    }
-                    else
-                    {
-                        Alert.ShowSimpleAlert("Usted no es un usuario administrador", "MSJ070");
-                        this.Close();
-                    }
                 }
-                else
-                {
-                    Alert.ShowSimpleAlert("Usted no es un usuario administrador", "MSJ070");
-                    this.Close();
-                }
-
             }
-
         }
-            
+
+
         //Combo para seleccionar el idioma
         private void cmbIdioma_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var lenguajeSeleccionado = (BEIdioma)cmbIdioma.SelectedItem;
+            var lenguajeSeleccionado = (Idioma)cmbIdioma.SelectedItem;
             formControl.LenguajeSeleccionado = lenguajeSeleccionado;
 
             Traduccir();
@@ -192,7 +154,7 @@ namespace ProyectoFinal
 
             try
             {
-                if (usuarioBLL.ObtenerUsuarioConEmail(usuario).Activo)
+                if (usuarioBLL.ObtenerUsuarioConEmail(usuario).UsuarioActivo)
                 {
                     var ingresa = usuarioBLL.Login(usuario, contrasenia);
 
@@ -204,7 +166,7 @@ namespace ProyectoFinal
                         PrincipalForm.Show();
                     }
 
-                    else if (usuarioBLL.ObtenerUsuarioConEmail(usuario).ContadorIngresosIncorrectos < 3)
+                    else if (usuarioBLL.ObtenerUsuarioConEmail(usuario).Cuenta_usuario_intentos_login < 3)
                     {
                         MessageBox.Show("Login Incorrecto", "Ingresar al Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
@@ -239,7 +201,7 @@ namespace ProyectoFinal
 
 
 
-            #region OLD LOGIN
+
             //VIEJO LOGIN
             //try
             //{
@@ -279,8 +241,6 @@ namespace ProyectoFinal
             //            break;
             //    }
             //}
-            #endregion
-
         }
     }
 }

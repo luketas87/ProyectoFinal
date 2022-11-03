@@ -8,14 +8,15 @@ using DAL.DAO;
 using DAL.Utilidades;
 using DAL.DAO.Interfaces;
 using BE.Implementacion;
+//using IDigitoVerificador = DAL.DAO.Interfaces.IDigitoVerificador;
 
 namespace DAL.DAO.Implementacion
 {
-    public class DALVentas : BaseDAO, ICrud<BEVenta>, DALIVentas
+    public class DALVenta : BaseDAO, ICrud<BEVenta>, DALIVenta
     {
         private readonly IDigitoVerificador digitoVerificador;
 
-        public DALVentas(IDigitoVerificador digitoVerificador)
+        public DALVenta(IDigitoVerificador digitoVerificador)
         {
             this.digitoVerificador = digitoVerificador;
         }

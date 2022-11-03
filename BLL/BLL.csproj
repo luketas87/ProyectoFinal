@@ -78,9 +78,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="implementacion\BLLBitacora.cs" />
+    <Compile Include="implementacion\BLLCliente.cs" />
     <Compile Include="implementacion\BLLCuentaUsuario.cs" />
+    <Compile Include="implementacion\BLLDetalleVenta.cs" />
+    <Compile Include="implementacion\BLLFamilia.cs" />
+    <Compile Include="implementacion\BLLFormControl.cs" />
+    <Compile Include="implementacion\BLLPatente.cs" />
+    <Compile Include="implementacion\BLLProducto.cs" />
     <Compile Include="implementacion\BLLTraductor.cs" />
+    <Compile Include="implementacion\BLLVenta.cs" />
     <Compile Include="Interfaces\BLLIBitacora.cs" />
+    <Compile Include="Interfaces\BLLICliente.cs" />
+    <Compile Include="Interfaces\BLLIDetalleVenta.cs" />
+    <Compile Include="Interfaces\BLLIFamilia.cs" />
     <Compile Include="Interfaces\BLLIIdioma.cs" />
     <Compile Include="BLNuevaCadena.cs" />
     <Compile Include="implementacion\BLLBackup.cs" />
@@ -88,6 +99,7 @@
     <Compile Include="Interfaces\BLLICuentaUsuario.cs" />
     <Compile Include="Interfaces\BLLIFormControl.cs" />
     <Compile Include="Interfaces\BLLIPatente.cs" />
+    <Compile Include="Interfaces\BLLIProducto.cs" />
     <Compile Include="Interfaces\BLLIVenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

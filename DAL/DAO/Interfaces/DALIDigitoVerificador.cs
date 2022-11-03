@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL.DAO
+namespace DAL.DAO.Interfaces
 {
-    public interface IDigitoVerificador
+    public interface DALIDigitoVerificador
     {
         List<string> Entidades { get; set; }
 

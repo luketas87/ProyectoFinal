@@ -60,11 +60,12 @@
     <Compile Include="DAO\Implementacion\DALCuentaUsuario.cs" />
     <Compile Include="DAO\Implementacion\DALDetalleVenta.cs" />
     <Compile Include="DAO\Implementacion\DALDigitoVerificador.cs" />
+    <Compile Include="DAO\Implementacion\DALFamilia.cs" />
     <Compile Include="DAO\Implementacion\DALFormControl.cs" />
     <Compile Include="DAO\Implementacion\DALIdioma.cs" />
     <Compile Include="DAO\Implementacion\DALPatente.cs" />
     <Compile Include="DAO\Implementacion\DALProducto.cs" />
-    <Compile Include="DAO\Implementacion\DALVentas.cs" />
+    <Compile Include="DAO\Implementacion\DALVenta.cs" />
     <Compile Include="DAO\Interfaces\DALIBitacora.cs" />
     <Compile Include="DAO\Interfaces\DALICliente.cs" />
     <Compile Include="DAO\Interfaces\DALIDetalleVenta.cs" />
@@ -74,7 +75,7 @@
     <Compile Include="DAO\Interfaces\DALIIdioma.cs" />
     <Compile Include="DAO\Interfaces\DALIPatente.cs" />
     <Compile Include="DAO\Interfaces\DALIProducto.cs" />
-    <Compile Include="DAO\Interfaces\DALIVentas.cs" />
+    <Compile Include="DAO\Interfaces\DALIVenta.cs" />
     <Compile Include="Utilidades\BaseDAO.cs" />
     <Compile Include="DAO\Interfaces\DALICuentaUsuario.cs" />
     <Compile Include="DAO\Interfaces\DALIdioma.cs" />

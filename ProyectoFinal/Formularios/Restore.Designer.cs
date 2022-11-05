@@ -34,7 +34,7 @@ namespace ProyectoFinal.Formularios
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.txtBackFiles = new System.Windows.Forms.TextBox();
             this.Label1 = new System.Windows.Forms.Label();
-            this.rjButton1 = new CustomControls.RJControls.RJButton();
+            this.btnVolver = new CustomControls.RJControls.RJButton();
             this.btnRestaurar = new CustomControls.RJControls.RJButton();
             this.btnExaminar = new CustomControls.RJControls.RJButton();
             this.SuspendLayout();
@@ -64,6 +64,7 @@ namespace ProyectoFinal.Formularios
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(240, 26);
             this.progressBar1.TabIndex = 63;
+            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
             // 
             // txtBackFiles
             // 
@@ -83,24 +84,25 @@ namespace ProyectoFinal.Formularios
             this.Label1.TabIndex = 59;
             this.Label1.Text = "SELECCIONE COPIA DE SEGURIDAD:";
             // 
-            // rjButton1
+            // btnVolver
             // 
-            this.rjButton1.BackColor = System.Drawing.SystemColors.Control;
-            this.rjButton1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.rjButton1.BorderColor = System.Drawing.Color.Red;
-            this.rjButton1.BorderRadius = 40;
-            this.rjButton1.BorderSize = 1;
-            this.rjButton1.FlatAppearance.BorderSize = 0;
-            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton1.ForeColor = System.Drawing.Color.Red;
-            this.rjButton1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.rjButton1.Location = new System.Drawing.Point(3, 210);
-            this.rjButton1.Name = "rjButton1";
-            this.rjButton1.Size = new System.Drawing.Size(118, 40);
-            this.rjButton1.TabIndex = 67;
-            this.rjButton1.Text = "Volver";
-            this.rjButton1.TextColor = System.Drawing.Color.Red;
-            this.rjButton1.UseVisualStyleBackColor = false;
+            this.btnVolver.BackColor = System.Drawing.SystemColors.Control;
+            this.btnVolver.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.btnVolver.BorderColor = System.Drawing.Color.Red;
+            this.btnVolver.BorderRadius = 40;
+            this.btnVolver.BorderSize = 1;
+            this.btnVolver.FlatAppearance.BorderSize = 0;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.ForeColor = System.Drawing.Color.Red;
+            this.btnVolver.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnVolver.Location = new System.Drawing.Point(3, 210);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(118, 40);
+            this.btnVolver.TabIndex = 67;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.TextColor = System.Drawing.Color.Red;
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // btnRestaurar
             // 
@@ -112,7 +114,7 @@ namespace ProyectoFinal.Formularios
             this.btnRestaurar.FlatAppearance.BorderSize = 0;
             this.btnRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRestaurar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnRestaurar.Location = new System.Drawing.Point(161, 210);
+            this.btnRestaurar.Location = new System.Drawing.Point(185, 210);
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Size = new System.Drawing.Size(118, 40);
             this.btnRestaurar.TabIndex = 68;
@@ -147,7 +149,7 @@ namespace ProyectoFinal.Formularios
             this.ClientSize = new System.Drawing.Size(339, 273);
             this.Controls.Add(this.btnExaminar);
             this.Controls.Add(this.btnRestaurar);
-            this.Controls.Add(this.rjButton1);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.lblProgreso);
             this.Controls.Add(this.progressBar1);
@@ -155,6 +157,7 @@ namespace ProyectoFinal.Formularios
             this.Controls.Add(this.Label1);
             this.Name = "Restore";
             this.Text = "Restore";
+            this.Load += new System.EventHandler(this.Restore_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,8 +169,9 @@ namespace ProyectoFinal.Formularios
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.TextBox txtBackFiles;
         internal System.Windows.Forms.Label Label1;
-        private CustomControls.RJControls.RJButton rjButton1;
+        private CustomControls.RJControls.RJButton btnVolver;
         private CustomControls.RJControls.RJButton btnRestaurar;
         private CustomControls.RJControls.RJButton btnExaminar;
+        private System.Windows.Forms.OpenFileDialog opFile;
     }
 }

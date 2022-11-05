@@ -172,6 +172,7 @@
             this.btnVolver.Text = "Volver";
             this.btnVolver.TextColor = System.Drawing.Color.Red;
             this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // btnAceptar
             // 
@@ -187,7 +188,7 @@
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(118, 40);
             this.btnAceptar.TabIndex = 59;
-            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.Text = "Realizar Backup";
             this.btnAceptar.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);

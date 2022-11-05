@@ -11,10 +11,10 @@ namespace DAL.DAO.Implementacion
 {
     public class DALPatente : BaseDAO, DALIPatente
     {
-        private readonly IDigitoVerificador digitoVerificador;
+        private readonly DALIDigitoVerificador digitoVerificador;
         private readonly DALIFamilia FamiliaDAL;
 
-        public DALPatente(IDigitoVerificador digitoVerificador, DALIFamilia FamiliaDAL)
+        public DALPatente(DALIDigitoVerificador digitoVerificador, DALIFamilia FamiliaDAL)
         {
             this.digitoVerificador = digitoVerificador;
             this.FamiliaDAL = FamiliaDAL;

@@ -73,6 +73,26 @@ namespace ProyectoFinal.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_database_daily_import_80 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-database-daily-import-80", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_exportación_de_base_de_datos_80 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-exportación-de-base-de-datos-80", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_subtract_16 {
             get {
                 object obj = ResourceManager.GetObject("icons8-subtract-16", resourceCulture);
@@ -86,6 +106,16 @@ namespace ProyectoFinal.Properties {
         internal static System.Drawing.Bitmap portada__3_ {
             get {
                 object obj = ResourceManager.GetObject("portada (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ventas {
+            get {
+                object obj = ResourceManager.GetObject("ventas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

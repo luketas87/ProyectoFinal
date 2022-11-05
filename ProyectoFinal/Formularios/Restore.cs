@@ -6,15 +6,40 @@ using Microsoft.SqlServer.Management.Smo;
 using System.Data.SqlClient;
 using System.IO;
 using DAL.Utilidades;
+using BE.Interfaces;
 
 
 namespace ProyectoFinal.Formularios
 {
-    public partial class Restore : Form
+    public partial class Restore : Form, IRestore
     {
         public Restore()
         {
             InitializeComponent();
+        }
+        private void DbPercentComplete(object sender, PercentCompleteEventArgs e)
+        {
+            progressBar1.Invoke((MethodInvoker)delegate
+            {
+                progressBar1.Value = e.Percent;
+                progressBar1.Update();
+            });
+
+            lblProgreso.Invoke((MethodInvoker)delegate
+            {
+                lblProgreso.Text = $"{e.Percent}%";
+            });
+        }
+
+        private void DbRestore_Complete(object sender, ServerMessageEventArgs e)
+        {
+            if (e.Error != null)
+            {
+                lblStatus.Invoke((MethodInvoker)delegate
+                {
+                    lblStatus.Text = e.Error.Message;
+                });
+            }
         }
 
         private void btnExaminar_Click(object sender, EventArgs e)
@@ -48,8 +73,9 @@ namespace ProyectoFinal.Formularios
                 var conn = new ServerConnection(SqlUtilidades.Connection());
                 string[] backupFiles = txtBackFiles.Text.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
                 var dbServer = new Server(new ServerConnection(new SqlConnection(conn.ConnectionString)));
-                var restore = new Restore()
+                var restore = new Microsoft.SqlServer.Management.Smo.Restore()
                 {
+                    
                     Database = conn.DatabaseName,
                     Action = RestoreActionType.Database,
                     ReplaceDatabase = true,
@@ -76,6 +102,27 @@ namespace ProyectoFinal.Formularios
             {
                 MessageBox.Show(ex.Message, "Error - Debe Seleccionar el archivo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        //private void Restore_FormClosing(object sender, FormClosingEventArgs e)
+        //{
+        //    e.Cancel = true;
+        //    Hide();
+        //}
+
+        private void Restore_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

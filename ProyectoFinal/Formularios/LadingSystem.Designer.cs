@@ -114,7 +114,7 @@ namespace ProyectoFinal.Formularios
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "LadingSystem";
-            this.Text = "LadingSystem";
+            this.Text = ":::INICIO:::";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

@@ -32,10 +32,10 @@ namespace ProyectoFinal
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run (new LadingSystem());
 
-                    IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Usuario");
+                    /*IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Usuario");
                     IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Bitacora");
                     IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Patente");
-                    IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Venta");
+                    IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Venta");*/
         }
     }
 }

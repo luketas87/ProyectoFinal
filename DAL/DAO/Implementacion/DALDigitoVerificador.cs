@@ -8,7 +8,7 @@ using DAL.Utilidades;
 
 namespace DAL.DAO.Implementacion
 {
-    public class DALDigitoVerificador : BaseDAO, IDigitoVerificador
+    public class DALDigitoVerificador : BaseDAO, DALIDigitoVerificador
     {
         public List<string>  Entidades { get; set; } = SqlUtilidades.GetTables();
 

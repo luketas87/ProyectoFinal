@@ -144,7 +144,17 @@ namespace DAL.DAO.Implementacion
 
         public List<BECuentaUsuario> CargarInactivos()
         {
-            throw new NotImplementedException();
+            var queryString = "SELECT Email FROM Usuario WHERE Activo = 0;";
+            var usuarios = new List<BECuentaUsuario>();
+
+            CatchException(() =>
+            {
+                usuarios = Exec<BECuentaUsuario>(queryString);
+            });
+
+            usuarios.ForEach(x => DES.Decrypt(x.Email, Key, Iv));
+
+            return usuarios;
         }
 
         public bool Crear(BECuentaUsuario objAlta)
@@ -389,18 +399,12 @@ namespace DAL.DAO.Implementacion
 
         public List<BECuentaUsuario> TraerUsuariosConPatentesYFamilias()
         {
-            var usuarios = Cargar();
+            var queryString = "SELECT * FROM Usuario WHERE Activo = 1;";
 
-            foreach (var usuario in usuarios)
+            return CatchException(() =>
             {
-                usuario.Familia = new List<BEFamilia>();
-                usuario.Patentes = new List<BEPatente>();
-
-                usuario.Familia = familiaDAL.ObtenerFamiliasUsuario(usuario.IdUsuario);
-                usuario.Patentes = patenteDAL.ObtenerPatentesUsuario(usuario.IdUsuario);
-            }
-
-            return usuarios;
+                return Exec<BECuentaUsuario>(queryString);
+            });
         }
 
         public BECuentaUsuario CargarPatentesYFamiliaUsuario(BECuentaUsuario usuario)
@@ -414,5 +418,8 @@ namespace DAL.DAO.Implementacion
             return usuario;
         }
     }
+
+
 }
+
 

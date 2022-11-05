@@ -31,9 +31,9 @@ namespace BLL.implementacion
                 }
             }
 
-            DALCuentaUsuario dAOCuentaUsuario = new DALCuentaUsuario();
+            //DALCuentaUsuario dAOCuentaUsuario = new DALCuentaUsuario();
 
-            dAOCuentaUsuario.ExecuteNonQuery(cmd);
+            //dAOCuentaUsuario.ExecuteNonQuery(cmd);
         }
     }
 }

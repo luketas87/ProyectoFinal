@@ -193,7 +193,7 @@ namespace ProyectoFinal.Formularios
         //no implementado
         private void btnVerSolicitudes_Click(object sender, EventArgs e)
         {
-            hideSubMenu();
+            hideSubMenu(); 
         }
 
         private void btnRegistrarDiagnostico_Click(object sender, EventArgs e)

@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using ProyectoFinal.Formularios;
 using BLL.Interfaces;
-using UI.Interfaces;
+using UI;
 using DAL.DAO.Interfaces;
 using DAL.DAO.Implementacion;
 using BE.Interfaces;
@@ -60,9 +60,15 @@ namespace ProyectoFinal.Formularios
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-            Login mLogin = new Login(IoCContainer.Resolve<BLLIIdioma>(),
+            Login mLogin = new Login(
+                IoCContainer.Resolve<BLLIIdioma>(),
                 IoCContainer.Resolve<IDigitoVerificador>(),
-                IoCContainer.Resolve<ITraductor>());            
+                IoCContainer.Resolve<ITraductor>());
+
+            IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Usuario");
+            IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Bitacora");
+            IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Patente");
+            IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Venta");
             mLogin.Show();
         }
     }

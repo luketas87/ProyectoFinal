@@ -13,9 +13,9 @@ namespace BLL.implementacion
     public class BLLVenta : ICrud<BEVenta>, BLLIVenta
     {
         private readonly DALIVenta ventaDAL;
-        private readonly DALIDigitoVerificador digitoVerificador;
+        private readonly IDigitoVerificador digitoVerificador;
 
-        public BLLVenta(DALIVenta ventaDAL, DALIDigitoVerificador digitoVerificador)
+        public BLLVenta(DALIVenta ventaDAL, IDigitoVerificador digitoVerificador)
         {
             this.ventaDAL = ventaDAL;
             this.digitoVerificador = digitoVerificador;

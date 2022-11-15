@@ -9,10 +9,7 @@ namespace BE.Interfaces
 {
     public interface INegarPat
     {
-        Form MdiParent
-        {
-            get; set;
-        }
-        void Show ();
+        void Show();
+        DialogResult ShowDialog();
     }
 }

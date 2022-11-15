@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Data;
-using BE;
 using System.Data.SqlClient;
 using Servicios;
 using BE.Implementacion;
@@ -14,7 +13,7 @@ using EasyEncryption;
 
 namespace DAL.DAO.Implementacion
 {
-    public class DALCuentaUsuario : BaseDAO, ICrud<BECuentaUsuario>, DALIUsuario
+    public class DALCuentaUsuario : BaseDAO, ICrud<BECuentaUsuario>, DALICuentaUsuario
     {
         //llave para encriptar y desencriptar.
         public const string Key = "bZr2URKx";
@@ -30,8 +29,6 @@ namespace DAL.DAO.Implementacion
             this.familiaDAL = familiaDAL;
             this.patenteDAL = patenteDAL;
         }
-
-        public SqlConnection mCon = new SqlConnection(new ConexionBD().CadenaConexion);
 
         public bool ActivarUsuario(string email)
         {
@@ -201,56 +198,6 @@ namespace DAL.DAO.Implementacion
             return Borrar(new BECuentaUsuario() { Email = email });
         }
 
-        public DataSet ExecuteDataSet(string pCadenaComando)
-        {
-            //Inserto filas en la base de datos
-            DataSet mDs = new DataSet();
-            SqlDataAdapter mDa = new SqlDataAdapter(pCadenaComando, mCon);
-            mDa.Fill(mDs);
-            if (mCon.State != ConnectionState.Closed) mCon.Close();
-            return mDs;
-        }
-
-        public int ExecuteNonQuery(string pCommandText)
-        {
-            try
-            {
-                SqlCommand mCom = new SqlCommand(pCommandText, mCon);
-                mCon.Open();
-                int resultado = mCom.ExecuteNonQuery();
-                mCon = new SqlConnection(new ConexionBD().CadenaConexion);
-                return resultado;
-            }
-            catch
-            {
-                throw;
-            }
-            finally
-            {
-                if (mCon.State != ConnectionState.Closed)
-                    mCon.Close();
-            }
-        }
-
-        public int ExecuteNonQuery(string pCommandText, string pDataBase)
-        {
-            try
-            {
-                SqlCommand mCom = new SqlCommand(pCommandText, mCon);
-                mCon.Open();
-                mCon.ChangeDatabase(pDataBase);
-                return mCom.ExecuteNonQuery();
-            }
-            catch
-            {
-                throw;
-            }
-            finally
-            {
-                if (mCon.State != ConnectionState.Closed)
-                    mCon.Close();
-            }
-        }
 
         private int ObtenerUltimoIdUsuario()
         {
@@ -270,7 +217,7 @@ namespace DAL.DAO.Implementacion
 
             return false;
         }
-
+        /*
         public bool LogIn(string email, string contraseña)
         {
             var ingresa = false;
@@ -308,7 +255,7 @@ namespace DAL.DAO.Implementacion
             }
 
             return false;
-        }
+        }*/
 
         private void AumentarIngresos(BECuentaUsuario usuario, int ingresos)
         {
@@ -326,25 +273,6 @@ namespace DAL.DAO.Implementacion
             {
                 return Exec(queryString);
             });
-        }
-
-        public int ObtenerId(string pTabla)
-        {
-            try
-            {
-                SqlCommand mCom = new SqlCommand("SELECT ISNULL(MAX(" + pTabla + "_Id),0) FROM " + pTabla, mCon);
-                mCon.Open();
-                return int.Parse(mCom.ExecuteScalar().ToString());
-            }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
-            finally
-            {
-                if (mCon.State != ConnectionState.Closed)
-                    mCon.Close();
-            }
         }
 
         public List<BEPatente> ObtenerPatentesDeUsuario(int usuarioId)
@@ -416,6 +344,46 @@ namespace DAL.DAO.Implementacion
             usuario.Patentes = patenteDAL.ObtenerPatentesUsuario(usuario.IdUsuario);
 
             return usuario;
+        }
+
+        public bool Login(string email, string contrasenia)
+        {
+
+            var ingresa = false;
+
+            var usu = ObtenerUsuarioConEmail(email);
+
+            if (usu.Email != null)
+            {
+                if (usu.Activo)
+                {
+                    if (!usu.PrimerLogin)
+                    {
+                        var cingresoInc = usu.ContadorIngresosIncorrectos;
+
+                        if (cingresoInc < 3)
+                        {
+                            var contEncriptada = MD5.ComputeMD5Hash(contrasenia);
+
+                            ingresa = ValidarContraseña(usu.Contraseña, contEncriptada);
+
+                            if (!ingresa)
+                            {
+                                AumentarIngresos(usu, usu.ContadorIngresosIncorrectos);
+                                return false;
+                            }
+
+                            return true;
+                        }
+
+                        return false;
+                    }
+
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 

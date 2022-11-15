@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 using BE.Implementacion;
 using DAL.DAO.Interfaces;
 using DAL.Utilidades;
+using BE.Interfaces;
 
 namespace DAL.DAO.Implementacion 
 {
     public class DALPatente : BaseDAO, DALIPatente
     {
-        private readonly DALIDigitoVerificador digitoVerificador;
+        private readonly IDigitoVerificador digitoVerificador;
         private readonly DALIFamilia FamiliaDAL;
 
-        public DALPatente(DALIDigitoVerificador digitoVerificador, DALIFamilia FamiliaDAL)
+        public DALPatente(IDigitoVerificador digitoVerificador, DALIFamilia FamiliaDAL)
         {
             this.digitoVerificador = digitoVerificador;
             this.FamiliaDAL = FamiliaDAL;

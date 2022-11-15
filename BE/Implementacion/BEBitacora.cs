@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlTypes;
+using BE.Interfaces;
+using System.Windows.Forms;
 
 namespace BE.Implementacion
 {
-   public class BEBitacora
+   public class BEBitacora : IBitacora
     {
         public int IdLog { get; set; }
 
@@ -22,5 +24,11 @@ namespace BE.Implementacion
         public string Usuario { get; set; }
 
         public int DVH { get; set; }
+        public Form MdiParent { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public void Show()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

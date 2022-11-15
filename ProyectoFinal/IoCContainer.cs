@@ -14,7 +14,7 @@ using BE.Implementacion;
 using BLL.Interfaces;
 using ProyectoFinal;
 
-namespace UI.Interfaces
+namespace UI
 {
     public static class IoCContainer
     {

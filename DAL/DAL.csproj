@@ -69,13 +69,11 @@
     <Compile Include="DAO\Interfaces\DALIBitacora.cs" />
     <Compile Include="DAO\Interfaces\DALICliente.cs" />
     <Compile Include="DAO\Interfaces\DALIDetalleVenta.cs" />
-    <Compile Include="DAO\Interfaces\DALIDigitoVerificador.cs" />
     <Compile Include="DAO\Interfaces\DALIFamilia.cs" />
     <Compile Include="DAO\Interfaces\DALIFormControl.cs" />
     <Compile Include="DAO\Interfaces\DALIIdioma.cs" />
     <Compile Include="DAO\Interfaces\DALIPatente.cs" />
     <Compile Include="DAO\Interfaces\DALIProducto.cs" />
-    <Compile Include="DAO\Interfaces\DALIUsuario.cs" />
     <Compile Include="DAO\Interfaces\DALIVenta.cs" />
     <Compile Include="Utilidades\BaseDAO.cs" />
     <Compile Include="DAO\Interfaces\DALICuentaUsuario.cs" />

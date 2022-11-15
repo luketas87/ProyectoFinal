@@ -9,7 +9,7 @@ using BLL.Interfaces;
 using Seguridad;
 using Servicios;
 using System.Linq;
-using UI.Interfaces;
+using UI;
 using Servicios.Excepciones;
 using DAL.DAO.Interfaces;
 
@@ -89,11 +89,11 @@ namespace ProyectoFinal.Formularios
         }
         #endregion
 
-        BLLCuentaUsuario ncuentaUsuario = new BLLCuentaUsuario();
+        //BLLCuentaUsuario ncuentaUsuario = new BLLCuentaUsuario();
 
         public Encriptador mEncriptador = new Encriptador();
         private BLLIIdioma bLLIIdioma;
-        private DALIDigitoVerificador digitoVerificador1;
+        private IDigitoVerificador digitoVerificador1;
 
         private void lblRecuperarC_Click(object sender, EventArgs e)
         {

@@ -8,7 +8,7 @@ using BE.Implementacion;
 using System.Windows.Forms;
 
 
-namespace BLL.Interfaces
+namespace BE.Interfaces
 {
     public interface BEIIdioma
     {

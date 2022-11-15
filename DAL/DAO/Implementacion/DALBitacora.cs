@@ -17,10 +17,10 @@ namespace DAL.DAO.Implementacion
         public const string Key = "bZr2URKx";
         public const string Code = "HNtgQw0w";
 
-        private readonly DALIDigitoVerificador digitoVerificador;
+        private readonly IDigitoVerificador digitoVerificador;
 
 
-        public DALBitacora(DALIDigitoVerificador digitoVerificador)
+        public DALBitacora(IDigitoVerificador digitoVerificador)
         {
             this.digitoVerificador = digitoVerificador;
         }

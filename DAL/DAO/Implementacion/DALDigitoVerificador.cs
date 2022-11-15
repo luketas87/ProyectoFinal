@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BE.Interfaces;
 using DAL.DAO.Interfaces;
 using DAL.Utilidades;
 
 namespace DAL.DAO.Implementacion
 {
-    public class DALDigitoVerificador : BaseDAO, DALIDigitoVerificador
+    public class DALDigitoVerificador : BaseDAO, IDigitoVerificador
     {
         public List<string>  Entidades { get; set; } = SqlUtilidades.GetTables();
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BE.Implementacion;
+using BE.Interfaces;
 using BLL.Interfaces;
 using DAL.DAO.Interfaces;
 using EasyEncryption;
@@ -16,9 +17,9 @@ namespace BLL.implementacion
         private const string Key = "bZr2URKx";
         private const string Iv = "HNtgQw0w";
         private readonly DALIBitacora bitacoraDAL;
-        private readonly DALIDigitoVerificador digitoVerificador;
+        private readonly IDigitoVerificador digitoVerificador;
 
-        public BLLBitacora(DALIBitacora bitacoraDAL, DALIDigitoVerificador digitoVerificador)
+        public BLLBitacora(DALIBitacora bitacoraDAL, IDigitoVerificador digitoVerificador)
         {
             this.bitacoraDAL = bitacoraDAL;
             this.digitoVerificador = digitoVerificador;

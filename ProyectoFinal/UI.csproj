@@ -185,6 +185,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\FormExtensions.cs" />
     <Compile Include="Formularios\ABMusuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -265,6 +266,12 @@
     <Compile Include="Formularios\DetalleRefForm.Designer.cs">
       <DependentUpon>DetalleRefForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\DetalleVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\DetalleVenta.Designer.cs">
+      <DependentUpon>DetalleVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FormControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -334,6 +341,9 @@
       <DependentUpon>ReseteoContraseña.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Formularios\ABMusuario.resx">
+      <DependentUpon>ABMusuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\AltaUsuario.resx">
       <DependentUpon>AltaUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -345,6 +355,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ConectionString.resx">
       <DependentUpon>ConectionString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\DetalleVenta.resx">
+      <DependentUpon>DetalleVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\LadingSystem.resx">
       <DependentUpon>LadingSystem.cs</DependentUpon>

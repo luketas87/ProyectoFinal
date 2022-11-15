@@ -18,7 +18,7 @@ namespace ProyectoFinal.Formularios
     public partial class MenuPrincipal : Form, IPrincipal
     {
         private readonly IFormControl formControl;
-        private readonly DALIUsuario usuarioDAL;
+        private readonly DALICuentaUsuario usuarioDAL;
         private readonly IDetalleVenta ventaDeProductos;
         private readonly IABMUsuario abmUsuario;
         private readonly IBitacora bitacora;
@@ -31,7 +31,7 @@ namespace ProyectoFinal.Formularios
         private readonly IVenta venta;
 
 
-        public MenuPrincipal(DALIUsuario usuarioDAL,
+        public MenuPrincipal(DALICuentaUsuario usuarioDAL,
             IDetalleVenta ventaDeProductos,
             IABMUsuario abmUsuario,
             IBitacora bitacora,

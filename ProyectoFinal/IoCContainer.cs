@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Autofac;
 using BLL.implementacion;
@@ -13,6 +10,7 @@ using ProyectoFinal.Formularios;
 using BE.Implementacion;
 using BLL.Interfaces;
 using ProyectoFinal;
+using ProyectoFinal.Clases;
 
 namespace UI
 {

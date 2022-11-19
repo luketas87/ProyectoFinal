@@ -63,6 +63,7 @@
     <Compile Include="Implementacion\BEIdioma.cs" />
     <Compile Include="Implementacion\BEPatente.cs" />
     <Compile Include="Implementacion\BELineaDetalle.cs" />
+    <Compile Include="Implementacion\ModeloBitacora.cs" />
     <Compile Include="Interfaces\IAdminFam.cs" />
     <Compile Include="Interfaces\IAdminPatentes.cs" />
     <Compile Include="Interfaces\IAdminPatFamilia.cs" />

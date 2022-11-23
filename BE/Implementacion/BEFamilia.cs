@@ -10,7 +10,7 @@ namespace BE.Implementacion
 {
     public class BEFamilia : IFamilias
     {
-        public int FamiliaId { get; set; }
+        public int IdFamilia { get; set; }
 
         public string Descripcion { get; set; }
 

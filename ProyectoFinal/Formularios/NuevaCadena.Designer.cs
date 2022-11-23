@@ -1,7 +1,7 @@
 ﻿
 namespace ProyectoFinal
 {
-    partial class ConectionString
+    partial class NuevaCadena
     {
         /// <summary>
         /// Required designer variable.
@@ -126,7 +126,7 @@ namespace ProyectoFinal
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextColor = System.Drawing.Color.LimeGreen;
             this.btnAceptar.UseVisualStyleBackColor = false;
-            this.btnAceptar.Click += new System.EventHandler(this.rjButton1_Click);
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -145,8 +145,9 @@ namespace ProyectoFinal
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextColor = System.Drawing.Color.Crimson;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // ConectionString
+            // NuevaCadena
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -161,8 +162,9 @@ namespace ProyectoFinal
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.txtInitialCatalog);
             this.Controls.Add(this.txtDatasource);
-            this.Name = "ConectionString";
-            this.Text = "ConectionString";
+            this.Name = "NuevaCadena";
+            this.Text = "Nueva Caadena de conexion";
+            this.Load += new System.EventHandler(this.NuevaCadena_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

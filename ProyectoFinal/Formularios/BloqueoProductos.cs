@@ -16,15 +16,16 @@ namespace ProyectoFinal.Formularios
 
         public BloqueoProductos(BLLIProducto productoBLL)
         {
+            InitializeComponent();
             this.productoBLL = productoBLL;
             CargarProductos();
-            InitializeComponent();
+
         }
 
         //ACTIVAR PRODUCTOS INACTIVOS.
         private void btnActivar_Click(object sender, EventArgs e)
         {
-            if (lstInactivos.Items.Count > 0)
+            if (lstInactivos.Items.Count >= 0)
             {
                 var activado = productoBLL.ActivarProducto(lstInactivos.SelectedValue.ToString());
 
@@ -37,9 +38,19 @@ namespace ProyectoFinal.Formularios
 
         private void CargarProductos()
         {
-            lstActivos.DataSource = productoBLL.Cargar().Select(x => x.IdProducto + " - " + x.Descripcion).ToList();
-            lstInactivos.DataSource = productoBLL.CargarInactivos().Select(x => x.IdProducto + " - " + x.Descripcion).ToList(); ;
+            var listaActivos = productoBLL.Cargar().Select(x => x.IdProducto + " - " + x.Descripcion).ToList();
+            foreach (var item in listaActivos)
+            {
+                lstActivos.Items.Add(item);
+            }
+
+            var listaInactivos = productoBLL.CargarInactivos().Select(x => x.IdProducto + " - " + x.Descripcion).ToList();
+            foreach (var item in listaInactivos)
+            {
+                lstInactivos.Items.Add(item);
+            }
         }
+        
 
         //INHABILITAR PRODUCTOS SIN STOCK.
         private void btnDesactivar_Click(object sender, EventArgs e)
@@ -64,6 +75,16 @@ namespace ProyectoFinal.Formularios
             this.Hide();
             DialogResult = DialogResult.OK;
             e.Cancel = true;
+        }
+
+        private void lstActivos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BloqueoProductos_Load(object sender, EventArgs e)
+        {
+            //CargarProductos();
         }
     }
 }

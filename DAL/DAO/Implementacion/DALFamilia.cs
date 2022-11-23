@@ -21,7 +21,7 @@ namespace DAL.DAO.Implementacion
 
         public bool Actualizar(BEFamilia objUpd)
         {
-            var queryString = $"UPDATE Familia SET Descripcion = '{objUpd.Descripcion}' WHERE IdFamilia = {objUpd.FamiliaId}";
+            var queryString = $"UPDATE Familia SET Descripcion = '{objUpd.Descripcion}' WHERE IdFamilia = {objUpd.IdFamilia}";
 
             return CatchException(() =>
             {
@@ -33,7 +33,7 @@ namespace DAL.DAO.Implementacion
         {
             var familia = ObtenerFamiliaConDescripcion(objDel.Descripcion);
 
-            var queryString = $"DELETE FROM Familia WHERE IdFamilia = {familia.FamiliaId}";
+            var queryString = $"DELETE FROM Familia WHERE IdFamilia = {familia.IdFamilia}";
 
             return CatchException(() =>
             {
@@ -55,7 +55,7 @@ namespace DAL.DAO.Implementacion
         {
             foreach (var familia in Familias)
             {
-                var queryString = $"DELETE FROM FamiliaUsuario WHERE IdFamilia = {familia.FamiliaId} and IdUsuario = {IdUsuario}";
+                var queryString = $"DELETE FROM FamiliaUsuario WHERE IdFamilia = {familia.IdFamilia} and IdUsuario = {IdUsuario}";
 
                 CatchException(() =>
                 {
@@ -154,7 +154,7 @@ namespace DAL.DAO.Implementacion
                 familia = Exec<BEFamilia>(queryString).FirstOrDefault();
             });
 
-            familia.Patentes = ObtenerPatentesFamilia(familia.FamiliaId);
+            familia.Patentes = ObtenerPatentesFamilia(familia.IdFamilia);
 
             return familia;
         }
@@ -164,7 +164,7 @@ namespace DAL.DAO.Implementacion
             var familiasDb = Cargar();
             var familiaUsuario = ObtenerIdsFamiliasPorUsuario(IdUsuario);
 
-            return familiasDb.FindAll(x => familiaUsuario.Any(y => y == x.FamiliaId));
+            return familiasDb.FindAll(x => familiaUsuario.Any(y => y == x.IdFamilia));
         }
 
         public int ObtenerIdFamiliaPorDescripcion(string Descripcion)

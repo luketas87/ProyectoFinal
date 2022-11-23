@@ -31,7 +31,7 @@ namespace ProyectoFinal.Formularios
         {
             this.lstInactivos = new System.Windows.Forms.ListBox();
             this.lstActivos = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblInactivos = new System.Windows.Forms.Label();
             this.lblActivos = new System.Windows.Forms.Label();
             this.btnVolver = new CustomControls.RJControls.RJButton();
             this.btnActivar = new CustomControls.RJControls.RJButton();
@@ -53,16 +53,17 @@ namespace ProyectoFinal.Formularios
             this.lstActivos.Name = "lstActivos";
             this.lstActivos.Size = new System.Drawing.Size(305, 225);
             this.lstActivos.TabIndex = 10;
+            this.lstActivos.SelectedIndexChanged += new System.EventHandler(this.lstActivos_SelectedIndexChanged);
             // 
-            // label1
+            // lblInactivos
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(524, 63);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "PRODUCTOS INACTIVOS:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblInactivos.AutoSize = true;
+            this.lblInactivos.Location = new System.Drawing.Point(524, 63);
+            this.lblInactivos.Name = "lblInactivos";
+            this.lblInactivos.Size = new System.Drawing.Size(138, 13);
+            this.lblInactivos.TabIndex = 9;
+            this.lblInactivos.Text = "PRODUCTOS INACTIVOS:";
+            this.lblInactivos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblActivos
             // 
@@ -144,11 +145,12 @@ namespace ProyectoFinal.Formularios
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.lstInactivos);
             this.Controls.Add(this.lstActivos);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblInactivos);
             this.Controls.Add(this.lblActivos);
             this.Name = "BloqueoProductos";
             this.Text = "BloqueoProductos";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BloqueoProductos_FormClosing);
+            this.Load += new System.EventHandler(this.BloqueoProductos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,7 +159,7 @@ namespace ProyectoFinal.Formularios
         #endregion
         private System.Windows.Forms.ListBox lstInactivos;
         private System.Windows.Forms.ListBox lstActivos;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblInactivos;
         private System.Windows.Forms.Label lblActivos;
         private CustomControls.RJControls.RJButton btnVolver;
         private CustomControls.RJControls.RJButton btnActivar;

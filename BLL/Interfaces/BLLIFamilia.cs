@@ -10,30 +10,30 @@ namespace BLL.Interfaces
 {
     public interface BLLIFamilia : ICrud<BEFamilia>
     {
-        List<BEPatente> ObtenerPatentesFamilia(List<int> familiaId);
+        List<BEPatente> ObtenerPatentesFamilia(List<int> Idfamilia);
 
-        List<BEPatente> ObtenerPatentesFamilia(int familiaId);
+        List<BEPatente> ObtenerPatentesFamilia(int Idfamilia);
 
         int ObtenerIdFamiliaPorDescripcion(string descripcion);
 
-        void GuardarFamiliasUsuario(List<int> familiaId, int usuarioId);
+        void GuardarFamiliasUsuario(List<int> Idfamilia, int Idusuario);
 
-        int ObtenerIdFamiliaPorUsuario(int usuarioId);
+        int ObtenerIdFamiliaPorUsuario(int Idusuario);
 
-        List<int> ObtenerIdsFamiliasPorUsuario(int usuarioId);
+        List<int> ObtenerIdsFamiliasPorUsuario(int Idusuario);
 
         BEFamilia ObtenerFamiliaConDescripcion(string descripcion);
 
-        string ObtenerDescripcionFamiliaPorId(int familiaId);
+        string ObtenerDescripcionFamiliaPorId(int Idfamilia);
 
-        List<string> ObtenerDescripcionFamiliaPorId(List<int> familiaId);
+        List<string> ObtenerDescripcionFamiliaPorId(List<int> Idfamilia);
 
-        bool ComprobarUsoFamilia(int familiaId);
+        bool ComprobarUsoFamilia(int Idfamilia);
 
-        void BorrarFamiliasUsuario(List<BEFamilia> familias, int usuarioId);
+        void BorrarFamiliasUsuario(List<BEFamilia> familias, int Idusuario);
 
-        List<BEFamilia> ObtenerFamiliasUsuario(int usuarioId);
+        List<BEFamilia> ObtenerFamiliasUsuario(int Idusuario);
 
-        List<BECuentaUsuario> ObtenerUsuariosPorFamilia(int familiaId);
+        List<BECuentaUsuario> ObtenerUsuariosPorFamilia(int Idfamilia);
     }
 }

@@ -12,6 +12,7 @@ using System.Linq;
 using UI;
 using Servicios.Excepciones;
 using DAL.DAO.Interfaces;
+using UI.Clases;
 
 namespace ProyectoFinal.Formularios
 {
@@ -92,8 +93,12 @@ namespace ProyectoFinal.Formularios
         //BLLCuentaUsuario ncuentaUsuario = new BLLCuentaUsuario();
 
         public Encriptador mEncriptador = new Encriptador();
+#pragma warning disable CS0169 // El campo 'Login.bLLIIdioma' nunca se usa
         private BLLIIdioma bLLIIdioma;
+#pragma warning restore CS0169 // El campo 'Login.bLLIIdioma' nunca se usa
+#pragma warning disable CS0169 // El campo 'Login.digitoVerificador1' nunca se usa
         private IDigitoVerificador digitoVerificador1;
+#pragma warning restore CS0169 // El campo 'Login.digitoVerificador1' nunca se usa
 
         private void lblRecuperarC_Click(object sender, EventArgs e)
         {
@@ -127,12 +132,7 @@ namespace ProyectoFinal.Formularios
             formControl.LenguajeSeleccionado = (BEIdioma)cmbIdioma.SelectedItem;
             Traduccir();
             ComprobarBD();
-            /* cmbIdioma.Items.Add("Seleccione un idioma");
-             cmbIdioma.Items.Add("Español");
-             cmbIdioma.Items.Add("Ingles");
-             cmbIdioma.SelectedItem = "Seleccione un idioma";
-             TxtUsuario.Text = "abc";
-             TxtContrasenia.Text = "abc";*/
+            ComprobarConexion();
         }
 
         /*COMPROBACION DE INTEGRIDAD
@@ -196,13 +196,25 @@ namespace ProyectoFinal.Formularios
             Traduccir();
         }
 
+        private void ComprobarConexion()
+        {
+            
+        }
+
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            var usuario = TxtUsuario.Text;
-            var contrasenia = TxtContrasenia.Text;
-
-            try
+            this.CatchException(() =>
             {
+                var usuario = TxtUsuario.Text;
+                var contrasenia = TxtContrasenia.Text;
+                ////lucas_matalima@hotmail.com pw: salom645
+
+                if (string.IsNullOrWhiteSpace(usuario) || string.IsNullOrWhiteSpace(contrasenia))
+                {
+                    MessageBox.Show("Revise los datos");
+                }
+
                 if (usuarioBLL.ObtenerUsuarioConEmail(usuario).Activo)
                 {
                     var ingresa = usuarioBLL.Login(usuario, contrasenia);
@@ -217,81 +229,20 @@ namespace ProyectoFinal.Formularios
 
                     else if (usuarioBLL.ObtenerUsuarioConEmail(usuario).ContadorIngresosIncorrectos < 3)
                     {
-                        MessageBox.Show("Login Incorrecto", "Ingresar al Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Login Incorrecto", "Ingresar al Sistema");
                     }
                     else
                     {
-                        MessageBox.Show("Cuenta bloqueada contacte a su administrador", "Ingresar al Sistema", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                        MessageBox.Show("Cuenta bloqueada contacte a su administrador", "Ingresar al Sistema");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Coloque Usuario y Contraseña", "Ingresar al Sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Coloque Usuario y Contraseña", "Ingresar al Sistema");
                 }
-
-
-            }
-            catch (LoginException)
-            {
-                if (string.IsNullOrWhiteSpace(usuario) || string.IsNullOrWhiteSpace(contrasenia))
-                {
-                    MessageBox.Show("Revise bien los campos ingresados", "Ingresar al Sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                throw;
-            }
-
-            catch (ConectionStringFaltanteException)
-            {
-
-                MessageBox.Show("No se encuentra el string de conexion, hable con el administrador del sistema", "Error de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                ConectionString aConctionString = new ConectionString();
-                aConctionString.Show();
-            }
-
-
-
-            #region OLD LOGIN
-            //VIEJO LOGIN
-            //try
-            //{
-            //    int idioma = 1;
-
-            //    BECuentaUsuario mCuentaUsuario = ncuentaUsuario.ValidarUsuario(TxtUsuario.Text, TxtContrasenia.Text);
-            //    MessageBox.Show("Ingreso exitoso");
-
-            //    MenuPrincipal mform = new MenuPrincipal();
-            //    mform.mCuentausuario = mCuentaUsuario;
-
-            //    if (cmbIdioma.SelectedItem.ToString() == "Español")
-            //        idioma = 1;
-            //    else
-            //        idioma = 2;
-            //}
-            //catch (ConectionStringFaltanteException)
-            //{
-
-            //    MessageBox.Show("No se encuentra el string de conexion, hable con el administrador del sistema","Error de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    ConectionString aConctionString = new ConectionString();
-            //    aConctionString.Show();
-            //}
-
-            //catch (LoginException error)
-            //{
-            //    switch (error.Result)
-            //    {
-            //        case LoginResult.InvalidUsername:
-            //            MessageBox.Show("Usuario incorrecto");
-            //            break;
-            //        case LoginResult.InvalidPassword:
-            //            MessageBox.Show("Password Incorrecto");
-            //            break;
-
-            //        default:
-            //            break;
-            //    }
-            //}
-            #endregion
-
+            },
+            (ex) => MessageBox.Show($"Ocurrio un error por lo siguiente {ex.Message}"));
         }
+
     }
 }

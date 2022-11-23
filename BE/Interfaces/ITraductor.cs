@@ -9,8 +9,8 @@ namespace BE.Interfaces
 {
    public interface ITraductor
     {
-        string ObtenerPathRecursos();
         void Traduccir(Control control, string nombreForm);
+        string ObtenerPathRecursos(); 
     }
 }
 

@@ -30,10 +30,6 @@ namespace ProyectoFinal.Formularios
             this.bloqueoProductos = bloqueoProductos;
             InitializeComponent();
         }
-        public Productos()
-        {
-            InitializeComponent();
-        }
 
         public BEProducto ObtenerProductoSeleccionado()
         {

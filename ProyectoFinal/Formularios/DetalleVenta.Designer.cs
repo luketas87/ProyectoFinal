@@ -200,36 +200,37 @@ namespace ProyectoFinal.Formularios
             // 
             this.btnVolver.BackColor = System.Drawing.SystemColors.Control;
             this.btnVolver.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.btnVolver.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnVolver.BorderColor = System.Drawing.Color.Gray;
             this.btnVolver.BorderRadius = 32;
             this.btnVolver.BorderSize = 1;
             this.btnVolver.FlatAppearance.BorderSize = 0;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnVolver.ForeColor = System.Drawing.Color.Gray;
             this.btnVolver.Location = new System.Drawing.Point(11, 12);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(108, 42);
             this.btnVolver.TabIndex = 60;
             this.btnVolver.Text = "Volver";
-            this.btnVolver.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnVolver.TextColor = System.Drawing.Color.Gray;
             this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // btnSeleccionarCliente
             // 
             this.btnSeleccionarCliente.BackColor = System.Drawing.SystemColors.Control;
             this.btnSeleccionarCliente.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.btnSeleccionarCliente.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnSeleccionarCliente.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnSeleccionarCliente.BorderRadius = 40;
             this.btnSeleccionarCliente.BorderSize = 1;
             this.btnSeleccionarCliente.FlatAppearance.BorderSize = 0;
             this.btnSeleccionarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeleccionarCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnSeleccionarCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnSeleccionarCliente.Location = new System.Drawing.Point(11, 75);
             this.btnSeleccionarCliente.Name = "btnSeleccionarCliente";
             this.btnSeleccionarCliente.Size = new System.Drawing.Size(118, 40);
             this.btnSeleccionarCliente.TabIndex = 61;
             this.btnSeleccionarCliente.Text = "Seleccionar Cliente";
-            this.btnSeleccionarCliente.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnSeleccionarCliente.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnSeleccionarCliente.UseVisualStyleBackColor = false;
             this.btnSeleccionarCliente.Click += new System.EventHandler(this.btnSeleccionarCliente_Click);
             // 
@@ -237,18 +238,18 @@ namespace ProyectoFinal.Formularios
             // 
             this.btnAgregarProducto.BackColor = System.Drawing.SystemColors.Control;
             this.btnAgregarProducto.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.btnAgregarProducto.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAgregarProducto.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnAgregarProducto.BorderRadius = 40;
             this.btnAgregarProducto.BorderSize = 1;
             this.btnAgregarProducto.FlatAppearance.BorderSize = 0;
             this.btnAgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAgregarProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnAgregarProducto.Location = new System.Drawing.Point(17, 427);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(118, 40);
             this.btnAgregarProducto.TabIndex = 62;
             this.btnAgregarProducto.Text = "Agregar Producto";
-            this.btnAgregarProducto.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAgregarProducto.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnAgregarProducto.UseVisualStyleBackColor = false;
             this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
             // 
@@ -275,18 +276,18 @@ namespace ProyectoFinal.Formularios
             // 
             this.btnCancelarVenta.BackColor = System.Drawing.SystemColors.Control;
             this.btnCancelarVenta.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.btnCancelarVenta.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnCancelarVenta.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnCancelarVenta.BorderRadius = 40;
             this.btnCancelarVenta.BorderSize = 1;
             this.btnCancelarVenta.FlatAppearance.BorderSize = 0;
             this.btnCancelarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarVenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnCancelarVenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnCancelarVenta.Location = new System.Drawing.Point(359, 496);
             this.btnCancelarVenta.Name = "btnCancelarVenta";
             this.btnCancelarVenta.Size = new System.Drawing.Size(118, 40);
             this.btnCancelarVenta.TabIndex = 64;
             this.btnCancelarVenta.Text = "Cancelar Venta";
-            this.btnCancelarVenta.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnCancelarVenta.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnCancelarVenta.UseVisualStyleBackColor = false;
             this.btnCancelarVenta.Click += new System.EventHandler(this.btnCancelarVenta_Click);
             // 
@@ -294,18 +295,18 @@ namespace ProyectoFinal.Formularios
             // 
             this.btnQuitarProducto.BackColor = System.Drawing.SystemColors.Control;
             this.btnQuitarProducto.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.btnQuitarProducto.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnQuitarProducto.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnQuitarProducto.BorderRadius = 40;
             this.btnQuitarProducto.BorderSize = 1;
             this.btnQuitarProducto.FlatAppearance.BorderSize = 0;
             this.btnQuitarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuitarProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnQuitarProducto.Location = new System.Drawing.Point(477, 428);
+            this.btnQuitarProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnQuitarProducto.Location = new System.Drawing.Point(466, 428);
             this.btnQuitarProducto.Name = "btnQuitarProducto";
             this.btnQuitarProducto.Size = new System.Drawing.Size(118, 40);
             this.btnQuitarProducto.TabIndex = 65;
             this.btnQuitarProducto.Text = "Quitar Producto";
-            this.btnQuitarProducto.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnQuitarProducto.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnQuitarProducto.UseVisualStyleBackColor = false;
             this.btnQuitarProducto.Click += new System.EventHandler(this.btnQuitarProducto_Click);
             // 
@@ -313,18 +314,18 @@ namespace ProyectoFinal.Formularios
             // 
             this.btnListarProductos.BackColor = System.Drawing.SystemColors.Control;
             this.btnListarProductos.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.btnListarProductos.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnListarProductos.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnListarProductos.BorderRadius = 40;
             this.btnListarProductos.BorderSize = 1;
             this.btnListarProductos.FlatAppearance.BorderSize = 0;
             this.btnListarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnListarProductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnListarProductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnListarProductos.Location = new System.Drawing.Point(503, 140);
             this.btnListarProductos.Name = "btnListarProductos";
             this.btnListarProductos.Size = new System.Drawing.Size(81, 70);
             this.btnListarProductos.TabIndex = 66;
             this.btnListarProductos.Text = "Listar Productos";
-            this.btnListarProductos.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnListarProductos.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnListarProductos.UseVisualStyleBackColor = false;
             this.btnListarProductos.Click += new System.EventHandler(this.btnListarProductos_Click);
             // 
@@ -332,7 +333,7 @@ namespace ProyectoFinal.Formularios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(607, 563);
+            this.ClientSize = new System.Drawing.Size(604, 546);
             this.Controls.Add(this.btnListarProductos);
             this.Controls.Add(this.btnQuitarProducto);
             this.Controls.Add(this.btnCancelarVenta);

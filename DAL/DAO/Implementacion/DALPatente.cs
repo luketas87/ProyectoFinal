@@ -120,7 +120,7 @@ namespace DAL.DAO.Implementacion
 
             var diccionarioPatentes = new Dictionary<int, int>();
             List<BECuentaUsuario> usuariosGlobal = usuariosGlobales;
-            List<int> familiasIds = usuario.Familia.Select(familia => familia.FamiliaId).ToList();
+            List<int> familiasIds = usuario.Familia.Select(familia => familia.IdFamilia).ToList();
 
             CargaUsuario(usuario, requestFamiliaUsuario, quitarId, usuariosGlobal);
 
@@ -170,13 +170,13 @@ namespace DAL.DAO.Implementacion
 
                 foreach (var idfam in IdFamilias)
                 {
-                    usuarioAComparar.Familia.Add(new BEFamilia() { FamiliaId = idfam });
+                    usuarioAComparar.Familia.Add(new BEFamilia() { IdFamilia = idfam });
 
                     if (requestFamilia)
                     {
-                        if (usuarioAComparar.Familia.Exists(a => usuario.Familia.All(x => a.FamiliaId == x.FamiliaId)))
+                        if (usuarioAComparar.Familia.Exists(a => usuario.Familia.All(x => a.IdFamilia == x.IdFamilia)))
                         {
-                            usuarioAComparar.Familia.RemoveAll(x => x.FamiliaId == idfam);
+                            usuarioAComparar.Familia.RemoveAll(x => x.IdFamilia == idfam);
                         }
                         else
                         {
@@ -197,20 +197,20 @@ namespace DAL.DAO.Implementacion
 
             RemoverIdsFamilias(requestFamiliaUsuario, quitarId, usuario.Familia);
 
-            SetearPatentesUsuario(usuario, usuario.Familia.Select(familia => familia.FamiliaId).ToList());
+            SetearPatentesUsuario(usuario, usuario.Familia.Select(familia => familia.IdFamilia).ToList());
         }
 
         private static void RemoverIdsFamilias(bool requestFamiliaUsuario, int quitarId, List<BEFamilia> familias)
         {
             if (requestFamiliaUsuario)
             {
-                familias.RemoveAll(x => x.FamiliaId != quitarId);
+                familias.RemoveAll(x => x.IdFamilia != quitarId);
             }
         }
 
         private List<BEPatente> ComprobarPatentesDeUsuariosPropiosYGlobales(BEFamilia familiaABorrar, List<BECuentaUsuario> usuariosGlobales)
         {
-            var usuarios = FamiliaDAL.ObtenerUsuariosPorFamilia(familiaABorrar.FamiliaId);
+            var usuarios = FamiliaDAL.ObtenerUsuariosPorFamilia(familiaABorrar.IdFamilia);
 
             usuarios.ForEach(usuario => usuario.Patentes = ObtenerPatentesUsuario(usuario.IdUsuario));
 
@@ -286,12 +286,12 @@ namespace DAL.DAO.Implementacion
                 return true;
             }
 
-            if (!(FamiliaDAL.ObtenerUsuariosPorFamilia(FamiliaABorrar.FamiliaId).Count > 0))
+            if (!(FamiliaDAL.ObtenerUsuariosPorFamilia(FamiliaABorrar.IdFamilia).Count > 0))
             {
                 return true;
             }
 
-            if (FamiliaDAL.ObtenerUsuariosPorFamilia(FamiliaABorrar.FamiliaId).Count > 1)
+            if (FamiliaDAL.ObtenerUsuariosPorFamilia(FamiliaABorrar.IdFamilia).Count > 1)
             {
                 return true;
             }
@@ -524,7 +524,7 @@ namespace DAL.DAO.Implementacion
         {
             usuariosGlobales.Remove(usuarioABorrar);
 
-            if (usuariosGlobales.Any(usuarioG => usuarioG.Familia.Any(fam => usuarioABorrar.Familia.Any(uFam => uFam.FamiliaId == fam.FamiliaId))))
+            if (usuariosGlobales.Any(usuarioG => usuarioG.Familia.Any(fam => usuarioABorrar.Familia.Any(uFam => uFam.IdFamilia == fam.IdFamilia))))
             {
                 return true;
             }

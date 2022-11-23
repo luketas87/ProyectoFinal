@@ -27,14 +27,14 @@ namespace BLL.implementacion
 
         public bool Borrar(BEFamilia objDel)
         {
-            familiaDAL.BorrarFamiliaDeFamiliaPatente(objDel.FamiliaId);
+            familiaDAL.BorrarFamiliaDeFamiliaPatente(objDel.IdFamilia);
 
             return familiaDAL.Borrar(objDel);
         }
 
-        public void BorrarFamiliasUsuario(List<BEFamilia> familias, int usuarioId)
+        public void BorrarFamiliasUsuario(List<BEFamilia> familias, int IdUsuario)
         {
-            familiaDAL.BorrarFamiliasUsuario(familias, usuarioId);
+            familiaDAL.BorrarFamiliasUsuario(familias, IdUsuario);
         }
 
         public List<BEFamilia> Cargar()
@@ -42,9 +42,9 @@ namespace BLL.implementacion
             return familiaDAL.Cargar();
         }
 
-        public bool ComprobarUsoFamilia(int familiaId)
+        public bool ComprobarUsoFamilia(int Idfamilia)
         {
-            return familiaDAL.ComprobarUsoFamilia(familiaId);
+            return familiaDAL.ComprobarUsoFamilia(Idfamilia);
         }
 
         public bool Crear(BEFamilia objAlta)
@@ -52,20 +52,20 @@ namespace BLL.implementacion
             return familiaDAL.Crear(objAlta);
         }
 
-        public void GuardarFamiliasUsuario(List<int> familiaId, int usuarioId)
+        public void GuardarFamiliasUsuario(List<int> Idfamilia, int Idusuario)
         {
-            familiaDAL.GuardarFamiliasUsuario(familiaId, usuarioId);
+            familiaDAL.GuardarFamiliasUsuario(Idfamilia, Idusuario);
 
         }
 
-        public string ObtenerDescripcionFamiliaPorId(int familiaId)
+        public string ObtenerDescripcionFamiliaPorId(int Idfamilia)
         {
-            return familiaDAL.ObtenerDescripcionFamiliaPorId(familiaId);
+            return familiaDAL.ObtenerDescripcionFamiliaPorId(Idfamilia);
         }
 
-        public List<string> ObtenerDescripcionFamiliaPorId(List<int> familiaId)
+        public List<string> ObtenerDescripcionFamiliaPorId(List<int> Idfamilia)
         {
-            return familiaDAL.ObtenerDescripcionFamiliaPorId(familiaId);
+            return familiaDAL.ObtenerDescripcionFamiliaPorId(Idfamilia);
         }
 
         public BEFamilia ObtenerFamiliaConDescripcion(string descripcion)
@@ -73,9 +73,9 @@ namespace BLL.implementacion
             return familiaDAL.ObtenerFamiliaConDescripcion(descripcion);
         }
 
-        public List<BEFamilia> ObtenerFamiliasUsuario(int usuarioId)
+        public List<BEFamilia> ObtenerFamiliasUsuario(int Idusuario)
         {
-            return familiaDAL.ObtenerFamiliasUsuario(usuarioId);
+            return familiaDAL.ObtenerFamiliasUsuario(Idusuario);
         }
 
         public int ObtenerIdFamiliaPorDescripcion(string descripcion)
@@ -83,30 +83,30 @@ namespace BLL.implementacion
             return familiaDAL.ObtenerIdFamiliaPorDescripcion(descripcion);
         }
 
-        public int ObtenerIdFamiliaPorUsuario(int usuarioId)
+        public int ObtenerIdFamiliaPorUsuario(int Idusuario)
         {
-            return familiaDAL.ObtenerIdFamiliaPorUsuario(usuarioId);
+            return familiaDAL.ObtenerIdFamiliaPorUsuario(Idusuario);
         }
 
-        public List<int> ObtenerIdsFamiliasPorUsuario(int usuarioId)
+        public List<int> ObtenerIdsFamiliasPorUsuario(int Idusuario)
         {
-            return familiaDAL.ObtenerIdsFamiliasPorUsuario(usuarioId);
+            return familiaDAL.ObtenerIdsFamiliasPorUsuario(Idusuario);
         }
 
-        public List<BEPatente> ObtenerPatentesFamilia(List<int> familiaId)
+        public List<BEPatente> ObtenerPatentesFamilia(List<int> Idfamilia)
         {
-            return familiaDAL.ObtenerPatentesDeFamilias(familiaId);
+            return familiaDAL.ObtenerPatentesDeFamilias(Idfamilia);
         }
 
-        public List<BEPatente> ObtenerPatentesFamilia(int familiaId)
+        public List<BEPatente> ObtenerPatentesFamilia(int Idfamilia)
         {
-            return familiaDAL.ObtenerPatentesFamilia(familiaId);
+            return familiaDAL.ObtenerPatentesFamilia(Idfamilia);
 
         }
 
-        public List<BECuentaUsuario> ObtenerUsuariosPorFamilia(int familiaId)
+        public List<BECuentaUsuario> ObtenerUsuariosPorFamilia(int Idfamilia)
         {
-            return familiaDAL.ObtenerUsuariosPorFamilia(familiaId);
+            return familiaDAL.ObtenerUsuariosPorFamilia(Idfamilia);
         }
     }
 }

@@ -131,9 +131,9 @@ namespace ProyectoFinal.Formularios
             if (permitir)
             {
 
-                if (UsuarioSeleccionado.Familia.Any(famUsu => famUsu.FamiliaId == FamiliaUsuarioSeleccionada.FamiliaId))
+                if (UsuarioSeleccionado.Familia.Any(famUsu => famUsu.IdFamilia == FamiliaUsuarioSeleccionada.IdFamilia))
                 {
-                    UsuarioSeleccionado.Familia.RemoveAll(famUsu => famUsu.FamiliaId == FamiliaUsuarioSeleccionada.FamiliaId);
+                    UsuarioSeleccionado.Familia.RemoveAll(famUsu => famUsu.IdFamilia == FamiliaUsuarioSeleccionada.IdFamilia);
                 }
 
                 familiaBLL.BorrarFamiliasUsuario(new List<BEFamilia>() { FamiliaUsuarioSeleccionada }, UsuarioSeleccionado.IdUsuario);
@@ -152,12 +152,12 @@ namespace ProyectoFinal.Formularios
         {
             ActualizarSeleccionado();
 
-            if (!UsuarioSeleccionado.Familia.Any(famUsu => famUsu.FamiliaId == FamiliaUsuarioSeleccionada.FamiliaId))
+            if (!UsuarioSeleccionado.Familia.Any(famUsu => famUsu.IdFamilia == FamiliaUsuarioSeleccionada.IdFamilia))
             {
                 UsuarioSeleccionado.Familia.Add(FamiliaSistemaSeleccionada);
             }
 
-            familiaBLL.GuardarFamiliasUsuario(new List<int>() { FamiliaSistemaSeleccionada.FamiliaId }, UsuarioSeleccionado.IdUsuario);
+            familiaBLL.GuardarFamiliasUsuario(new List<int>() { FamiliaSistemaSeleccionada.IdFamilia }, UsuarioSeleccionado.IdUsuario);
 
             CargarListas();
         }

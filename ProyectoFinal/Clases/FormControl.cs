@@ -23,8 +23,7 @@ namespace ProyectoFinal.Clases
             get { return traducciones; }
             set { traducciones = value; }
         }
-
-        public FormControl(BLLCuentaUsuario usuarioBLL, BLLIFamilia familiaBLL, BLLIFormControl formControlBLL, BLLIIdioma idiomaBLL)
+       public FormControl(BLLICuentaUsuario usuarioBLL, BLLIFamilia familiaBLL, BLLIFormControl formControlBLL, BLLIIdioma idiomaBLL)
         {
             this.usuarioBLL = usuarioBLL;
             this.familiaBLL = familiaBLL;
@@ -39,7 +38,6 @@ namespace ProyectoFinal.Clases
         private readonly BLLIFormControl formControlBLL;
 
         private BECuentaUsuario UsuarioActivo { get; set; }
-        BEIdioma IFormControl.LenguajeSeleccionado { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         private IDictionary<string, string> traducciones = new Dictionary<string, string>();
 
@@ -54,7 +52,7 @@ namespace ProyectoFinal.Clases
 
             patentes.AddRange(usuarioBLL.ObtenerPatentesDeUsuario(UsuarioActivo.IdUsuario));
 
-            patentes.AddRange(familiaBLL.ObtenerPatentesFamilia(UsuarioActivo.Familia.Select(x => x.FamiliaId).ToList()));
+            patentes.AddRange(familiaBLL.ObtenerPatentesFamilia(UsuarioActivo.Familia.Select(x => x.IdFamilia).ToList()));
 
             patentes = patentes.GroupBy(p => p.IdPatente).Select(grp => grp.First()).ToList();
 
@@ -71,7 +69,7 @@ namespace ProyectoFinal.Clases
 
             foreach (var id in famIds)
             {
-                usuario.Familia.Add(new BEFamilia() { FamiliaId = id, Descripcion = familiaBLL.ObtenerDescripcionFamiliaPorId(id) });
+                usuario.Familia.Add(new BEFamilia() { IdFamilia = id, Descripcion = familiaBLL.ObtenerDescripcionFamiliaPorId(id) });
             }
 
             UsuarioActivo = usuario;

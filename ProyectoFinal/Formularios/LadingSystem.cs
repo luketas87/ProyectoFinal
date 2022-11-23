@@ -6,11 +6,14 @@ using UI;
 using DAL.DAO.Interfaces;
 using DAL.DAO.Implementacion;
 using BE.Interfaces;
+using Servicios.Excepciones;
 
 namespace ProyectoFinal.Formularios
 {
     public partial class LadingSystem : Form
     {
+        Login mLogin;
+
         public LadingSystem()
         {
             InitializeComponent();
@@ -53,23 +56,45 @@ namespace ProyectoFinal.Formularios
 
         private void btnConfigBD_Click(object sender, EventArgs e)
         {
-            ConectionString aConctionString = new ConectionString();
+            NuevaCadena aConctionString = new NuevaCadena();
             aConctionString.Show();
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LadingSystem_FormClosing(object sender, FormClosingEventArgs e)
+        {
+      
+            Hide();
+        }
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-            Login mLogin = new Login(
+            
+            try
+            {
+                mLogin = new Login(
                 IoCContainer.Resolve<BLLIIdioma>(),
                 IoCContainer.Resolve<IDigitoVerificador>(),
                 IoCContainer.Resolve<ITraductor>());
 
-            IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Usuario");
-            IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Bitacora");
-            IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Patente");
-            IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Venta");
-            mLogin.Show();
+                IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Usuario");
+                IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Bitacora");
+                IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Patente");
+                IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Venta");
+                mLogin.Show();
+            }
+            catch (ConectionStringFaltanteException)
+            {
+
+                NuevaCadena mconexion = new NuevaCadena();
+                mconexion.Show();
+            }
+
+
         }
     }
 }

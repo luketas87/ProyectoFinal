@@ -6,20 +6,19 @@ using System.Threading.Tasks;
 
 namespace BE.Implementacion
 {
-    public class BEVenta
+    public class BELineaVenta
     {
-        public int s;
         public int IdVenta { get; set; }
 
         public DateTime Fecha { get; set; }
 
-        public int IdUsuario { get; set; }
+        public string Vendedor { get; set; }
 
-        public int IdEstado { get; set; }
+        public string Estado { get; set; }
 
-        public int IdTipoVenta { get; set; }
+        public string TipoVenta { get; set; }
 
-        public int IdCliente { get; set; }
+        public string Cliente { get; set; }
 
         public float Monto { get; set; }
     }

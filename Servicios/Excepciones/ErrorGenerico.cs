@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BE.Implementacion
+namespace Servicios.Excepciones
 {
-    class BETradictpr
+    public class ErrorGenerico : Exception
     {
     }
 }

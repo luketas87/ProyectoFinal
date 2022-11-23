@@ -250,7 +250,7 @@ namespace ProyectoFinal.Formularios
                 UsuarioSeleccionado.Familia = familiasBLL.ObtenerFamiliasUsuario(UsuarioSeleccionado.IdUsuario);
                 foreach (var familia in UsuarioSeleccionado.Familia)
                 {
-                    familia.Patentes = familiasBLL.ObtenerPatentesFamilia(familia.FamiliaId);
+                    familia.Patentes = familiasBLL.ObtenerPatentesFamilia(familia.IdFamilia);
                 }
             });
         }

@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Excepciones\ErrorGenerico.cs" />
     <Compile Include="Excepciones\LoginException.cs" />
     <Compile Include="LoginResult.cs" />
     <Compile Include="NuevaCadena.cs" />

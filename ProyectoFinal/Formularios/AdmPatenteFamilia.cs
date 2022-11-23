@@ -77,7 +77,7 @@ namespace ProyectoFinal.Formularios
         private void CargarChecks()
         {
             checkeadapat = true;
-            var patentes = familiaBLL.ObtenerPatentesFamilia(familia.FamiliaId);
+            var patentes = familiaBLL.ObtenerPatentesFamilia(familia.IdFamilia);
 
             foreach (var pat in patentes)
             {
@@ -113,17 +113,17 @@ namespace ProyectoFinal.Formularios
 
                     patenteSel = (BEPatente)lstPatentes.SelectedItem;
 
-                    AsignarPatente(familia.FamiliaId, patenteSel.IdPatente);
+                    AsignarPatente(familia.IdFamilia, patenteSel.IdPatente);
                 }
                 else
                 {
                     patenteSel = (BEPatente)lstPatentes.SelectedItem;
 
-                    var patentes = patenteBLL.ConsultarPatenteFamilia(familia.FamiliaId);
+                    var patentes = patenteBLL.ConsultarPatenteFamilia(familia.IdFamilia);
 
                     if (patentes.Exists(x => x.IdPatente == patenteSel.IdPatente))
                     {
-                        var usuarios = familiaBLL.ObtenerUsuariosPorFamilia(familia.FamiliaId);
+                        var usuarios = familiaBLL.ObtenerUsuariosPorFamilia(familia.IdFamilia);
 
                         if (usuarios.Count > 0)
                         {
@@ -133,11 +133,11 @@ namespace ProyectoFinal.Formularios
 
                                 foreach (var familia in usuario.Familia)
                                 {
-                                    familia.Patentes = familiaBLL.ObtenerPatentesFamilia(familia.FamiliaId);
+                                    familia.Patentes = familiaBLL.ObtenerPatentesFamilia(familia.IdFamilia);
                                 }
                                 if (patenteBLL.CheckeoPatenteParaBorrar(patenteSel, usuario, usuarioBLL.TraerUsuariosConPatentesYFamilias(), true))
                                 {
-                                    BorrarPatente(familia.FamiliaId, patenteSel.IdPatente);
+                                    BorrarPatente(familia.IdFamilia, patenteSel.IdPatente);
                                 }
                                 else
                                 {
@@ -149,12 +149,12 @@ namespace ProyectoFinal.Formularios
                         }
                         else
                         {
-                            BorrarPatente(familia.FamiliaId, patenteSel.IdPatente);
+                            BorrarPatente(familia.IdFamilia, patenteSel.IdPatente);
                         }
                     }
                     else
                     {
-                        AsignarPatente(familia.FamiliaId, patenteSel.IdPatente);
+                        AsignarPatente(familia.IdFamilia, patenteSel.IdPatente);
                     }
                 }
             }

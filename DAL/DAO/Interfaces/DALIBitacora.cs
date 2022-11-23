@@ -10,7 +10,7 @@ namespace DAL.DAO.Interfaces
 {
     public interface DALIBitacora
     {
-        void FiltrarBitacora(BEFBitacora filtros);
+        void FiltrarBitacora(BEFiltroBitacora filtros);
 
         BEBitacora LeerBitacoraConId(int bitacoraId);
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE.Implementacion
 {
-    public class BEFBitacora
+    public class BEFiltroBitacora
     {
         public DateTime FechaDesde { get; set; }
 

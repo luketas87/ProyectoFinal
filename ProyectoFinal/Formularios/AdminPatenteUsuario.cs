@@ -14,7 +14,7 @@ using UI;
 
 namespace ProyectoFinal.Formularios
 {
-    public partial class AdminPatenteUsuario : Form, IAdminFam
+    public partial class AdminPatenteUsuario : Form, IAdminPatentes
     {
         private const string lblUsu = "Usuario: ";
         private readonly BLLIPatente patenteBLL;

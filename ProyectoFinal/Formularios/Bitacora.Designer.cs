@@ -30,7 +30,7 @@ namespace ProyectoFinal.Formularios
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.checkListCriticidad = new System.Windows.Forms.CheckedListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -132,9 +132,9 @@ namespace ProyectoFinal.Formularios
             // rpv1
             // 
             this.rpv1.AutoSize = true;
-            reportDataSource2.Name = "DS_Bitacora";
-            reportDataSource2.Value = null;
-            this.rpv1.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "DS_Bitacora";
+            reportDataSource1.Value = null;
+            this.rpv1.LocalReport.DataSources.Add(reportDataSource1);
             this.rpv1.LocalReport.ReportEmbeddedResource = "UI.Reporte.Bitacora.rdlc";
             this.rpv1.Location = new System.Drawing.Point(6, 300);
             this.rpv1.Name = "rpv1";
@@ -153,9 +153,9 @@ namespace ProyectoFinal.Formularios
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.Gray;
-            this.btnVolver.Location = new System.Drawing.Point(533, 22);
+            this.btnVolver.Location = new System.Drawing.Point(556, 22);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(110, 36);
+            this.btnVolver.Size = new System.Drawing.Size(87, 36);
             this.btnVolver.TabIndex = 76;
             this.btnVolver.Text = "Volver";
             this.btnVolver.TextColor = System.Drawing.Color.Gray;

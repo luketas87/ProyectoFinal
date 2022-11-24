@@ -172,6 +172,8 @@ namespace ProyectoFinal.Formularios
         private CustomControls.RJControls.RJButton btnVolver;
         private CustomControls.RJControls.RJButton btnRestaurar;
         private CustomControls.RJControls.RJButton btnExaminar;
+#pragma warning disable CS0649 // El campo 'Restore.opFile' nunca se asigna y siempre tendrá el valor predeterminado null
         private System.Windows.Forms.OpenFileDialog opFile;
+#pragma warning restore CS0649 // El campo 'Restore.opFile' nunca se asigna y siempre tendrá el valor predeterminado null
     }
 }

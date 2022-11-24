@@ -9,19 +9,8 @@ namespace BLL.Interfaces
 {
     public interface BLLIFormControl
     {
-        IDictionary<string, string> Traducciones { get; set; }
-
-        BEIdioma LenguajeSeleccionado { get; set; }
-
         List<BEPatente> ObtenerPermisosFormularios();
 
         List<BEPatente> ObtenerPermisosFormulario(int formId);
-
-        void GuardarDatosSesionUsuario(BECuentaUsuario usuario);
-        BECuentaUsuario ObtenerInfoUsuario();
-        BECuentaUsuario ObtenerPermisosUsuario();
-
-        IDictionary<string, string> ObtenerTraducciones();
-        BEIdioma ObtenerIdioma();
     }
 }

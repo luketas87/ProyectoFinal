@@ -34,7 +34,7 @@ namespace DAL.DAO.Implementacion
         {
             var usu = ObtenerUsuarioConEmail(email);
 
-            var queryString = string.Format("UPDATE Usuario SET Activo = 1 WHERE UsuarioId = {0}", usu.IdUsuario);
+            var queryString = string.Format("UPDATE Usuario SET Activo = 1 WHERE IdUsuario = {0}", usu.IdUsuario);
 
             return CatchException(() =>
             {
@@ -45,9 +45,9 @@ namespace DAL.DAO.Implementacion
         public bool Actualizar(BECuentaUsuario objUpd)
         {
             var usu = ObtenerUsuarioConEmail(objUpd.Email);
-            var digitoVH = digitoVerificador.CalcularDVHorizontal(new List<string> { objUpd.Nombre, usu.Email, usu.Contraseña });
+            var digitoVH = digitoVerificador.CalcularDVHorizontal(new List<string> { objUpd.Nombre, objUpd.Email/*, objUpd.Contraseña*/ });
 
-            var queryString = $"UPDATE Usuario SET Nombre = @nombre, Apellido = @apellido, Email = @email, Telefono = @telefono, Domicilio = @domicilio, DVH = @dvh, PrimerLogin=@PrimerLogin WHERE IdUsuario = @Idusuario";
+            var queryString = $"UPDATE Usuario SET Nombre = @nombre, Apellido = @apellido, Email = @email, Telefono = @telefono, Domicilio = @domicilio, DVH = @dvh, PrimerLogin=@PrimerLogin WHERE IdUsuario = @IdUsuario";
 
             return CatchException(() =>
             {
@@ -55,15 +55,16 @@ namespace DAL.DAO.Implementacion
                     queryString,
                     new
                     {
-                        @usuarioId = usu.IdUsuario,
+                        @IdUsuario = usu.IdUsuario,
                         @nombre = objUpd.Nombre,
                         @apellido = objUpd.Apellido,
+                        @contraseña = usu.Contraseña,
                         @email = usu.Email,
                         @telefono = objUpd.Telefono,
                         @domicilio = objUpd.Domicilio,
                         @dvh = digitoVH,
                         @PrimerLogin = objUpd.PrimerLogin,
-                    });
+                    }); ;
             });
         }
 
@@ -71,7 +72,7 @@ namespace DAL.DAO.Implementacion
         {
             var usu = ObtenerUsuarioConEmail(objDel.Email);
 
-            var queryString = string.Format("UPDATE Usuario SET Activo = 0 WHERE UsuarioId = {0}", usu.IdUsuario);
+            var queryString = string.Format("UPDATE Usuario SET Activo = 0 WHERE IdUsuario = {0}", usu.IdUsuario);
 
             return CatchException(() =>
             {
@@ -85,16 +86,16 @@ namespace DAL.DAO.Implementacion
             var queryString = string.Empty;
             if (primerLogin == true)
             {
-                queryString = "UPDATE Usuario SET Contraseña = @contraseña, PrimerLogin = 0 WHERE UsuarioId = @usuarioId";
+                queryString = "UPDATE Usuario SET Contraseña = @contraseña, PrimerLogin = 0 WHERE IdUsuario = @IdUsuario";
             }
             else
             {
-                queryString = "UPDATE Usuario SET Contraseña = @contraseña WHERE UsuarioId = @usuarioId";
+                queryString = "UPDATE Usuario SET Contraseña = @contraseña WHERE IdUsuario = @IdUsuario";
             }
 
             return CatchException(() =>
             {
-                return Exec(queryString, new { @usuarioId = usuario.IdUsuario, @contraseña = contEncript });
+                return Exec(queryString, new { @IdUsuario = usuario.IdUsuario, @contraseña = contEncript });
             });
         }
 
@@ -125,7 +126,7 @@ namespace DAL.DAO.Implementacion
 
                 //HACER update
 
-                var q = $"UPDATE Usuario SET DVH = {digito} WHERE UsuarioId = @Id";
+                var q = $"UPDATE Usuario SET DVH = {digito} WHERE IdUsuario = @Id";
 
                 CatchException(() =>
                 {
@@ -260,14 +261,14 @@ namespace DAL.DAO.Implementacion
         private void AumentarIngresos(BECuentaUsuario usuario, int ingresos)
         {
             var ingresosSel = ingresos;
-            var querySelect = string.Format("SELECT ContadorIngresosIncorrectos FROM Usuario WHERE UsuarioId = {0}", usuario.IdUsuario);
+            var querySelect = string.Format("SELECT ContadorIngresosIncorrectos FROM Usuario WHERE IdUsuario = {0}", usuario.IdUsuario);
 
             CatchException(() =>
             {
                 ingresosSel = 1 + Exec<int>(querySelect)[0];
             });
 
-            var queryString = string.Format("UPDATE Usuario SET ContadorIngresosIncorrectos = {1} WHERE UsuarioId = {0}", usuario.IdUsuario, ingresosSel);
+            var queryString = string.Format("UPDATE Usuario SET ContadorIngresosIncorrectos = {1} WHERE IdUsuario = {0}", usuario.IdUsuario, ingresosSel);
 
             CatchException(() =>
             {
@@ -277,7 +278,7 @@ namespace DAL.DAO.Implementacion
 
         public List<BEPatente> ObtenerPatentesDeUsuario(int usuarioId)
         {
-            var queryString = $"SELECT UsuarioPatente.IdPatente, Patente.Descripcion, UsuarioPatente.Negada FROM UsuarioPatente INNER JOIN Patente ON UsuarioPatente.IdPatente = Patente.IdPatente WHERE UsuarioId = {usuarioId}";
+            var queryString = $"SELECT UsuarioPatente.IdPatente, Patente.Descripcion, UsuarioPatente.Negada FROM UsuarioPatente INNER JOIN Patente ON UsuarioPatente.IdPatente = Patente.IdPatente WHERE IdUsuario = {usuarioId}";
 
             return CatchException(() =>
             {
@@ -308,7 +309,7 @@ namespace DAL.DAO.Implementacion
         public BECuentaUsuario ObtenerUsuarioConId(int usuarioId)
         {
             var usuario = new List<BECuentaUsuario>();
-            var queryString = "SELECT * FROM dbo.Usuario WHERE UsuarioId = @UsuarioId";
+            var queryString = "SELECT * FROM dbo.Usuario WHERE IdUsuario = @IdUsuario";
 
             CatchException(() =>
             {

@@ -9,7 +9,7 @@ using DAL.Utilidades;
 
 namespace BLL.implementacion
 {
-    public class BLLBackup
+    public class BLLBackup // viejo
     {
         string cmd;
         public void Backup(int bkp, string direccion)

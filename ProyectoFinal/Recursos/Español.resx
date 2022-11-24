@@ -117,10 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="MSJ000" xml:space="preserve">
-    <value>Problema Base de datos</value>
+  <data name="MSJ013" xml:space="preserve">
+    <value>Una patente se encuentra en uso y no puede borrarse</value>
   </data>
-  <data name="MSJ001" xml:space="preserve">
-    <value>Seguro que desea salir?</value>
+  <data name="MSJ015" xml:space="preserve">
+    <value>Al menos un usuario debe tener asignada esta patente</value>
+  </data>
+  <data name="MSJ017" xml:space="preserve">
+    <value>Registro exitoso</value>
+  </data>
+  <data name="MSJ019" xml:space="preserve">
+    <value>El registro de nuevo usuario ha fallado</value>
+  </data>
+  <data name="MSJ021" xml:space="preserve">
+    <value>No pueden haber 2 usuarios con el mismo email</value>
+  </data>
+  <data name="MSJ023" xml:space="preserve">
+    <value>Modificacion exitosa</value>
+  </data>
+  <data name="MSJ025" xml:space="preserve">
+    <value>La modificacion ha fallado</value>
+  </data>
+  <data name="MSJ027" xml:space="preserve">
+    <value>Borrado exitoso</value>
+  </data>
+  <data name="MSJ029" xml:space="preserve">
+    <value>El borrado de usuario ha fallado</value>
+  </data>
+  <data name="MSJ031" xml:space="preserve">
+    <value>No puede realizar acciones sobre el usuario activo</value>
+  </data>
+  <data name="MSJ033" xml:space="preserve">
+    <value>Todos los datos deben estar completos</value>
+  </data>
+  <data name="MSJ035" xml:space="preserve">
+    <value>No puede quitar esta familia</value>
   </data>
 </root>

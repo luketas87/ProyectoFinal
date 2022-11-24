@@ -61,6 +61,78 @@ namespace ProyectoFinal.Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Cambiar Base.
+        /// </summary>
+        internal static string btn_CambiarBase {
+            get {
+                return ResourceManager.GetString("btn_CambiarBase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a INGRESAR.
+        /// </summary>
+        internal static string btn_ingresar {
+            get {
+                return ResourceManager.GetString("btn_ingresar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a SALIR.
+        /// </summary>
+        internal static string btn_salir {
+            get {
+                return ResourceManager.GetString("btn_salir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ingrese usuario y contraseña para ingresar.
+        /// </summary>
+        internal static string label1 {
+            get {
+                return ResourceManager.GetString("label1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a USUARIO.
+        /// </summary>
+        internal static string label2 {
+            get {
+                return ResourceManager.GetString("label2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a CONTRASEÑA.
+        /// </summary>
+        internal static string label3 {
+            get {
+                return ResourceManager.GetString("label3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a SELECCIONAR IDIOMA:.
+        /// </summary>
+        internal static string label4 {
+            get {
+                return ResourceManager.GetString("label4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ACCESO AL SISTEMA.
+        /// </summary>
+        internal static string Login {
+            get {
+                return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Problema Base de datos.
         /// </summary>
         internal static string MSJ000 {
@@ -70,11 +142,20 @@ namespace ProyectoFinal.Recursos {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Seguro que desea salir?.
+        ///   Busca una cadena traducida similar a ¿Esta seguro que quiere salir?.
         /// </summary>
-        internal static string MSJ001 {
+        internal static string MSJ037 {
             get {
-                return ResourceManager.GetString("MSJ001", resourceCulture);
+                return ResourceManager.GetString("MSJ037", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Usted no es un usuario administrador.
+        /// </summary>
+        internal static string MSJ087 {
+            get {
+                return ResourceManager.GetString("MSJ087", resourceCulture);
             }
         }
     }

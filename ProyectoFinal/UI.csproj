@@ -81,22 +81,25 @@
       <HintPath>..\packages\Microsoft.Extensions.Primitives.6.0.0\lib\net461\Microsoft.Extensions.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1537.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1537.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1537.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1537.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1537.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1537.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=14.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Unofficial.Sql.Server.Management.Objects.17.4.1\lib\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
@@ -185,6 +188,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Traductor.cs" />
+    <Compile Include="Clases\FormControl.cs" />
     <Compile Include="Clases\FormExtensions.cs" />
     <Compile Include="Formularios\ABMusuario.cs">
       <SubType>Form</SubType>
@@ -217,18 +222,18 @@
       <DependentUpon>Backup.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\Alert.cs" />
-    <Compile Include="Formularios\AltaUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\AltaUsuario.Designer.cs">
-      <DependentUpon>AltaUsuario.cs</DependentUpon>
-    </Compile>
     <Compile Include="Clases\OptionBox.cs" />
     <Compile Include="Formularios\BackupRestore.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\BackupRestore.Designer.cs">
       <DependentUpon>BackupRestore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Bitacora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Bitacora.Designer.cs">
+      <DependentUpon>Bitacora.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\BloqueoProductos.cs">
       <SubType>Form</SubType>
@@ -248,11 +253,11 @@
     <Compile Include="Formularios\Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\ConectionString.cs">
+    <Compile Include="Formularios\NuevaCadena.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\ConectionString.Designer.cs">
-      <DependentUpon>ConectionString.cs</DependentUpon>
+    <Compile Include="Formularios\NuevaCadena.Designer.cs">
+      <DependentUpon>NuevaCadena.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\DatosUsuario.cs">
       <SubType>Form</SubType>
@@ -272,11 +277,17 @@
     <Compile Include="Formularios\DetalleVenta.Designer.cs">
       <DependentUpon>DetalleVenta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FormControl.cs">
+    <Compile Include="Formularios\Familias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FormControl.Designer.cs">
-      <DependentUpon>FormControl.cs</DependentUpon>
+    <Compile Include="Formularios\Familias.Designer.cs">
+      <DependentUpon>Familias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormCarga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormCarga.Designer.cs">
+      <DependentUpon>FormCarga.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\LadingSystem.cs">
       <SubType>Form</SubType>
@@ -301,12 +312,6 @@
     </Compile>
     <Compile Include="Formularios\Restore.Designer.cs">
       <DependentUpon>Restore.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Traductor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Traductor.Designer.cs">
-      <DependentUpon>Traductor.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Venta.cs">
       <SubType>Form</SubType>
@@ -344,8 +349,14 @@
     <EmbeddedResource Include="Formularios\ABMusuario.resx">
       <DependentUpon>ABMusuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\AltaUsuario.resx">
-      <DependentUpon>AltaUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\AdminFamiliaUsuario.resx">
+      <DependentUpon>AdminFamiliaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\AdminPatenteUsuario.resx">
+      <DependentUpon>AdminPatenteUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\AdmPatenteFamilia.resx">
+      <DependentUpon>AdmPatenteFamilia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Backup.resx">
       <DependentUpon>Backup.cs</DependentUpon>
@@ -353,11 +364,35 @@
     <EmbeddedResource Include="Formularios\BackupRestore.resx">
       <DependentUpon>BackupRestore.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\ConectionString.resx">
-      <DependentUpon>ConectionString.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Bitacora.resx">
+      <DependentUpon>Bitacora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\BloqueoProductos.resx">
+      <DependentUpon>BloqueoProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\BloqueoUsuario.resx">
+      <DependentUpon>BloqueoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Clientes.resx">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\NuevaCadena.resx">
+      <DependentUpon>NuevaCadena.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\DatosUsuario.resx">
+      <DependentUpon>DatosUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\DetalleRefForm.resx">
+      <DependentUpon>DetalleRefForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\DetalleVenta.resx">
       <DependentUpon>DetalleVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Familias.resx">
+      <DependentUpon>Familias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormCarga.resx">
+      <DependentUpon>FormCarga.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\LadingSystem.resx">
       <DependentUpon>LadingSystem.cs</DependentUpon>
@@ -368,8 +403,17 @@
     <EmbeddedResource Include="Formularios\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\NegarPatenteUsuario.resx">
+      <DependentUpon>NegarPatenteUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Productos.resx">
+      <DependentUpon>Productos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Restore.resx">
       <DependentUpon>Restore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Venta.resx">
+      <DependentUpon>Venta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -442,6 +486,7 @@
     <None Include="Resources\ventas.png" />
     <None Include="Resources\icons8-exportación-de-base-de-datos-80.png" />
     <None Include="Resources\icons8-database-daily-import-80.png" />
+    <Content Include="secret.txt" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -11,6 +11,7 @@ namespace BE.Interfaces
 
         void BorrarPatente(int IdFamilia, int IdPatente);
 
-        void Show(); DialogResult ShowDialog();
+        void Show(); 
+        DialogResult ShowDialog();
      }
 }

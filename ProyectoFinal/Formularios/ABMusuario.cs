@@ -30,7 +30,7 @@ namespace ProyectoFinal.Formularios
         private readonly BLLIIdioma idiomaBLL;
 
         private const int formId = 3;
-        private const string nombreForm = "ABMUsuario";
+        private const string nombreForm = "ABMusuario";
         private const string entidad = "Usuario";
         public const string key = "bZr2URKx";
         public const string iv = "HNtgQw0w";
@@ -44,22 +44,7 @@ namespace ProyectoFinal.Formularios
         public BEPatente PatenteSeleccionada { get; set; } = new BEPatente();
 
         public BEFamilia FamiliaSeleccionada { get; set; } = new BEFamilia();
-        Form IABMUsuario.MdiParent { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-        void IABMUsuario.Show()
-        {
-            throw new NotImplementedException();
-        }
-
-        BECuentaUsuario IABMUsuario.ObtenerUsuarioSeleccionado()
-        {
-            throw new NotImplementedException();
-        }
-
-        List<BECuentaUsuario> IABMUsuario.ObtenerUsuariosBd()
-        {
-            throw new NotImplementedException();
-        }
+        //Form IABMUsuario.MdiParent { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         
@@ -250,7 +235,7 @@ namespace ProyectoFinal.Formularios
                 UsuarioSeleccionado.Familia = familiasBLL.ObtenerFamiliasUsuario(UsuarioSeleccionado.IdUsuario);
                 foreach (var familia in UsuarioSeleccionado.Familia)
                 {
-                    familia.Patentes = familiasBLL.ObtenerPatentesFamilia(familia.FamiliaId);
+                    familia.Patentes = familiasBLL.ObtenerPatentesFamilia(familia.IdFamilia);
                 }
             });
         }

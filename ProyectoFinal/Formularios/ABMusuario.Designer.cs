@@ -83,7 +83,7 @@ namespace ProyectoFinal.Formularios
             this.txtTel.Location = new System.Drawing.Point(11, 165);
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(200, 20);
-            this.txtTel.TabIndex = 49;
+            this.txtTel.TabIndex = 3;
             // 
             // label6
             // 
@@ -100,7 +100,7 @@ namespace ProyectoFinal.Formularios
             this.txtEmail.Location = new System.Drawing.Point(11, 206);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(200, 20);
-            this.txtEmail.TabIndex = 46;
+            this.txtEmail.TabIndex = 4;
             // 
             // label12
             // 
@@ -148,7 +148,7 @@ namespace ProyectoFinal.Formularios
             this.txtApellido.Margin = new System.Windows.Forms.Padding(2);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(200, 20);
-            this.txtApellido.TabIndex = 47;
+            this.txtApellido.TabIndex = 2;
             // 
             // txtNombre
             // 
@@ -156,7 +156,7 @@ namespace ProyectoFinal.Formularios
             this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(200, 20);
-            this.txtNombre.TabIndex = 45;
+            this.txtNombre.TabIndex = 1;
             // 
             // Domicilio
             // 
@@ -229,7 +229,7 @@ namespace ProyectoFinal.Formularios
             this.txtDomicilio.Margin = new System.Windows.Forms.Padding(2);
             this.txtDomicilio.Name = "txtDomicilio";
             this.txtDomicilio.Size = new System.Drawing.Size(200, 20);
-            this.txtDomicilio.TabIndex = 48;
+            this.txtDomicilio.TabIndex = 5;
             // 
             // btnVolver
             // 

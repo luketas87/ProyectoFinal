@@ -13,6 +13,7 @@ namespace DAL.DAO.Implementacion
     {
         public List<string>  Entidades { get; set; } = SqlUtilidades.GetTables();
 
+
         public void ActualizarDVVertical(string entidad)
         {
             var digito = CalcularDVVertical(entidad);
@@ -25,9 +26,11 @@ namespace DAL.DAO.Implementacion
             });
         }
 
+        //Calculos digito verificado Horizontal
+        //agarra tamaño de la palabra y multiplica por la posicion.
         public int CalcularDVHorizontal(List<string> columnasString)
         {
-            var digito = 0;
+            /*var digito = 0;
 
             foreach (var str in columnasString)
             {
@@ -37,9 +40,20 @@ namespace DAL.DAO.Implementacion
                 }
             }
 
+            return digito;*/
+            int digito = new int();
+            foreach (var item in columnasString)
+            {
+                for (int i = 0; i < item.Length; i++)
+                {
+                    digito += char.Parse(item[i].ToString());
+                }
+            }
             return digito;
         }
 
+        //Calculos digito verificado Vertical.
+        // la suma de los horizontales.
         public int CalcularDVVertical(string entidad)
         {
             var queryString = string.Format("SELECT SUM(DVH) FROM {0}", entidad);

@@ -13,7 +13,7 @@ namespace DAL.DAO.Implementacion
     {
         public bool Actualizar(BECliente objUpd)
         {
-            var queryString = $"UPDATE Cliente SET NombreCompleto = @nombre, Email = @email, Telefono = @telefono, Domicilio = @domicilio WHERE IdCliente = @IdClientex";
+            var queryString = $"UPDATE Cliente SET NombreCompleto = @nombre, Email = @email, Telefono = @telefono, Domicilio = @domicilio WHERE IdCliente = @IdCliente";
 
             return CatchException(() =>
             {
@@ -36,7 +36,7 @@ namespace DAL.DAO.Implementacion
 
         public bool Borrar(BECliente objDel)
         {
-            var queryString = string.Format("UPDATE Cliente SET Activo = 0 WHERE ClienteId = {0}", objDel.IdCliente);
+            var queryString = string.Format("UPDATE Cliente SET Activo = 0 WHERE IdCliente = {0}", objDel.IdCliente);
 
             return CatchException(() =>
             {
@@ -46,7 +46,7 @@ namespace DAL.DAO.Implementacion
 
         public List<BECliente> Cargar()
         {
-            var queryString = "SELECT * FROM Cliente INNER JOIN CuentaCorriente ON Cliente.CuentaCorrienteId = CuentaCorriente.CuentaId WHERE Activo = 1";
+            var queryString = "SELECT * FROM Cliente INNER JOIN CuentaCorriente ON Cliente.IdCuentaCorriente = CuentaCorriente.IdCuenta WHERE Activo = 1";
 
             return CatchException(() =>
             {

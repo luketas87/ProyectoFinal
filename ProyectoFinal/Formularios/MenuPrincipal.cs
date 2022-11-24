@@ -12,6 +12,7 @@ using BE.Implementacion;
 using BE.Interfaces;
 using BLL.Interfaces;
 using DAL.DAO.Interfaces;
+using UI;
 
 namespace ProyectoFinal.Formularios
 {
@@ -76,7 +77,7 @@ namespace ProyectoFinal.Formularios
                 panelSubmenuVentas.Visible = false;
             }
 
-            if (panelAdmVet.Visible == true)
+            if (panelAdmVet.Visible == false)
             {
                 panelAdmVet.Visible = false;
             }
@@ -114,14 +115,14 @@ namespace ProyectoFinal.Formularios
             var patUsu = formControl.ObtenerPermisosUsuario();
 
             //Bloquear Toolstrip por patente.
-             if (!patUsu.Patentes.Any(x => x.Descripcion == "AMBFamilia"))
+             if (!patUsu.Patentes.Any(x => x.Descripcion == "ABMFamilia"))
              {
                 btnFamilias.Enabled = false;
                 familias.MdiParent = this;
                 familias.Show();
 
             }
-             if (!patUsu.Patentes.Any(x => x.Descripcion == "AMBUsuario"))
+             if (!patUsu.Patentes.Any(x => x.Descripcion == "ABMusuario"))
              {
                  btnAdministrarUsuarios.Enabled = false;
 
@@ -131,7 +132,7 @@ namespace ProyectoFinal.Formularios
                  btnBitacora.Enabled = false;
 
              }
-             if (!patUsu.Patentes.Any(x => x.Descripcion == "MenuBkpRestore"))
+             if (!patUsu.Patentes.Any(x => x.Descripcion == "BackupRestore"))
              {
                  btnBackupRestore.Enabled = false;
 
@@ -157,12 +158,31 @@ namespace ProyectoFinal.Formularios
         #region MostrarPanels
         public void ComprobarPrimerLogin(string usuario)
         {
-            throw new NotImplementedException();
-        }
+            var usu = formControl.ObtenerInfoUsuario();
+            if (usu.PrimerLogin)
+            {
+                var nuevaContraseña = "";
 
-        private void panelSideMenu_Paint(object sender, PaintEventArgs e)
-        {
+                var items = InputBox.fillItems("Contraseña", nuevaContraseña);
 
+                InputBox input = InputBox.Show("Ingrese nueva contraseña", items, InputBoxButtons.OK);
+
+                if (input.Result == InputBoxResult.OK)
+                {
+                    nuevaContraseña = input.Items["Contraseña"];
+                    var cambioExitoso = usuarioDAL.CambiarContraseña(usu, nuevaContraseña, true);
+                    if (cambioExitoso)
+                    {
+                        //Log.Info("Password Actualizado");
+                        MessageBox.Show("Su contraseña fue actualizada");
+                    }
+                    else
+                    {
+                        //Log.Info("Fallo la actualizacion del password");
+                        MessageBox.Show("Error contraseña no actualizada");
+                    }
+                }
+            }
         }
 
         private void btnAdmVentas_Click(object sender, EventArgs e)
@@ -175,6 +195,7 @@ namespace ProyectoFinal.Formularios
             hideSubMenu();
             venta.HacerLoad();
             venta.MdiParent = this;
+            venta.Show();
         }
 
         private void btnRealizarVentas_Click(object sender, EventArgs e)
@@ -193,7 +214,7 @@ namespace ProyectoFinal.Formularios
         //no implementado
         private void btnVerSolicitudes_Click(object sender, EventArgs e)
         {
-            hideSubMenu();
+            hideSubMenu(); 
         }
 
         private void btnRegistrarDiagnostico_Click(object sender, EventArgs e)
@@ -209,14 +230,15 @@ namespace ProyectoFinal.Formularios
         private void btnAdministrarUsuarios_Click(object sender, EventArgs e)
         {
             hideSubMenu();
-            abmUsuario.MdiParent = this;
+            //abmUsuario.MdiParent = this;
             abmUsuario.Show();
+           
         }
 
         private void btnBitacora_Click(object sender, EventArgs e)
         {
             hideSubMenu();
-            bitacora.MdiParent = this;
+            //bitacora.MdiParent = this;
             bitacora.Show();
         }
 
@@ -256,16 +278,17 @@ namespace ProyectoFinal.Formularios
         {
             Application.Exit();
         }
-        private void panelChildForm_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnProductos_Click(object sender, EventArgs e)
         {
             hideSubMenu();
             productos.MdiParent = this;
             productos.Show();
+        }
+
+        private void btnVisualizarUsuarios_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            datosUsuario.Show();
         }
     }
 }

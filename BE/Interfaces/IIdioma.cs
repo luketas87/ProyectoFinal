@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace BE.Interfaces
 {
-    public interface BEIIdioma
+    public interface BEIIdioma //no va
     {
         List<BEIdioma> ObtenerTodosLosIdiomas();
 

@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using BE.Implementacion;
 using BLL.Interfaces;
@@ -23,9 +21,9 @@ namespace BLL.implementacion
         }
         public bool ActivarProducto(string descripcion)
         {
-            var productoId = obtenerInt.Match(descripcion).Value;
+            var Idproducto = obtenerInt.Match(descripcion).Value;
 
-            return productoDAL.ActivarProducto(productoId);
+            return productoDAL.ActivarProducto(Idproducto);
         }
 
         public bool Actualizar(BEProducto objUpd)

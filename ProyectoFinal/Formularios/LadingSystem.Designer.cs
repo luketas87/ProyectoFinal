@@ -32,7 +32,6 @@ namespace ProyectoFinal.Formularios
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnIniciar = new CustomControls.RJControls.RJButton();
             this.btnSalir = new CustomControls.RJControls.RJButton();
-            this.btnConfigBD = new CustomControls.RJControls.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,6 +44,7 @@ namespace ProyectoFinal.Formularios
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btnIniciar
             // 
@@ -56,7 +56,7 @@ namespace ProyectoFinal.Formularios
             this.btnIniciar.FlatAppearance.BorderSize = 0;
             this.btnIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIniciar.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btnIniciar.Location = new System.Drawing.Point(12, 23);
+            this.btnIniciar.Location = new System.Drawing.Point(364, 12);
             this.btnIniciar.Name = "btnIniciar";
             this.btnIniciar.Size = new System.Drawing.Size(61, 22);
             this.btnIniciar.TabIndex = 1;
@@ -84,37 +84,18 @@ namespace ProyectoFinal.Formularios
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // btnConfigBD
-            // 
-            this.btnConfigBD.BackColor = System.Drawing.SystemColors.Control;
-            this.btnConfigBD.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.btnConfigBD.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnConfigBD.BorderRadius = 20;
-            this.btnConfigBD.BorderSize = 1;
-            this.btnConfigBD.FlatAppearance.BorderSize = 0;
-            this.btnConfigBD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfigBD.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btnConfigBD.Location = new System.Drawing.Point(358, 23);
-            this.btnConfigBD.Name = "btnConfigBD";
-            this.btnConfigBD.Size = new System.Drawing.Size(67, 22);
-            this.btnConfigBD.TabIndex = 2;
-            this.btnConfigBD.Text = "Config. BD";
-            this.btnConfigBD.TextColor = System.Drawing.Color.DodgerBlue;
-            this.btnConfigBD.UseVisualStyleBackColor = false;
-            this.btnConfigBD.Click += new System.EventHandler(this.btnConfigBD_Click);
-            // 
             // LadingSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(429, 216);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnConfigBD);
             this.Controls.Add(this.btnIniciar);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "LadingSystem";
-            this.Text = ":::INICIO:::";
+            this.Text = ".:: Veterinaria Patitas ::.";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LadingSystem_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -125,6 +106,5 @@ namespace ProyectoFinal.Formularios
         private System.Windows.Forms.PictureBox pictureBox1;
         private CustomControls.RJControls.RJButton btnIniciar;
         private CustomControls.RJControls.RJButton btnSalir;
-        private CustomControls.RJControls.RJButton btnConfigBD;
     }
 }

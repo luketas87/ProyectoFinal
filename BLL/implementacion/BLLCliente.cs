@@ -33,7 +33,7 @@ namespace BLL.implementacion
 
         public List<BECliente> Cargar()
         {
-            throw new NotImplementedException();
+            return clienteDAL.Cargar();
         }
 
         public bool Borrar(BECliente objDel)

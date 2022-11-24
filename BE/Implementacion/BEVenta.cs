@@ -8,6 +8,7 @@ namespace BE.Implementacion
 {
     public class BEVenta
     {
+        public int s;
         public int IdVenta { get; set; }
 
         public DateTime Fecha { get; set; }
@@ -18,7 +19,7 @@ namespace BE.Implementacion
 
         public int IdTipoVenta { get; set; }
 
-        public int? IdCliente { get; set; }
+        public int IdCliente { get; set; }
 
         public float Monto { get; set; }
     }

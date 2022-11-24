@@ -30,14 +30,12 @@ namespace ProyectoFinal
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run (new Login(IoCContainer.Resolve<BLLIIdioma>(),
-                IoCContainer.Resolve<IDigitoVerificador>(),
-                IoCContainer.Resolve<ITraductor>()));
+            Application.Run (new LadingSystem());
 
                     IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Usuario");
                     IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Bitacora");
                     IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Patente");
-                    IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Venta");
+            IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Venta");
         }
     }
 }

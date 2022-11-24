@@ -66,8 +66,9 @@ namespace DAL.DAO.Implementacion
             });
         }
 
-        public void FiltrarBitacora(BEFBitacora filtros)
+        public void FiltrarBitacora(BEFiltroBitacora filtros)
         {
+
             var queryString = new StringBuilder();
 
             var baseQuery = string.Format("SELECT * FROM Bitacora WHERE Fecha >= {0} AND Fecha <= {1} ", filtros.FechaDesde, filtros.FechaHasta);

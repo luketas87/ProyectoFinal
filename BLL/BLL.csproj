@@ -93,7 +93,6 @@
     <Compile Include="Interfaces\BLLIDetalleVenta.cs" />
     <Compile Include="Interfaces\BLLIFamilia.cs" />
     <Compile Include="Interfaces\BLLIIdioma.cs" />
-    <Compile Include="BLNuevaCadena.cs" />
     <Compile Include="implementacion\BLLBackup.cs" />
     <Compile Include="implementacion\BLLIdioma.cs" />
     <Compile Include="Interfaces\BLLICuentaUsuario.cs" />

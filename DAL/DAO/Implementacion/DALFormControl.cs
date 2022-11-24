@@ -17,7 +17,7 @@ namespace DAL.DAO.Implementacion
 
             return CatchException(() =>
             {
-                return Exec<BEPatente>(query, new { @formId = IdForm });
+                return Exec<BEPatente>(query, new { @Idform = IdForm });
             });
         }
 

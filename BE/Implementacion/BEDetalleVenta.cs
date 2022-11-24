@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace BE.Implementacion
 {
-    public class BEDetalleVenta : IDetalleVenta
+    public class BEDetalleVenta
     {
         public int IdDetalle { get; set; }
 
@@ -16,12 +16,5 @@ namespace BE.Implementacion
 
         public List<BELineaDetalle> LineasDetalle { get; set; } = new List<BELineaDetalle>();
        
-        
-        public Form MdiParent { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-        public void Show()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

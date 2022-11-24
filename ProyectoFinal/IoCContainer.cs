@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Autofac;
 using BLL.implementacion;
@@ -13,6 +10,8 @@ using ProyectoFinal.Formularios;
 using BE.Implementacion;
 using BLL.Interfaces;
 using ProyectoFinal;
+using ProyectoFinal.Clases;
+using Servicios.Excepciones;
 
 namespace UI
 {
@@ -32,7 +31,25 @@ namespace UI
 
         public static T Resolve<T>()
         {
-            return container.Resolve<T>();
+            try
+            {
+                return container.Resolve<T>();
+            }
+            catch (ConectionStringFaltanteException)
+            {
+
+                throw new ConectionStringFaltanteException();
+            }
+
+            catch (ErrorGenerico)
+            {
+
+                throw new ConectionStringFaltanteException();
+                //MessageBox.Show("a ver que llega aca?" ,ex.Message);
+
+            }
+
+
         }
 
         private static IContainer CreateContainer()
@@ -47,13 +64,13 @@ namespace UI
              contBuilder.RegisterType<BLLFormControl>().As<BLLIFormControl>().SingleInstance();
              contBuilder.RegisterType<DALFormControl>().As<DALIFormControl>().SingleInstance();
              contBuilder.RegisterType<DALDigitoVerificador>().As<IDigitoVerificador>().InstancePerDependency();
-             contBuilder.RegisterType<BEDetalleVenta>().As<IDetalleVenta>().SingleInstance();
+             contBuilder.RegisterType<DetalleVenta>().As<IDetalleVenta>().SingleInstance();
              contBuilder.RegisterType<ABMusuario>().As<IABMUsuario>().SingleInstance();
-             contBuilder.RegisterType<BEBitacora>().As<IBitacora>().SingleInstance();
+             contBuilder.RegisterType<Bitacora>().As<IBitacora>().SingleInstance();
              contBuilder.RegisterType<BLLBitacora>().As<BLLIBitacora>().InstancePerDependency();
              contBuilder.RegisterType<DALBitacora>().As<DALIBitacora>().InstancePerDependency();
              contBuilder.RegisterType<FormControl>().As<IFormControl>().SingleInstance();
-             contBuilder.RegisterType<BEFamilia>().As<IFamilias>().SingleInstance();
+             contBuilder.RegisterType<Familias>().As<IFamilias>().SingleInstance();
              contBuilder.RegisterType<BLLFamilia>().As<BLLIFamilia>().InstancePerDependency();
              contBuilder.RegisterType<DALFamilia>().As<DALIFamilia>().InstancePerDependency();
              contBuilder.RegisterType<BLLPatente>().As<BLLIPatente>().InstancePerDependency();

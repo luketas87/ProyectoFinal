@@ -21,7 +21,7 @@ namespace DAL.DAO.Implementacion
 
         public bool Actualizar(BEFamilia objUpd)
         {
-            var queryString = $"UPDATE Familia SET Descripcion = '{objUpd.Descripcion}' WHERE IdFamilia = {objUpd.FamiliaId}";
+            var queryString = $"UPDATE Familia SET Descripcion = '{objUpd.Descripcion}' WHERE IdFamilia = {objUpd.IdFamilia}";
 
             return CatchException(() =>
             {
@@ -33,7 +33,7 @@ namespace DAL.DAO.Implementacion
         {
             var familia = ObtenerFamiliaConDescripcion(objDel.Descripcion);
 
-            var queryString = $"DELETE FROM Familia WHERE IdFamilia = {familia.FamiliaId}";
+            var queryString = $"DELETE FROM Familia WHERE IdFamilia = {familia.IdFamilia}";
 
             return CatchException(() =>
             {
@@ -43,7 +43,7 @@ namespace DAL.DAO.Implementacion
 
         public void BorrarFamiliaDeFamiliaPatente(int IdFamilia)
         {
-            var queryString = string.Format("DELETE FROM FamiliaPatente WHERE FamiliaId = {0}", IdFamilia);
+            var queryString = string.Format("DELETE FROM FamiliaPatente WHERE IdFamilia = {0}", IdFamilia);
 
             CatchException(() =>
             {
@@ -55,7 +55,7 @@ namespace DAL.DAO.Implementacion
         {
             foreach (var familia in Familias)
             {
-                var queryString = $"DELETE FROM FamiliaUsuario WHERE IdFamilia = {familia.FamiliaId} and IdUsuario = {IdUsuario}";
+                var queryString = $"DELETE FROM FamiliaUsuario WHERE IdFamilia = {familia.IdFamilia} and IdUsuario = {IdUsuario}";
 
                 CatchException(() =>
                 {
@@ -77,7 +77,7 @@ namespace DAL.DAO.Implementacion
         public bool ComprobarUsoFamilia(int IdFamilia)
         {
             var result = new List<int>();
-            var queryString = "SELECT FamiliaId FROM FamiliaUsuario WHERE FamiliaId = @idfamilia";
+            var queryString = "SELECT FamiliaId FROM FamiliaUsuario WHERE IdFamilia = @idfamilia";
 
             CatchException(() =>
             {
@@ -108,7 +108,7 @@ namespace DAL.DAO.Implementacion
         {
             foreach (var id in IdFamilia)
             {
-                var queryString = $"INSERT INTO FamiliaUsuario(FamiliaId, UsuarioId) VALUES('{id}','{IdUsuario}')";
+                var queryString = $"INSERT INTO FamiliaUsuario(IdFamilia, IdUsuario) VALUES('{id}','{IdUsuario}')";
 
                 CatchException(() =>
                 {
@@ -119,7 +119,7 @@ namespace DAL.DAO.Implementacion
 
         public string ObtenerDescripcionFamiliaPorId(int IdFamilia)
         {
-            var queryString = $"SELECT Descripcion FROM Familia WHERE FamiliaId = {IdFamilia}";
+            var queryString = $"SELECT Descripcion FROM Familia WHERE IdFamilia = {IdFamilia}";
 
             return CatchException(() =>
             {
@@ -133,7 +133,7 @@ namespace DAL.DAO.Implementacion
 
             foreach (var id in IdFamilia)
             {
-                var queryString = $"SELECT Descripcion FROM Familia WHERE FamiliaId = {id}";
+                var queryString = $"SELECT Descripcion FROM Familia WHERE IdFamilia = {id}";
 
                 CatchException(() =>
                 {
@@ -154,7 +154,7 @@ namespace DAL.DAO.Implementacion
                 familia = Exec<BEFamilia>(queryString).FirstOrDefault();
             });
 
-            familia.Patentes = ObtenerPatentesFamilia(familia.FamiliaId);
+            familia.Patentes = ObtenerPatentesFamilia(familia.IdFamilia);
 
             return familia;
         }
@@ -164,12 +164,12 @@ namespace DAL.DAO.Implementacion
             var familiasDb = Cargar();
             var familiaUsuario = ObtenerIdsFamiliasPorUsuario(IdUsuario);
 
-            return familiasDb.FindAll(x => familiaUsuario.Any(y => y == x.FamiliaId));
+            return familiasDb.FindAll(x => familiaUsuario.Any(y => y == x.IdFamilia));
         }
 
         public int ObtenerIdFamiliaPorDescripcion(string Descripcion)
         {
-            var queryString = "SELECT FamiliaId FROM Familia WHERE Descripcion = @descripcion";
+            var queryString = "SELECT IdFamilia FROM Familia WHERE Descripcion = @descripcion";
 
             return CatchException(() =>
             {
@@ -179,7 +179,7 @@ namespace DAL.DAO.Implementacion
 
         public int ObtenerIdFamiliaPorUsuario(int IdUsuario)
         {
-            var queryString = $"SELECT FamiliaId FROM FamiliaUsuario WHERE UsuarioId = {IdUsuario}";
+            var queryString = $"SELECT FamiliaId FROM FamiliaUsuario WHERE IdUsuario = {IdUsuario}";
 
             return CatchException(() =>
             {
@@ -191,7 +191,7 @@ namespace DAL.DAO.Implementacion
         {
             var famIds = new List<int>();
 
-            var queryString = $"SELECT FamiliaId FROM FamiliaUsuario WHERE UsuarioId = {IdUsuario}";
+            var queryString = $"SELECT IdFamilia FROM FamiliaUsuario WHERE IdUsuario = {IdUsuario}";
 
             famIds = CatchException(() =>
             {
@@ -208,7 +208,7 @@ namespace DAL.DAO.Implementacion
 
             foreach (var id in IdFamilia)
             {
-                var queryString = $"SELECT * FROM FamiliaPatente WHERE FamiliaId = {id}";
+                var queryString = $"SELECT * FROM FamiliaPatente WHERE IdFamilia = {id}";
 
                 auxpat = CatchException(() =>
                 {
@@ -221,7 +221,7 @@ namespace DAL.DAO.Implementacion
 
             foreach (var patente in patentes)
             {
-                var querypatente = $"SELECT Id, FamiliaId, FamiliaPatente.IdPatente, Descripcion FROM FamiliaPatente INNER JOIN Patente on FamiliaPatente.IdPatente = Patente.IdPatente WHERE FamiliaPatente.IdPatente ={patente.IdPatente}";
+                var querypatente = $"SELECT Id, IdFamilia, FamiliaPatente.IdPatente, Descripcion FROM FamiliaPatente INNER JOIN Patente on FamiliaPatente.IdPatente = Patente.IdPatente WHERE FamiliaPatente.IdPatente ={patente.IdPatente}";
 
                 auxpat = CatchException(() =>
                 {
@@ -236,7 +236,7 @@ namespace DAL.DAO.Implementacion
         public List<BEPatente> ObtenerPatentesFamilia(int IdFamilia)
         {
             var patentes = new List<BEPatente>();
-            var queryString = $"SELECT distinct IdPatente FROM FamiliaPatente WHERE FamiliaId = {IdFamilia}";
+            var queryString = $"SELECT distinct IdPatente FROM FamiliaPatente WHERE IdFamilia = {IdFamilia}";
 
             CatchException(() =>
             {
@@ -268,7 +268,7 @@ namespace DAL.DAO.Implementacion
         public List<BECuentaUsuario> ObtenerUsuariosPorFamilia(int IdFamilia)
         {
             var listaUsuarios = new List<BECuentaUsuario>();
-            var queryString = string.Format("SELECT DISTINCT UsuarioId FROM FamiliaUsuario WHERE FamiliaId = {0}", IdFamilia);
+            var queryString = string.Format("SELECT DISTINCT IdUsuario FROM FamiliaUsuario WHERE IdFamilia = {0}", IdFamilia);
 
             var ids = Exec<int>(queryString);
 
@@ -278,7 +278,7 @@ namespace DAL.DAO.Implementacion
 
                 CatchException(() =>
                 {
-                    var queryUsuario = string.Format("SELECT * FROM Usuario WHERE Activo = 1 AND UsuarioId IN ({0})", stringIds);
+                    var queryUsuario = string.Format("SELECT * FROM Usuario WHERE Activo = 1 AND IdUsuario IN ({0})", stringIds);
 
                     listaUsuarios = Exec<BECuentaUsuario>(queryUsuario);
                 });

@@ -11,13 +11,25 @@ namespace Seguridad
 {
     public class Encriptador
     {
+#pragma warning disable CS0169 // El campo 'Encriptador.cipherData' nunca se usa
         readonly string cipherData;
+#pragma warning restore CS0169 // El campo 'Encriptador.cipherData' nunca se usa
+#pragma warning disable CS0169 // El campo 'Encriptador.cipherBytes' nunca se usa
         readonly byte[] cipherBytes;
+#pragma warning restore CS0169 // El campo 'Encriptador.cipherBytes' nunca se usa
+#pragma warning disable CS0169 // El campo 'Encriptador.plainBytes' nunca se usa
         readonly byte[] plainBytes;
+#pragma warning restore CS0169 // El campo 'Encriptador.plainBytes' nunca se usa
+#pragma warning disable CS0169 // El campo 'Encriptador.plainKey' nunca se usa
         readonly byte[] plainKey;
+#pragma warning restore CS0169 // El campo 'Encriptador.plainKey' nunca se usa
 
+#pragma warning disable CS0169 // El campo 'Encriptador.sha' nunca se usa
         HashAlgorithm sha;
+#pragma warning restore CS0169 // El campo 'Encriptador.sha' nunca se usa
+#pragma warning disable CS0169 // El campo 'Encriptador.desObj' nunca se usa
         SymmetricAlgorithm desObj;
+#pragma warning restore CS0169 // El campo 'Encriptador.desObj' nunca se usa
         public Encriptador()
         {
 

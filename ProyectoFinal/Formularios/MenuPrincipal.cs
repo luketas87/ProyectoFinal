@@ -132,13 +132,19 @@ namespace ProyectoFinal.Formularios
                  btnBitacora.Enabled = false;
 
              }
-             if (!patUsu.Patentes.Any(x => x.Descripcion == "BackupRestore"))
+             if (!patUsu.Patentes.Any(x => x.Descripcion == "Backup"))
              {
-                 btnBackupRestore.Enabled = false;
+                 btnBackup.Enabled = false;
 
              }
 
-             if (!patUsu.Patentes.Any(x => x.Descripcion == "RealizarVentas"))
+            if (!patUsu.Patentes.Any(x => x.Descripcion == "Restore"))
+            {
+                btnRestore.Enabled = false;
+
+            }
+
+            if (!patUsu.Patentes.Any(x => x.Descripcion == "RealizarVentas"))
              {
                  btnRealizarVentas.Enabled = false;
 
@@ -245,6 +251,7 @@ namespace ProyectoFinal.Formularios
         private void btnFamilia_Click(object sender, EventArgs e)
         {
             hideSubMenu();
+            familias.Show();
         }
 
         //cambiar
@@ -289,6 +296,24 @@ namespace ProyectoFinal.Formularios
         {
             hideSubMenu();
             datosUsuario.Show();
+        }
+
+        private void btnAdmPatenteFamilia_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            datosUsuario.Show();
+        }
+
+        private void btnBackup_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            backup.Show();
+        }
+
+        private void btnRestore_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            restore.Show();
         }
     }
 }

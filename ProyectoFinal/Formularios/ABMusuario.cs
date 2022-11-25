@@ -407,7 +407,15 @@ namespace ProyectoFinal.Formularios
                 var permitir = verificarDatos();
                 if (permitir)
                 {
-                    var modificado = usuarioBLL.Actualizar(new BECuentaUsuario() { Nombre = txtNombre.Text, Apellido = txtApellido.Text, Email = txtEmail.Text, Telefono = int.Parse(txtTel.Text), Domicilio = txtDomicilio.Text, PrimerLogin = true, ContadorIngresosIncorrectos = 0, Activo = true });
+                    
+                    var modificado = usuarioBLL.Actualizar(new BECuentaUsuario() {
+                        
+                        Nombre = txtNombre.Text, 
+                        Apellido = txtApellido.Text, 
+                        Email = DES.Encrypt(txtEmail.Text, key, iv), 
+                        Telefono = int.Parse(txtTel.Text), 
+                        Domicilio = txtDomicilio.Text, PrimerLogin = true, 
+                        ContadorIngresosIncorrectos = 0, Activo = true });
 
                     if (modificado)
                     {
@@ -420,7 +428,8 @@ namespace ProyectoFinal.Formularios
                             digitoVerificador.ActualizarDVVertical(digitoVerificador.Entidades.Find(x => x == entidad));
                         }
 
-                        Log4netExtensions.Baja(log, string.Format("Se ha modificado al usuario {0}", DES.Decrypt(UsuarioSeleccionado.Email, key, iv)));
+                        //Log4netExtensions.Baja(log, string.Format("Se ha modificado al usuario {0}", DES.Decrypt(UsuarioSeleccionado.Email, key, iv)));
+                        //Email= DES.Decrypt(txtEmail.Text, key, iv);
                         bitacoraBLL.RegistrarEnBitacora(UsuarioActivo);
                         Alert.ShowSimpleAlert("Modificacion exitosa", "MSJ023");
                         CargarRefrescarDatagrid();

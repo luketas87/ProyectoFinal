@@ -8,6 +8,6 @@ namespace Servicios.Excepciones
 {
     public class ConectionStringFaltanteException : Exception
     {
-
+        
     }
 }

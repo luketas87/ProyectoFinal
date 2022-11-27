@@ -289,11 +289,11 @@
     <Compile Include="Formularios\FormCarga.Designer.cs">
       <DependentUpon>FormCarga.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\LadingSystem.cs">
+    <Compile Include="Formularios\LandingSystem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\LadingSystem.Designer.cs">
-      <DependentUpon>LadingSystem.cs</DependentUpon>
+    <Compile Include="Formularios\LandingSystem.Designer.cs">
+      <DependentUpon>LandingSystem.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\NegarPatenteUsuario.cs">
       <SubType>Form</SubType>
@@ -394,8 +394,8 @@
     <EmbeddedResource Include="Formularios\FormCarga.resx">
       <DependentUpon>FormCarga.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\LadingSystem.resx">
-      <DependentUpon>LadingSystem.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\LandingSystem.resx">
+      <DependentUpon>LandingSystem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

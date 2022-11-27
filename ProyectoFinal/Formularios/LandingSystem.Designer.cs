@@ -1,7 +1,7 @@
 ﻿
 namespace ProyectoFinal.Formularios
 {
-    partial class LadingSystem
+    partial class LandingSystem
     {
         /// <summary>
         /// Required designer variable.

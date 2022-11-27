@@ -30,7 +30,7 @@ namespace ProyectoFinal
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run (new LadingSystem());
+            Application.Run (new LandingSystem());
 
                     IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Usuario");
                     IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Bitacora");

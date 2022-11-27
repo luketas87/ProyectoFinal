@@ -7,14 +7,15 @@ using DAL.DAO.Interfaces;
 using DAL.DAO.Implementacion;
 using BE.Interfaces;
 using Servicios.Excepciones;
+using System.IO;
 
 namespace ProyectoFinal.Formularios
 {
-    public partial class LadingSystem : Form
+    public partial class LandingSystem : Form
     {
         Login mLogin;
 
-        public LadingSystem()
+        public LandingSystem()
         {
             InitializeComponent();
         }
@@ -73,23 +74,32 @@ namespace ProyectoFinal.Formularios
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
-                mLogin = new Login(
-                IoCContainer.Resolve<BLLIIdioma>(),
-                IoCContainer.Resolve<IDigitoVerificador>(),
-                IoCContainer.Resolve<ITraductor>());
+                var path = "C:\\Users\\Usuario\\source\\repos\\luketas87\\ProyectoFinal\\secret.txt";
+                bool fileExist = File.Exists(path);
 
-                IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Usuario");
-                IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Bitacora");
-                IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Patente");
-                IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Venta");
-                mLogin.Show();
+                if (fileExist)
+                {
+                    
+                    mLogin = new Login(
+                    IoCContainer.Resolve<BLLIIdioma>(),
+                    IoCContainer.Resolve<IDigitoVerificador>(),
+                    IoCContainer.Resolve<ITraductor>());
+
+
+                    IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Usuario");
+                    IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Bitacora");
+                    IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Patente");
+                    IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Venta");
+                    mLogin.Show();
+                } 
+                
             }
             catch (ConectionStringFaltanteException)
             {
-
+                //throw new ConectionStringFaltanteException();
                 NuevaCadena mconexion = new NuevaCadena();
                 mconexion.Show();
             }

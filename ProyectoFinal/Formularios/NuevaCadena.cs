@@ -36,14 +36,14 @@ namespace ProyectoFinal
                 {
                     CrearConexion(Cadena);
                     MessageBox.Show("Se crea la cadena de conexion");
-                    LadingSystem mLandingSystem = new LadingSystem();
+                    LandingSystem mLandingSystem = new LandingSystem();
                     mLandingSystem.Show();
 
 
                 }
                 else
                 {
-                    MessageBox.Show("La cadena de conexion no es exitosa, compruebe nuevamente");
+                    MessageBox.Show("La cadena de conexion no se ha podido generar con exito, compruebe nuevamente");
                 }
             }
             catch (Exception)
@@ -54,6 +54,8 @@ namespace ProyectoFinal
 
         }
 
+
+        #region Singleton
 
         public bool ValidarConexion(string Cadena)
         {
@@ -75,13 +77,13 @@ namespace ProyectoFinal
             }
 
         }
-
+        #endregion
 
         public bool CrearConexion(string Cadena)
         {
             try
             {
-                var path = "C:\\Users\\lucas\\source\\repos\\ProyectoFinal\\ProyectoFinal\\secret.txt";
+                var path = "C:\\Users\\Usuario\\source\\repos\\luketas87\\ProyectoFinal\\secret.txt";
                 var newCadenaEncrypted = DES.Encrypt(Cadena, Key, Iv);
                 File.WriteAllText(path, newCadenaEncrypted);//escribo el archivo
                 return true;

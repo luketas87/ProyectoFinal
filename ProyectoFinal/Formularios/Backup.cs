@@ -36,10 +36,7 @@ namespace ProyectoFinal
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            #region OLD
-            // BLLBackup bLLBackup = new BLLBackup();
-            //bLLBackup.Backup(int.Parse(cboCantidad.Text), txtDirectorio.Text);
-            #endregion
+
             progressBar1.Value = 0;
             var cantVolumenes = Convert.ToInt32(cboCantidad.SelectedItem);
 
@@ -56,7 +53,7 @@ namespace ProyectoFinal
                     var dbServer = new Server(conn);
                     var dbBackUp = new Microsoft.SqlServer.Management.Smo.Backup() 
                     {
-                       Action = BackupActionType.Database, Database = conn.DatabaseName
+                       Action =  BackupActionType.Database,Database =   "VeterinariaPatitas"
                     };
 
                     for (int i = 0; i < cantVolumenes; i++)

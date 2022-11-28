@@ -84,7 +84,7 @@ namespace ProyectoFinal
         {
             try
             {
-                var path = "C:\\Users\\Usuario\\source\\repos\\luketas87\\ProyectoFinal\\secret.txt";
+                var path = "C:\\Users\\lucas\\source\\repos\\ProyectoFinal\\ProyectoFinal\\secret.txt";
                 var newCadenaEncrypted = DES.Encrypt(Cadena, Key, Iv);
                 File.WriteAllText(path, newCadenaEncrypted);//escribo el archivo
                 return true;

@@ -46,7 +46,7 @@ namespace DAL.DAO.Implementacion
         {
 
             var usu = ObtenerUsuarioConEmail(objUpd.Email);                           //no carga el email en usu
-            var digitoVH = digitoVerificador.CalcularDVHorizontal(new List<string> {/* objUpd.Nombre,*/ usu.Email/*, objUpd.Contraseña*/ });
+            var digitoVH = digitoVerificador.CalcularDVHorizontal(new List<string> {/* objUpd.Nombre,*/ objUpd.Email/*, objUpd.Contraseña*/ });
 
             var queryString = $"UPDATE Usuario SET Nombre = @nombre, Apellido = @apellido, Email = @email, Telefono = @telefono, Domicilio = @domicilio, DVH = @dvh, PrimerLogin=@PrimerLogin WHERE IdUsuario = @IdUsuario";
 

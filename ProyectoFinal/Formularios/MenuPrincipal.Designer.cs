@@ -36,6 +36,8 @@ namespace ProyectoFinal.Formularios
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnAyuda = new System.Windows.Forms.Button();
             this.panelAdministradores = new System.Windows.Forms.Panel();
+            this.btnRestore = new System.Windows.Forms.Button();
+            this.btnBackup = new System.Windows.Forms.Button();
             this.btnVisualizarUsuarios = new System.Windows.Forms.Button();
             this.btnFamilias = new System.Windows.Forms.Button();
             this.btnBitacora = new System.Windows.Forms.Button();
@@ -46,13 +48,10 @@ namespace ProyectoFinal.Formularios
             this.btnVerSolicitudes = new System.Windows.Forms.Button();
             this.btnAdmVet = new System.Windows.Forms.Button();
             this.panelSubmenuVentas = new System.Windows.Forms.Panel();
-            this.btnProductos = new System.Windows.Forms.Button();
             this.btnRealizarVentas = new System.Windows.Forms.Button();
-            this.btnVentas = new System.Windows.Forms.Button();
+            this.btnVerVentas = new System.Windows.Forms.Button();
             this.btnAdmVentas = new System.Windows.Forms.Button();
             this.panelPlayer = new System.Windows.Forms.Panel();
-            this.btnBackup = new System.Windows.Forms.Button();
-            this.btnRestore = new System.Windows.Forms.Button();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureLogo)).BeginInit();
             this.panelSideMenu.SuspendLayout();
@@ -116,7 +115,7 @@ namespace ProyectoFinal.Formularios
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnSalir.Location = new System.Drawing.Point(0, 733);
+            this.btnSalir.Location = new System.Drawing.Point(0, 690);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnSalir.Size = new System.Drawing.Size(233, 45);
@@ -133,7 +132,7 @@ namespace ProyectoFinal.Formularios
             this.btnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAyuda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAyuda.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnAyuda.Location = new System.Drawing.Point(0, 688);
+            this.btnAyuda.Location = new System.Drawing.Point(0, 645);
             this.btnAyuda.Name = "btnAyuda";
             this.btnAyuda.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAyuda.Size = new System.Drawing.Size(233, 45);
@@ -153,10 +152,46 @@ namespace ProyectoFinal.Formularios
             this.panelAdministradores.Controls.Add(this.btnBitacora);
             this.panelAdministradores.Controls.Add(this.btnAdministrarUsuarios);
             this.panelAdministradores.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAdministradores.Location = new System.Drawing.Point(0, 445);
+            this.panelAdministradores.Location = new System.Drawing.Point(0, 402);
             this.panelAdministradores.Name = "panelAdministradores";
             this.panelAdministradores.Size = new System.Drawing.Size(233, 243);
             this.panelAdministradores.TabIndex = 6;
+            // 
+            // btnRestore
+            // 
+            this.btnRestore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.btnRestore.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRestore.FlatAppearance.BorderSize = 0;
+            this.btnRestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRestore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestore.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnRestore.Location = new System.Drawing.Point(0, 200);
+            this.btnRestore.Name = "btnRestore";
+            this.btnRestore.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
+            this.btnRestore.Size = new System.Drawing.Size(233, 40);
+            this.btnRestore.TabIndex = 10;
+            this.btnRestore.Text = "Restore";
+            this.btnRestore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRestore.UseVisualStyleBackColor = false;
+            this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
+            // 
+            // btnBackup
+            // 
+            this.btnBackup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.btnBackup.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBackup.FlatAppearance.BorderSize = 0;
+            this.btnBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackup.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnBackup.Location = new System.Drawing.Point(0, 160);
+            this.btnBackup.Name = "btnBackup";
+            this.btnBackup.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
+            this.btnBackup.Size = new System.Drawing.Size(233, 40);
+            this.btnBackup.TabIndex = 9;
+            this.btnBackup.Text = "Backup";
+            this.btnBackup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBackup.UseVisualStyleBackColor = false;
+            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
             // 
             // btnVisualizarUsuarios
             // 
@@ -233,7 +268,7 @@ namespace ProyectoFinal.Formularios
             this.btnAdministrador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdministrador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdministrador.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnAdministrador.Location = new System.Drawing.Point(0, 400);
+            this.btnAdministrador.Location = new System.Drawing.Point(0, 357);
             this.btnAdministrador.Name = "btnAdministrador";
             this.btnAdministrador.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAdministrador.Size = new System.Drawing.Size(233, 45);
@@ -249,7 +284,7 @@ namespace ProyectoFinal.Formularios
             this.panelAdmVet.Controls.Add(this.btnRegistrarDiagnostico);
             this.panelAdmVet.Controls.Add(this.btnVerSolicitudes);
             this.panelAdmVet.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAdmVet.Location = new System.Drawing.Point(0, 310);
+            this.panelAdmVet.Location = new System.Drawing.Point(0, 267);
             this.panelAdmVet.Name = "panelAdmVet";
             this.panelAdmVet.Size = new System.Drawing.Size(233, 90);
             this.panelAdmVet.TabIndex = 4;
@@ -295,7 +330,7 @@ namespace ProyectoFinal.Formularios
             this.btnAdmVet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdmVet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdmVet.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnAdmVet.Location = new System.Drawing.Point(0, 265);
+            this.btnAdmVet.Location = new System.Drawing.Point(0, 222);
             this.btnAdmVet.Name = "btnAdmVet";
             this.btnAdmVet.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAdmVet.Size = new System.Drawing.Size(233, 45);
@@ -308,31 +343,13 @@ namespace ProyectoFinal.Formularios
             // panelSubmenuVentas
             // 
             this.panelSubmenuVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.panelSubmenuVentas.Controls.Add(this.btnProductos);
             this.panelSubmenuVentas.Controls.Add(this.btnRealizarVentas);
-            this.panelSubmenuVentas.Controls.Add(this.btnVentas);
+            this.panelSubmenuVentas.Controls.Add(this.btnVerVentas);
             this.panelSubmenuVentas.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubmenuVentas.Location = new System.Drawing.Point(0, 137);
             this.panelSubmenuVentas.Name = "panelSubmenuVentas";
-            this.panelSubmenuVentas.Size = new System.Drawing.Size(233, 128);
+            this.panelSubmenuVentas.Size = new System.Drawing.Size(233, 85);
             this.panelSubmenuVentas.TabIndex = 2;
-            // 
-            // btnProductos
-            // 
-            this.btnProductos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnProductos.FlatAppearance.BorderSize = 0;
-            this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductos.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnProductos.Location = new System.Drawing.Point(0, 80);
-            this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnProductos.Size = new System.Drawing.Size(233, 40);
-            this.btnProductos.TabIndex = 2;
-            this.btnProductos.Text = "Productos";
-            this.btnProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProductos.UseVisualStyleBackColor = true;
-            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
             // btnRealizarVentas
             // 
@@ -351,22 +368,22 @@ namespace ProyectoFinal.Formularios
             this.btnRealizarVentas.UseVisualStyleBackColor = true;
             this.btnRealizarVentas.Click += new System.EventHandler(this.btnRealizarVentas_Click);
             // 
-            // btnVentas
+            // btnVerVentas
             // 
-            this.btnVentas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnVentas.FlatAppearance.BorderSize = 0;
-            this.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVentas.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnVentas.Location = new System.Drawing.Point(0, 0);
-            this.btnVentas.Name = "btnVentas";
-            this.btnVentas.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnVentas.Size = new System.Drawing.Size(233, 40);
-            this.btnVentas.TabIndex = 0;
-            this.btnVentas.Text = "Ver Ventas";
-            this.btnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentas.UseVisualStyleBackColor = true;
-            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
+            this.btnVerVentas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnVerVentas.FlatAppearance.BorderSize = 0;
+            this.btnVerVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerVentas.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnVerVentas.Location = new System.Drawing.Point(0, 0);
+            this.btnVerVentas.Name = "btnVerVentas";
+            this.btnVerVentas.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnVerVentas.Size = new System.Drawing.Size(233, 40);
+            this.btnVerVentas.TabIndex = 0;
+            this.btnVerVentas.Text = "Ver Ventas";
+            this.btnVerVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVerVentas.UseVisualStyleBackColor = true;
+            this.btnVerVentas.Click += new System.EventHandler(this.btnVerVentas_Click);
             // 
             // btnAdmVentas
             // 
@@ -380,7 +397,7 @@ namespace ProyectoFinal.Formularios
             this.btnAdmVentas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAdmVentas.Size = new System.Drawing.Size(233, 45);
             this.btnAdmVentas.TabIndex = 1;
-            this.btnAdmVentas.Text = "Adm Ventas";
+            this.btnAdmVentas.Text = "Ventas";
             this.btnAdmVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdmVentas.UseVisualStyleBackColor = true;
             this.btnAdmVentas.Click += new System.EventHandler(this.btnAdmVentas_Click);
@@ -393,42 +410,6 @@ namespace ProyectoFinal.Formularios
             this.panelPlayer.Name = "panelPlayer";
             this.panelPlayer.Size = new System.Drawing.Size(934, 10);
             this.panelPlayer.TabIndex = 4;
-            // 
-            // btnBackup
-            // 
-            this.btnBackup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.btnBackup.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnBackup.FlatAppearance.BorderSize = 0;
-            this.btnBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBackup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackup.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnBackup.Location = new System.Drawing.Point(0, 160);
-            this.btnBackup.Name = "btnBackup";
-            this.btnBackup.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
-            this.btnBackup.Size = new System.Drawing.Size(233, 40);
-            this.btnBackup.TabIndex = 9;
-            this.btnBackup.Text = "Backup";
-            this.btnBackup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBackup.UseVisualStyleBackColor = false;
-            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
-            // 
-            // btnRestore
-            // 
-            this.btnRestore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.btnRestore.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRestore.FlatAppearance.BorderSize = 0;
-            this.btnRestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRestore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRestore.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnRestore.Location = new System.Drawing.Point(0, 200);
-            this.btnRestore.Name = "btnRestore";
-            this.btnRestore.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
-            this.btnRestore.Size = new System.Drawing.Size(233, 40);
-            this.btnRestore.TabIndex = 10;
-            this.btnRestore.Text = "Restore";
-            this.btnRestore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRestore.UseVisualStyleBackColor = false;
-            this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
             // 
             // MenuPrincipal
             // 
@@ -461,7 +442,7 @@ namespace ProyectoFinal.Formularios
         private System.Windows.Forms.Panel panelPlayer;
         private System.Windows.Forms.Panel panelSubmenuVentas;
         private System.Windows.Forms.Button btnRealizarVentas;
-        private System.Windows.Forms.Button btnVentas;
+        private System.Windows.Forms.Button btnVerVentas;
         private System.Windows.Forms.Button btnAdmVentas;
         private System.Windows.Forms.Panel panelAdmVet;
         private System.Windows.Forms.Button btnRegistrarDiagnostico;
@@ -473,7 +454,6 @@ namespace ProyectoFinal.Formularios
         private System.Windows.Forms.Button btnAdministrarUsuarios;
         private System.Windows.Forms.Button btnAdministrador;
         private System.Windows.Forms.Button btnAdmVet;
-        private System.Windows.Forms.Button btnProductos;
         private System.Windows.Forms.Button btnVisualizarUsuarios;
         private System.Windows.Forms.Button btnFamilias;
         private System.Windows.Forms.Button btnRestore;

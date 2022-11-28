@@ -19,7 +19,7 @@ namespace BE.Implementacion
 
         public int IdTipoVenta { get; set; }
 
-        public int IdCliente { get; set; }
+        public int? IdCliente { get; set; }
 
         public float Monto { get; set; }
     }

@@ -19,9 +19,7 @@ namespace ProyectoFinal.Formularios
     public partial class Venta : Form, IVenta
     {
         private readonly BLLIVenta ventaBLL;
-#pragma warning disable CS0649 // El campo 'Venta.traductor' nunca se asigna y siempre tendrá el valor predeterminado null
         private readonly ITraductor traductor;
-#pragma warning restore CS0649 // El campo 'Venta.traductor' nunca se asigna y siempre tendrá el valor predeterminado null
         private readonly BLLICliente clienteBLL;
         private readonly BLLICuentaUsuario usuarioBLL;
         private readonly IDetalleRefForm detalleRefForm;
@@ -40,6 +38,7 @@ namespace ProyectoFinal.Formularios
 
         public Venta(ITraductor traductor, BLLIVenta ventaBLL, BLLICliente clienteBLL, BLLICuentaUsuario usuarioBLL, IDetalleRefForm detalleRefForm)
         {
+            this.traductor = traductor;
             this.ventaBLL = ventaBLL;
             this.clienteBLL = clienteBLL;
             this.usuarioBLL = usuarioBLL;

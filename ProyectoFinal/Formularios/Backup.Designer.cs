@@ -216,7 +216,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(501, 361);
+            this.ClientSize = new System.Drawing.Size(519, 361);
             this.Controls.Add(this.btnExaminar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnVolver);

@@ -151,7 +151,7 @@ namespace ProyectoFinal.Formularios
              }
              if (!patUsu.Patentes.Any(x => x.Descripcion == "VerVentas"))
              {
-                btnVentas.Enabled = false;
+                btnVerVentas.Enabled = false;
 
              }
              if (!patUsu.Patentes.Any(x => x.Descripcion == "MenuVentas"))
@@ -189,26 +189,6 @@ namespace ProyectoFinal.Formularios
                     }
                 }
             }
-        }
-
-        private void btnAdmVentas_Click(object sender, EventArgs e)
-        {
-            showSubMenu(panelSubmenuVentas);
-        }
-
-        private void btnVentas_Click(object sender, EventArgs e)
-        {
-            hideSubMenu();
-            venta.HacerLoad();
-            venta.MdiParent = this;
-            venta.Show();
-        }
-
-        private void btnRealizarVentas_Click(object sender, EventArgs e)
-        {
-            hideSubMenu();
-            ventaDeProductos.MdiParent = this;
-            ventaDeProductos.Show();
         }
 
         //no implementado
@@ -288,7 +268,7 @@ namespace ProyectoFinal.Formularios
         private void btnProductos_Click(object sender, EventArgs e)
         {
             hideSubMenu();
-            productos.MdiParent = this;
+            //productos.MdiParent = this;
             productos.Show();
         }
 
@@ -315,5 +295,26 @@ namespace ProyectoFinal.Formularios
             hideSubMenu();
             restore.Show();
         }
+
+        private void btnAdmVentas_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panelSubmenuVentas);
+        }
+
+        private void btnVerVentas_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            venta.HacerLoad();
+            //venta.MdiParent = this;
+            venta.Show();
+        }
+
+        private void btnRealizarVentas_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            ventaDeProductos.MdiParent = this;
+            ventaDeProductos.Show();
+        }
+
     }
 }

@@ -209,7 +209,7 @@ namespace ProyectoFinal.Formularios
                 var usuario = TxtUsuario.Text;
                 var contrasenia = TxtContrasenia.Text;
                 ////lucas_matalima@hotmail.com pw: salom645
-
+                //lucastoffolon@gmail. pass: Lt2022+
                 if (string.IsNullOrWhiteSpace(usuario) || string.IsNullOrWhiteSpace(contrasenia))
                 {
                     MessageBox.Show("Revise los datos");

@@ -16,7 +16,7 @@ namespace ProyectoFinal.Formularios
     public partial class DetalleRefForm : Form, IDetalleRefForm
     {
         private readonly BLLIDetalleVenta detalleVentaBLL;
-        private int VentaId { get; set; }
+        private int IdVenta { get; set; }
 
         public DetalleRefForm(BLLIDetalleVenta detalleVentaBLL)
         {
@@ -33,11 +33,11 @@ namespace ProyectoFinal.Formularios
 
         private void CargarDetalle()
         {
-            var ventaUI = IoCContainer.Resolve<IVenta>();
-            VentaId = ventaUI.ObtenerVentaSeleccionada().IdVenta;
+            var venta = IoCContainer.Resolve<IVenta>();
+            IdVenta = venta.ObtenerVentaSeleccionada().IdVenta;
 
             dgDetalleVenta.DataSource = detalleVentaBLL.Cargar()
-                                                       .Where(x => x.IdVenta == VentaId)
+                                                       .Where(x => x.IdVenta == IdVenta)
                                                        .SelectMany(x => x.LineasDetalle).ToList();
         }
 

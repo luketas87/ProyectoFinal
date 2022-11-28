@@ -33,7 +33,7 @@ namespace DAL.DAO.Implementacion
 
         public bool Borrar(BEVenta objDel)
         {
-            var queryString = $"DELETE FROM Venta WHERE VentaId = {objDel.IdVenta}";
+            var queryString = $"DELETE FROM Venta WHERE IdVenta = {objDel.IdVenta}";
 
             return CatchException(() =>
             {
@@ -68,7 +68,7 @@ namespace DAL.DAO.Implementacion
 
                 //HACER update
 
-                var q = $"UPDATE Venta SET DVH = {digito} WHERE VentaId = @Id";
+                var q = $"UPDATE Venta SET DVH = {digito} WHERE IdVenta = @Id";
 
                 CatchException(() =>
                 {
@@ -86,7 +86,7 @@ namespace DAL.DAO.Implementacion
         {
             var digitoVH = digitoVerificador.CalcularDVHorizontal(new List<string>() { objAlta.Fecha.ToString() });
 
-            var queryString = "INSERT INTO Venta(Fecha, IdUsuario, IdEstado, IdTipoVenta, IdCliente ,Monto,dvh) VALUES (@fecha, @usuarioId, @estado, @tipoVenta, @cliente, @monto, @dvh)";
+            var queryString = "INSERT INTO Venta(Fecha, IdUsuario, IdEstado, IdTipoVenta, IdCliente ,Monto,dvh) VALUES (@fecha, @Idusuario, @estado, @tipoVenta, @cliente, @monto, @dvh)";
             return CatchException(() =>
             {
                 return Exec(
@@ -96,7 +96,7 @@ namespace DAL.DAO.Implementacion
 
                         @fecha = objAlta.Fecha,
                         @estado = objAlta.IdEstado,
-                        @usuarioId = objAlta.IdUsuario,
+                        @Idusuario = objAlta.IdUsuario,
                         @tipoVenta = objAlta.IdTipoVenta,
                         @cliente = objAlta.IdCliente,
                         @monto = objAlta.Monto,

@@ -44,6 +44,7 @@ namespace ProyectoFinal.Formularios
 
         private void btnExaminar_Click(object sender, EventArgs e)
         {
+            
             opFile.Filter = "Backup files(*.bak) |*.bak";
             opFile.Title = "Seleccione un archivo backup";
 

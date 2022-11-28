@@ -9,6 +9,7 @@ using Microsoft.Reporting.WinForms;
 using System.Windows.Forms;
 using BLL.Interfaces;
 using UI;
+using UI.Clases;
 
 namespace ProyectoFinal.Formularios
 {
@@ -34,9 +35,14 @@ namespace ProyectoFinal.Formularios
         private void Bitacora_Load(object sender, EventArgs e)
         {
             FillCheckedList();
-            this.rpv1.RefreshReport();
-            this.rpv1.RefreshReport();
+            this.reportViewer1.RefreshReport();
+            // this.reportViewer1.RefreshReport();
 
+            this.reportViewer1.RefreshReport();
+            this.reportViewer1.RefreshReport();
+            this.reportViewer1.RefreshReport();
+            this.reportViewer1.RefreshReport();
+            this.reportViewer1.RefreshReport();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -85,27 +91,35 @@ namespace ProyectoFinal.Formularios
 
             var listaBitacora = ListarBitacora(emailUsuarios, criticidadesSeleccionadas, fechaDesde, fechaHasta);
 
-            if (listaBitacora != null)
+            try
+            {
+                if (listaBitacora != null)
+                {
+                    ModeloBitacora.ListadoBitacora = CrearDataTable(listaBitacora);
+                    //Cargamos info en el reporte
+                    reportViewer1.LocalReport.DataSources.Clear();
+                    reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DS_Bitacora", ModeloBitacora.ListadoBitacora.Tables[0]));
+                    reportViewer1.LocalReport.Refresh();
+                    reportViewer1.RefreshReport();
+                }
+                else
+                {
+                    //VER PORQUE NO LO LIMPIA CUANDO NO HAY DATOS
+                    //lo de abajo es temporal hasta encontrar una mejor solucion
+                    ModeloBitacora.ListadoBitacora.Clear();
+                    reportViewer1.LocalReport.DataSources.Clear();
+                    reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DS_Bitacora", ModeloBitacora.ListadoBitacora.Tables[0]));
+                    reportViewer1.LocalReport.Refresh();
+                    reportViewer1.RefreshReport();
+                    //Alert.ShowAlterWithButtonAndIcon("MSJ004", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception)
             {
 
-                ModeloBitacora.ListadoBitacora = CrearDataTable(listaBitacora);
-                //Cargamos info en el reporte
-                rpv1.LocalReport.DataSources.Clear();
-                rpv1.LocalReport.DataSources.Add(new ReportDataSource("DS_Bitacora", ModeloBitacora.ListadoBitacora.Tables[0]));
-                rpv1.LocalReport.Refresh();
-                rpv1.RefreshReport();
+                throw;
             }
-            else
-            {
-                //VER PORQUE NO LO LIMPIA CUANDO NO HAY DATOS
-                //lo de abajo es temporal hasta encontrar una mejor solucion
-                ModeloBitacora.ListadoBitacora.Clear();
-                rpv1.LocalReport.DataSources.Clear();
-                rpv1.LocalReport.DataSources.Add(new ReportDataSource("DS_Bitacora", ModeloBitacora.ListadoBitacora.Tables[0]));
-                rpv1.LocalReport.Refresh();
-                rpv1.RefreshReport();
-                //Alert.ShowAlterWithButtonAndIcon("MSJ004", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         public List<BEBitacora> ListarBitacora(List<string> usuarios, List<string> prueba, string fechaDesde, string fechaHasta)
@@ -169,6 +183,16 @@ namespace ProyectoFinal.Formularios
             {
                 checkListCriticidad.SetItemChecked(i, chkTodas.Checked);
             }
+        }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rpv1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

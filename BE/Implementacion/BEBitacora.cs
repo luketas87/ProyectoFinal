@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace BE.Implementacion
 {
-   public class BEBitacora : IBitacora
+   public class BEBitacora 
     {
         public int IdLog { get; set; }
 
@@ -24,11 +24,6 @@ namespace BE.Implementacion
         public string Usuario { get; set; }
 
         public int DVH { get; set; }
-        public Form MdiParent { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public void Show()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

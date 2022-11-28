@@ -26,7 +26,7 @@ namespace DAL.Utilidades
 
         public static SqlConnection Connection(string newDatabaseName = null)
         {
-            var path = "C:\\Users\\Usuario\\source\\repos\\luketas87\\ProyectoFinal\\secret.txt";
+            var path = "C:\\Users\\lucas\\source\\repos\\ProyectoFinal\\ProyectoFinal\\secret.txt";
             string readText;
 
             readText = File.ReadAllText(path); //Leo el archivo
@@ -72,7 +72,7 @@ namespace DAL.Utilidades
             }
         }
 
-        #region MyRegion
+        #region Singleton
         public bool ValidarConexion(string Cadena)
         {
 

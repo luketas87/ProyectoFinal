@@ -38,6 +38,7 @@ namespace ProyectoFinal
                     MessageBox.Show("Se crea la cadena de conexion");
                     LandingSystem mLandingSystem = new LandingSystem();
                     mLandingSystem.Show();
+                    Hide();
 
 
                 }

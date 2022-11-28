@@ -188,9 +188,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\ModeloBitacora.cs" />
     <Compile Include="Clases\Traductor.cs" />
     <Compile Include="Clases\FormControl.cs" />
     <Compile Include="Clases\FormExtensions.cs" />
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\ABMusuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -432,8 +438,21 @@
     <EmbeddedResource Include="Formularios\ReseteoContraseña.resx">
       <DependentUpon>ReseteoContraseña.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\Bitacora.rdlc" />
     <None Include="app.config" />
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\UI.Clases.ModeloBitacora.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

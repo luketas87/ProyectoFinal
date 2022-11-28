@@ -120,7 +120,7 @@ namespace DAL.DAO.Implementacion
 
         public List<BEBitacora> LeerBitacoraPorUsuarioCriticidadYFecha(List<string> usuarios, List<string> criticidades, string desde, string hasta)
         {
-            var queryImpl = "SELECT * from Bitacora WHERE ";
+            var queryImpl = "SET DATEFORMAT 'YMD' SELECT * from Bitacora WHERE ";
             var idsUsuParameters = string.Empty;
             var criticidadesParameters = string.Empty;
             var coma = string.Empty;

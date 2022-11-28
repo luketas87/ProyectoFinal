@@ -43,77 +43,69 @@ namespace ProyectoFinal
             // 
             // txtDatasource
             // 
-            this.txtDatasource.Location = new System.Drawing.Point(115, 64);
-            this.txtDatasource.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDatasource.Location = new System.Drawing.Point(86, 52);
             this.txtDatasource.Name = "txtDatasource";
-            this.txtDatasource.Size = new System.Drawing.Size(211, 22);
+            this.txtDatasource.Size = new System.Drawing.Size(159, 20);
             this.txtDatasource.TabIndex = 0;
-            this.txtDatasource.Text = "LUKETAS3";
+            this.txtDatasource.Text = "localhost";
             // 
             // txtInitialCatalog
             // 
-            this.txtInitialCatalog.Location = new System.Drawing.Point(115, 112);
-            this.txtInitialCatalog.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtInitialCatalog.Location = new System.Drawing.Point(86, 91);
             this.txtInitialCatalog.Name = "txtInitialCatalog";
-            this.txtInitialCatalog.Size = new System.Drawing.Size(211, 22);
+            this.txtInitialCatalog.Size = new System.Drawing.Size(159, 20);
             this.txtInitialCatalog.TabIndex = 1;
             this.txtInitialCatalog.Text = "VeterinariaPatitas";
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(115, 162);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsuario.Location = new System.Drawing.Point(86, 132);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(211, 22);
+            this.txtUsuario.Size = new System.Drawing.Size(159, 20);
             this.txtUsuario.TabIndex = 2;
             this.txtUsuario.Text = "sa";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(115, 222);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Location = new System.Drawing.Point(86, 180);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(211, 22);
+            this.txtPassword.Size = new System.Drawing.Size(159, 20);
             this.txtPassword.TabIndex = 3;
             this.txtPassword.Text = "Patitas2022";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 66);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(13, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 16);
+            this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "Datsource:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 112);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(2, 91);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 16);
+            this.label2.Size = new System.Drawing.Size(70, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "InitialCatalog:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(35, 162);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(26, 132);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 16);
+            this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Usuario:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 224);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(13, 182);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 16);
+            this.label4.Size = new System.Drawing.Size(56, 13);
             this.label4.TabIndex = 8;
             this.label4.Text = "Password:";
             // 
@@ -127,10 +119,9 @@ namespace ProyectoFinal
             this.btnAceptar.FlatAppearance.BorderSize = 0;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.ForeColor = System.Drawing.Color.LimeGreen;
-            this.btnAceptar.Location = new System.Drawing.Point(223, 290);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAceptar.Location = new System.Drawing.Point(167, 236);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(104, 37);
+            this.btnAceptar.Size = new System.Drawing.Size(78, 30);
             this.btnAceptar.TabIndex = 13;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextColor = System.Drawing.Color.LimeGreen;
@@ -147,10 +138,9 @@ namespace ProyectoFinal
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.ForeColor = System.Drawing.Color.Crimson;
-            this.btnCancelar.Location = new System.Drawing.Point(21, 290);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Location = new System.Drawing.Point(16, 236);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(104, 37);
+            this.btnCancelar.Size = new System.Drawing.Size(78, 30);
             this.btnCancelar.TabIndex = 12;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextColor = System.Drawing.Color.Crimson;
@@ -159,9 +149,9 @@ namespace ProyectoFinal
             // 
             // NuevaCadena
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(363, 363);
+            this.ClientSize = new System.Drawing.Size(272, 295);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.label4);
@@ -172,9 +162,8 @@ namespace ProyectoFinal
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.txtInitialCatalog);
             this.Controls.Add(this.txtDatasource);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "NuevaCadena";
-            this.Text = "Nueva Caadena de conexion";
+            this.Text = "Nueva Cadena de conexion";
             this.Load += new System.EventHandler(this.NuevaCadena_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

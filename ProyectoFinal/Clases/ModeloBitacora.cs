@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BE.Implementacion
+namespace UI.Clases
 {
     public class ModeloBitacora
     {

@@ -39,15 +39,15 @@ namespace ProyectoFinal.Formularios
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.BitacoraBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rpv1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.btnVolver = new CustomControls.RJControls.RJButton();
-            this.btnFiltrar = new CustomControls.RJControls.RJButton();
             this.chkTodos = new System.Windows.Forms.CheckBox();
             this.chkTodas = new System.Windows.Forms.CheckBox();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.btnFiltrar = new CustomControls.RJControls.RJButton();
+            this.btnVolver = new CustomControls.RJControls.RJButton();
+            this.ModeloBitacoraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BitacoraBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ModeloBitacoraBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -125,63 +125,6 @@ namespace ProyectoFinal.Formularios
             this.label1.TabIndex = 67;
             this.label1.Text = "DESDE:";
             // 
-            // BitacoraBindingSource
-            // 
-            this.BitacoraBindingSource.CurrentChanged += new System.EventHandler(this.BitacoraBindingSource_CurrentChanged);
-            // 
-            // rpv1
-            // 
-            this.rpv1.AutoSize = true;
-            reportDataSource1.Name = "DS_Bitacora";
-            reportDataSource1.Value = null;
-            this.rpv1.LocalReport.DataSources.Add(reportDataSource1);
-            this.rpv1.LocalReport.ReportEmbeddedResource = "UI.Reporte.Bitacora.rdlc";
-            this.rpv1.Location = new System.Drawing.Point(6, 300);
-            this.rpv1.Name = "rpv1";
-            this.rpv1.ServerReport.BearerToken = null;
-            this.rpv1.Size = new System.Drawing.Size(637, 311);
-            this.rpv1.TabIndex = 74;
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.BackColor = System.Drawing.SystemColors.Control;
-            this.btnVolver.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.btnVolver.BorderColor = System.Drawing.Color.Gray;
-            this.btnVolver.BorderRadius = 20;
-            this.btnVolver.BorderSize = 1;
-            this.btnVolver.FlatAppearance.BorderSize = 0;
-            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.ForeColor = System.Drawing.Color.Gray;
-            this.btnVolver.Location = new System.Drawing.Point(556, 22);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(87, 36);
-            this.btnVolver.TabIndex = 76;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.TextColor = System.Drawing.Color.Gray;
-            this.btnVolver.UseVisualStyleBackColor = false;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
-            // btnFiltrar
-            // 
-            this.btnFiltrar.BackColor = System.Drawing.SystemColors.Control;
-            this.btnFiltrar.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.btnFiltrar.BorderColor = System.Drawing.Color.Gray;
-            this.btnFiltrar.BorderRadius = 20;
-            this.btnFiltrar.BorderSize = 1;
-            this.btnFiltrar.FlatAppearance.BorderSize = 0;
-            this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFiltrar.ForeColor = System.Drawing.Color.Gray;
-            this.btnFiltrar.Location = new System.Drawing.Point(171, 617);
-            this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(320, 41);
-            this.btnFiltrar.TabIndex = 77;
-            this.btnFiltrar.Text = "Filtrar";
-            this.btnFiltrar.TextColor = System.Drawing.Color.Gray;
-            this.btnFiltrar.UseVisualStyleBackColor = false;
-            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
-            // 
             // chkTodos
             // 
             this.chkTodos.AutoSize = true;
@@ -204,16 +147,73 @@ namespace ProyectoFinal.Formularios
             this.chkTodas.UseVisualStyleBackColor = true;
             this.chkTodas.CheckedChanged += new System.EventHandler(this.chkTodas_CheckedChanged);
             // 
+            // reportViewer1
+            // 
+            this.reportViewer1.AutoSize = true;
+            reportDataSource1.Name = "DS_Bitacora";
+            reportDataSource1.Value = this.ModeloBitacoraBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "ProyectoFinal.Reporte.Bitacora.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(12, 305);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(637, 311);
+            this.reportViewer1.TabIndex = 81;
+            // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnFiltrar.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.btnFiltrar.BorderColor = System.Drawing.Color.Gray;
+            this.btnFiltrar.BorderRadius = 20;
+            this.btnFiltrar.BorderSize = 1;
+            this.btnFiltrar.FlatAppearance.BorderSize = 0;
+            this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFiltrar.ForeColor = System.Drawing.Color.Gray;
+            this.btnFiltrar.Location = new System.Drawing.Point(171, 617);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(320, 41);
+            this.btnFiltrar.TabIndex = 77;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.TextColor = System.Drawing.Color.Gray;
+            this.btnFiltrar.UseVisualStyleBackColor = false;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.BackColor = System.Drawing.SystemColors.Control;
+            this.btnVolver.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.btnVolver.BorderColor = System.Drawing.Color.Gray;
+            this.btnVolver.BorderRadius = 20;
+            this.btnVolver.BorderSize = 1;
+            this.btnVolver.FlatAppearance.BorderSize = 0;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.ForeColor = System.Drawing.Color.Gray;
+            this.btnVolver.Location = new System.Drawing.Point(556, 22);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(87, 36);
+            this.btnVolver.TabIndex = 76;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.TextColor = System.Drawing.Color.Gray;
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // ModeloBitacoraBindingSource
+            // 
+            this.ModeloBitacoraBindingSource.DataSource = typeof(UI.Clases.ModeloBitacora);
+            // 
             // Bitacora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(667, 668);
+            this.ClientSize = new System.Drawing.Size(664, 668);
+            this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.chkTodas);
             this.Controls.Add(this.chkTodos);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.rpv1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dateTimePicker2);
@@ -226,7 +226,7 @@ namespace ProyectoFinal.Formularios
             this.Load += new System.EventHandler(this.Bitacora_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.BitacoraBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ModeloBitacoraBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,11 +241,11 @@ namespace ProyectoFinal.Formularios
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.BindingSource BitacoraBindingSource;
-        private Microsoft.Reporting.WinForms.ReportViewer rpv1;
         private CustomControls.RJControls.RJButton btnVolver;
         private CustomControls.RJControls.RJButton btnFiltrar;
         private System.Windows.Forms.CheckBox chkTodos;
         private System.Windows.Forms.CheckBox chkTodas;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource ModeloBitacoraBindingSource;
     }
 }

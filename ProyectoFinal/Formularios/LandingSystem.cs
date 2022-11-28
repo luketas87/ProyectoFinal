@@ -77,9 +77,9 @@ namespace ProyectoFinal.Formularios
 
             try
             {
-                var path = "C:\\Users\\Usuario\\source\\repos\\luketas87\\ProyectoFinal\\secret.txt";
+                var path = "C:\\Users\\lucas\\source\\repos\\ProyectoFinal\\ProyectoFinal\\secret.txt";
                 bool fileExist = File.Exists(path);
-
+            
                 if (fileExist)
                 {
                     
@@ -94,14 +94,20 @@ namespace ProyectoFinal.Formularios
                     IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Patente");
                     IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Venta");
                     mLogin.Show();
-                } 
+                    Hide();
+                }
+
+                else
+                {
+                    NuevaCadena mconexion = new NuevaCadena();
+                    mconexion.Show();
+                }
                 
             }
             catch (ConectionStringFaltanteException)
             {
                 //throw new ConectionStringFaltanteException();
-                NuevaCadena mconexion = new NuevaCadena();
-                mconexion.Show();
+               
             }
 
 

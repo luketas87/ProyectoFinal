@@ -127,7 +127,7 @@ namespace ProyectoFinal.Formularios
                  btnAdministrarUsuarios.Enabled = false;
 
              }
-             if (!patUsu.Patentes.Any(x => x.Descripcion == "MenuBitacora"))
+             if (!patUsu.Patentes.Any(x => x.Descripcion == "Bitacora"))
              {
                  btnBitacora.Enabled = false;
 
@@ -316,5 +316,13 @@ namespace ProyectoFinal.Formularios
             ventaDeProductos.Show();
         }
 
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Seguro que desea actualizar?", "Actualizar modificaciones", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.MenuPrincipal_Load(sender, e);
+                //this.Close();
+            }
+        }
     }
 }

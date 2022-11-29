@@ -52,6 +52,7 @@ namespace ProyectoFinal.Formularios
             this.btnVerVentas = new System.Windows.Forms.Button();
             this.btnAdmVentas = new System.Windows.Forms.Button();
             this.panelPlayer = new System.Windows.Forms.Panel();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureLogo)).BeginInit();
             this.panelSideMenu.SuspendLayout();
@@ -115,7 +116,7 @@ namespace ProyectoFinal.Formularios
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnSalir.Location = new System.Drawing.Point(0, 690);
+            this.btnSalir.Location = new System.Drawing.Point(0, 735);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnSalir.Size = new System.Drawing.Size(233, 45);
@@ -132,7 +133,7 @@ namespace ProyectoFinal.Formularios
             this.btnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAyuda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAyuda.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnAyuda.Location = new System.Drawing.Point(0, 645);
+            this.btnAyuda.Location = new System.Drawing.Point(0, 690);
             this.btnAyuda.Name = "btnAyuda";
             this.btnAyuda.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAyuda.Size = new System.Drawing.Size(233, 45);
@@ -145,6 +146,7 @@ namespace ProyectoFinal.Formularios
             // panelAdministradores
             // 
             this.panelAdministradores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.panelAdministradores.Controls.Add(this.btnActualizar);
             this.panelAdministradores.Controls.Add(this.btnRestore);
             this.panelAdministradores.Controls.Add(this.btnBackup);
             this.panelAdministradores.Controls.Add(this.btnVisualizarUsuarios);
@@ -154,7 +156,7 @@ namespace ProyectoFinal.Formularios
             this.panelAdministradores.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelAdministradores.Location = new System.Drawing.Point(0, 402);
             this.panelAdministradores.Name = "panelAdministradores";
-            this.panelAdministradores.Size = new System.Drawing.Size(233, 243);
+            this.panelAdministradores.Size = new System.Drawing.Size(233, 288);
             this.panelAdministradores.TabIndex = 6;
             // 
             // btnRestore
@@ -411,6 +413,23 @@ namespace ProyectoFinal.Formularios
             this.panelPlayer.Size = new System.Drawing.Size(934, 10);
             this.panelPlayer.TabIndex = 4;
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnActualizar.FlatAppearance.BorderSize = 0;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnActualizar.Location = new System.Drawing.Point(0, 240);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnActualizar.Size = new System.Drawing.Size(233, 40);
+            this.btnActualizar.TabIndex = 11;
+            this.btnActualizar.Text = "Actualizar datos";
+            this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -458,5 +477,6 @@ namespace ProyectoFinal.Formularios
         private System.Windows.Forms.Button btnFamilias;
         private System.Windows.Forms.Button btnRestore;
         private System.Windows.Forms.Button btnBackup;
+        private System.Windows.Forms.Button btnActualizar;
     }
 }

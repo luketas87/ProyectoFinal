@@ -38,7 +38,9 @@ namespace DAL.DAO.Implementacion
 
             foreach (var bitacora in listaBitacora)
             {
-                var digito = digitoVerificador.CalcularDVHorizontal(new List<string>() { bitacora.InformacionAsociada, bitacora.Actividad, bitacora.Criticidad });
+                var digito = digitoVerificador.CalcularDVHorizontal(new List<string>() 
+                { bitacora.InformacionAsociada, bitacora.Actividad, bitacora.Criticidad 
+                });
 
                 //HACER update
 
@@ -77,7 +79,7 @@ namespace DAL.DAO.Implementacion
 
             if (filtros.IdsUsuarios.Count > 0)
             {
-                queryString.Append(string.Format("AND UsuarioId IN ({0})", filtros.IdsUsuarios));
+                queryString.Append(string.Format("AND IdUsuario IN ({0})", filtros.IdsUsuarios));
             }
 
             if (filtros.Criticidades.Count > 0)
@@ -94,17 +96,20 @@ namespace DAL.DAO.Implementacion
         public int GenerarDVH()
         {
             var bitacora = new BEBitacora();
-            var bitacoraId = ObtenerUltimoIdBitacora();
+            var Idbitacora = ObtenerUltimoIdBitacora();
 
-            if (bitacoraId == 1)
+            if (Idbitacora == 1)
             {
                 bitacora.InformacionAsociada = "primer login";
                 bitacora.Actividad = "Login";
                 bitacora.Criticidad = "primer Login";
             }
 
-            bitacora = LeerBitacoraConId(bitacoraId);
-            var digitoVH = digitoVerificador.CalcularDVHorizontal(new List<string> { bitacora.InformacionAsociada, bitacora.Actividad, bitacora.Criticidad });
+            bitacora = LeerBitacoraConId(Idbitacora);
+            var digitoVH = digitoVerificador.CalcularDVHorizontal(new List<string> 
+            { 
+                bitacora.InformacionAsociada, bitacora.Actividad, bitacora.Criticidad 
+            });
             return digitoVH;
         }
 

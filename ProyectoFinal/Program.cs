@@ -8,6 +8,8 @@ using UI;
 using DAL.DAO.Interfaces;
 using DAL.DAO.Implementacion;
 using BE.Interfaces;
+using static DAL.Utilidades.Log4netExtensions;
+using System.IO;
 //using IDigitoVerificador = DAL.DAO.Interfaces.IDigitoVerificador;
 
 namespace ProyectoFinal
@@ -20,7 +22,11 @@ namespace ProyectoFinal
         [STAThread]
         static void Main()
         {
+
+            log4net.ILog log;
+
             log4net.Config.XmlConfigurator.Configure();
+            log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
             log4net.Core.Level nivelAlto = new log4net.Core.Level(50000, "ALTA");
             log4net.LogManager.GetRepository().LevelMap.Add(nivelAlto);
             log4net.Core.Level nivelMedio = new log4net.Core.Level(40000, "MEDIA");

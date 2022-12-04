@@ -253,12 +253,21 @@ namespace DAL.DAO.Implementacion
 
         private void CargarPatentesUsuariosGloables(List<BECuentaUsuario> usuariosGlobal)
         {
+            BEPatente patente = new BEPatente();
+            
             foreach (var usuarioAComparar in usuariosGlobal)
             {
+                usuarioAComparar.Patentes = new List<BEPatente>();
                 var familiasId = FamiliaDAL.ObtenerIdsFamiliasPorUsuario(usuarioAComparar.IdUsuario);
                 foreach (var idfam in familiasId)
                 {
-                    usuarioAComparar.Patentes.AddRange(FamiliaDAL.ObtenerPatentesFamilia(idfam));
+                    List<BE.Implementacion.BEPatente> listaPatentes = FamiliaDAL.ObtenerPatentesFamilia(idfam);
+                    foreach (BEPatente item in listaPatentes)
+                    {
+                        patente = item;
+                        usuarioAComparar.Patentes.Add(patente);
+                    }
+                 
                     usuarioAComparar.Patentes = usuarioAComparar.Patentes.GroupBy(p => p.IdPatente).Select(grp => grp.First()).ToList();
                 }
             }
@@ -357,7 +366,7 @@ namespace DAL.DAO.Implementacion
             }
 
             ///si no tiene familia estoy permitiendo que se borre esta mal
-            if (UsuarioABorrar.Familia.Count <= 0 && UsuarioABorrar.Patentes.Count <= 0)
+            if (/*UsuarioABorrar.Familia.Count <= 0 &&*/ UsuarioABorrar.Patentes.Count <= 0)
             {
                 return true;
             }

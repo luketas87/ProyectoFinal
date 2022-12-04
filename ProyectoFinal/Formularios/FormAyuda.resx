@@ -117,46 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="MSJ014" xml:space="preserve">
-    <value>Patent is in use and can not be deleted</value>
-  </data>
-  <data name="MSJ016" xml:space="preserve">
-    <value>At least one user must have this patent assigned</value>
-  </data>
-  <data name="MSJ018" xml:space="preserve">
-    <value>Successful registration</value>
-  </data>
-  <data name="MSJ020" xml:space="preserve">
-    <value>Registration failed</value>
-  </data>
-  <data name="MSJ022" xml:space="preserve">
-    <value>Can't be 2 users with the same email</value>
-  </data>
-  <data name="MSJ024" xml:space="preserve">
-    <value>Successful modification
-</value>
-  </data>
-  <data name="MSJ026" xml:space="preserve">
-    <value>The modification has failed</value>
-  </data>
-  <data name="MSJ028" xml:space="preserve">
-    <value>Successful deletion
-</value>
-  </data>
-  <data name="MSJ030" xml:space="preserve">
-    <value>User deletion has failed
-</value>
-  </data>
-  <data name="MSJ032" xml:space="preserve">
-    <value>You can not perform actions on the active user
-</value>
-  </data>
-  <data name="MSJ034" xml:space="preserve">
-    <value>All data must be complete
-</value>
-  </data>
-  <data name="MSJ036" xml:space="preserve">
-    <value>You can not remove this family
-</value>
-  </data>
 </root>

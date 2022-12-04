@@ -36,6 +36,7 @@ namespace ProyectoFinal.Formularios
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnAyuda = new System.Windows.Forms.Button();
             this.panelAdministradores = new System.Windows.Forms.Panel();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.btnRestore = new System.Windows.Forms.Button();
             this.btnBackup = new System.Windows.Forms.Button();
             this.btnVisualizarUsuarios = new System.Windows.Forms.Button();
@@ -52,7 +53,6 @@ namespace ProyectoFinal.Formularios
             this.btnVerVentas = new System.Windows.Forms.Button();
             this.btnAdmVentas = new System.Windows.Forms.Button();
             this.panelPlayer = new System.Windows.Forms.Panel();
-            this.btnActualizar = new System.Windows.Forms.Button();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureLogo)).BeginInit();
             this.panelSideMenu.SuspendLayout();
@@ -89,6 +89,7 @@ namespace ProyectoFinal.Formularios
             this.panelChildForm.Name = "panelChildForm";
             this.panelChildForm.Size = new System.Drawing.Size(684, 551);
             this.panelChildForm.TabIndex = 5;
+            this.panelChildForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelChildForm_Paint);
             // 
             // panelSideMenu
             // 
@@ -158,6 +159,23 @@ namespace ProyectoFinal.Formularios
             this.panelAdministradores.Name = "panelAdministradores";
             this.panelAdministradores.Size = new System.Drawing.Size(233, 288);
             this.panelAdministradores.TabIndex = 6;
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnActualizar.FlatAppearance.BorderSize = 0;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnActualizar.Location = new System.Drawing.Point(0, 240);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnActualizar.Size = new System.Drawing.Size(233, 40);
+            this.btnActualizar.TabIndex = 11;
+            this.btnActualizar.Text = "Actualizar datos";
+            this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnRestore
             // 
@@ -412,23 +430,6 @@ namespace ProyectoFinal.Formularios
             this.panelPlayer.Name = "panelPlayer";
             this.panelPlayer.Size = new System.Drawing.Size(934, 10);
             this.panelPlayer.TabIndex = 4;
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnActualizar.FlatAppearance.BorderSize = 0;
-            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnActualizar.Location = new System.Drawing.Point(0, 240);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnActualizar.Size = new System.Drawing.Size(233, 40);
-            this.btnActualizar.TabIndex = 11;
-            this.btnActualizar.Text = "Actualizar datos";
-            this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // MenuPrincipal
             // 

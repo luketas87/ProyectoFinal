@@ -65,8 +65,8 @@ namespace ProyectoFinal.Formularios
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            var fechaDesde = dateTimePicker1.Value.Date.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
-            var fechaHasta = dateTimePicker2.Value.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.CurrentCulture);
+            var fechaDesde = dateTimePicker1.Value.Date.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
+            var fechaHasta = dateTimePicker2.Value.Date.ToString("yyyy-MM-dd", CultureInfo.CurrentCulture);
             var usuariosSeleccionados = new List<string>();
             var criticidadesSeleccionadas = new List<string>();
 
@@ -145,7 +145,7 @@ namespace ProyectoFinal.Formularios
                 {
                     //var email = usuarios.FirstOrDefault(_ => _.UsuarioId == item.UsuarioId)?.Email;
                     DataRow row = table.NewRow();
-                    row["Fecha"] = item.Fecha.Value.ToString("dd/MM/yyyy hh:mm:ss.fffffff tt");
+                    row["Fecha"] = item.Fecha.Value.ToString("dd/MM/yyyy");
                     row["Usuario"] = item.Usuario;
                     row["Funcionalidad"] = item.Actividad;
                     row["Descripcion"] = item.InformacionAsociada;

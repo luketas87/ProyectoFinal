@@ -16,6 +16,7 @@ namespace DAL.Utilidades
         public static readonly log4net.Core.Level NivelAlto = new log4net.Core.Level(50000, "ALTA");
         public static readonly log4net.Core.Level NivelMedio = new log4net.Core.Level(40000, "MEDIA");
         public static readonly log4net.Core.Level NivelBajo = new log4net.Core.Level(30000, "BAJA");
+
         public static void Alta(this ILog log, string message)
         {
             log.Logger.Log(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType, NivelAlto, DES.Encrypt(message, Key, Code), null);
@@ -41,6 +42,7 @@ namespace DAL.Utilidades
         public static void Baja(this ILog log, string message)
         {
             log.Logger.Log(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType, NivelBajo, DES.Encrypt(message, Key, Code), null);
+
         }
 
         public static void BajaFormat(this ILog log, string message, params object[] args)

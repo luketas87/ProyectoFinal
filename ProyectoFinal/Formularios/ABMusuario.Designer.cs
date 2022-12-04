@@ -52,7 +52,6 @@ namespace ProyectoFinal.Formularios
             this.btnModificar = new CustomControls.RJControls.RJButton();
             this.btnBorrar = new CustomControls.RJControls.RJButton();
             this.btnAsignarPat = new CustomControls.RJControls.RJButton();
-            this.btnNegarPat = new CustomControls.RJControls.RJButton();
             this.btnAsignarFam = new CustomControls.RJControls.RJButton();
             this.btnUsuariosInactivos = new CustomControls.RJControls.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgusuario)).BeginInit();
@@ -61,7 +60,7 @@ namespace ProyectoFinal.Formularios
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(369, 70);
+            this.label8.Location = new System.Drawing.Point(295, 70);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 13);
@@ -71,7 +70,7 @@ namespace ProyectoFinal.Formularios
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(369, 190);
+            this.label7.Location = new System.Drawing.Point(421, 70);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(51, 13);
@@ -331,26 +330,6 @@ namespace ProyectoFinal.Formularios
             this.btnAsignarPat.UseVisualStyleBackColor = false;
             this.btnAsignarPat.Click += new System.EventHandler(this.btnAsignarPat_Click);
             // 
-            // btnNegarPat
-            // 
-            this.btnNegarPat.BackColor = System.Drawing.SystemColors.Control;
-            this.btnNegarPat.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.btnNegarPat.BorderColor = System.Drawing.Color.SlateGray;
-            this.btnNegarPat.BorderRadius = 20;
-            this.btnNegarPat.BorderSize = 1;
-            this.btnNegarPat.FlatAppearance.BorderSize = 0;
-            this.btnNegarPat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNegarPat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNegarPat.ForeColor = System.Drawing.Color.SlateGray;
-            this.btnNegarPat.Location = new System.Drawing.Point(406, 86);
-            this.btnNegarPat.Name = "btnNegarPat";
-            this.btnNegarPat.Size = new System.Drawing.Size(113, 46);
-            this.btnNegarPat.TabIndex = 72;
-            this.btnNegarPat.Text = "Negar/Habilitar Patentes";
-            this.btnNegarPat.TextColor = System.Drawing.Color.SlateGray;
-            this.btnNegarPat.UseVisualStyleBackColor = false;
-            this.btnNegarPat.Click += new System.EventHandler(this.btnNegarPat_Click);
-            // 
             // btnAsignarFam
             // 
             this.btnAsignarFam.BackColor = System.Drawing.SystemColors.Control;
@@ -362,7 +341,7 @@ namespace ProyectoFinal.Formularios
             this.btnAsignarFam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAsignarFam.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAsignarFam.ForeColor = System.Drawing.Color.SlateGray;
-            this.btnAsignarFam.Location = new System.Drawing.Point(276, 206);
+            this.btnAsignarFam.Location = new System.Drawing.Point(406, 86);
             this.btnAsignarFam.Name = "btnAsignarFam";
             this.btnAsignarFam.Size = new System.Drawing.Size(113, 46);
             this.btnAsignarFam.TabIndex = 73;
@@ -382,7 +361,7 @@ namespace ProyectoFinal.Formularios
             this.btnUsuariosInactivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsuariosInactivos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuariosInactivos.ForeColor = System.Drawing.Color.SlateGray;
-            this.btnUsuariosInactivos.Location = new System.Drawing.Point(406, 206);
+            this.btnUsuariosInactivos.Location = new System.Drawing.Point(406, 214);
             this.btnUsuariosInactivos.Name = "btnUsuariosInactivos";
             this.btnUsuariosInactivos.Size = new System.Drawing.Size(113, 46);
             this.btnUsuariosInactivos.TabIndex = 74;
@@ -398,7 +377,6 @@ namespace ProyectoFinal.Formularios
             this.ClientSize = new System.Drawing.Size(556, 614);
             this.Controls.Add(this.btnUsuariosInactivos);
             this.Controls.Add(this.btnAsignarFam);
-            this.Controls.Add(this.btnNegarPat);
             this.Controls.Add(this.btnAsignarPat);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnModificar);
@@ -421,6 +399,7 @@ namespace ProyectoFinal.Formularios
             this.Text = "ABMusuario";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ABMusuario_FormClosing);
             this.Load += new System.EventHandler(this.ABMusuario_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ABMusuario_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgusuario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -451,7 +430,6 @@ namespace ProyectoFinal.Formularios
         private CustomControls.RJControls.RJButton btnModificar;
         private CustomControls.RJControls.RJButton btnBorrar;
         private CustomControls.RJControls.RJButton btnAsignarPat;
-        private CustomControls.RJControls.RJButton btnNegarPat;
         private CustomControls.RJControls.RJButton btnAsignarFam;
         private CustomControls.RJControls.RJButton btnUsuariosInactivos;
     }

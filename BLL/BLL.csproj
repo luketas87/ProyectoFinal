@@ -84,6 +84,7 @@
     <Compile Include="implementacion\BLLDetalleVenta.cs" />
     <Compile Include="implementacion\BLLFamilia.cs" />
     <Compile Include="implementacion\BLLFormControl.cs" />
+    <Compile Include="implementacion\BLLLog.cs" />
     <Compile Include="implementacion\BLLPatente.cs" />
     <Compile Include="implementacion\BLLProducto.cs" />
     <Compile Include="implementacion\BLLTraductor.cs" />

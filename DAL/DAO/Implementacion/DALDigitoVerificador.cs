@@ -11,6 +11,25 @@ namespace DAL.DAO.Implementacion
 {
     public class DALDigitoVerificador : BaseDAO, IDigitoVerificador
     {
+
+        //#region Singleton
+        //private DALDigitoVerificador()
+        //{
+
+        //}
+
+        //private static DALDigitoVerificador instance;
+
+        //public static DALDigitoVerificador GetInstance()
+        //{
+        //    if (instance == null)
+        //    {
+        //        instance = new DALDigitoVerificador();
+        //    }
+        //    return instance;
+        //}
+        //#endregion
+
         public List<string>  Entidades { get; set; } = SqlUtilidades.GetTables();
 
 
@@ -50,6 +69,11 @@ namespace DAL.DAO.Implementacion
                 }
             }
             return digito;
+        }
+
+        internal int CalcularDVVertical(List<string> digitos)
+        {
+            throw new NotImplementedException();
         }
 
         //Calculos digito verificado Vertical.

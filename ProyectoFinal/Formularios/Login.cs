@@ -20,7 +20,12 @@ namespace ProyectoFinal.Formularios
     {
         private const string nombreFormulario = "Login";
 
+        
+        /// <summary>
+        /// No lo re conoce
+        /// </summary>
         private log4net.ILog log;
+        BELog logueo;
         private IPrincipal PrincipalForm;
         private BLLICuentaUsuario usuarioBLL;
         private IFormControl formControl;
@@ -40,12 +45,6 @@ namespace ProyectoFinal.Formularios
             TxtContrasenia.PasswordChar = '*';
         }
 
-        /*public Login(BLLIIdioma bLLIIdioma,IDigitoVerificador digitoVerificador1, ITraductor traductor)
-        {
-            this.bLLIIdioma = bLLIIdioma;
-            this.digitoVerificador1 = digitoVerificador1;
-            this.traductor = traductor;
-        }*/
         #region Acciones minimizar y cerrar
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -93,12 +92,9 @@ namespace ProyectoFinal.Formularios
         //BLLCuentaUsuario ncuentaUsuario = new BLLCuentaUsuario();
 
         public Encriptador mEncriptador = new Encriptador();
-#pragma warning disable CS0169 // El campo 'Login.bLLIIdioma' nunca se usa
-        private BLLIIdioma bLLIIdioma;
-#pragma warning restore CS0169 // El campo 'Login.bLLIIdioma' nunca se usa
-#pragma warning disable CS0169 // El campo 'Login.digitoVerificador1' nunca se usa
+        private BLLIIdioma bLLIIdioma; 
         private IDigitoVerificador digitoVerificador1;
-#pragma warning restore CS0169 // El campo 'Login.digitoVerificador1' nunca se usa
+
 
         private void lblRecuperarC_Click(object sender, EventArgs e)
         {

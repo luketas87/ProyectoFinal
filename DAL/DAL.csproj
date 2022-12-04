@@ -63,6 +63,7 @@
     <Compile Include="DAO\Implementacion\DALFamilia.cs" />
     <Compile Include="DAO\Implementacion\DALFormControl.cs" />
     <Compile Include="DAO\Implementacion\DALIdioma.cs" />
+    <Compile Include="DAO\Implementacion\DALLog.cs" />
     <Compile Include="DAO\Implementacion\DALPatente.cs" />
     <Compile Include="DAO\Implementacion\DALProducto.cs" />
     <Compile Include="DAO\Implementacion\DALVenta.cs" />
@@ -75,12 +76,28 @@
     <Compile Include="DAO\Interfaces\DALIPatente.cs" />
     <Compile Include="DAO\Interfaces\DALIProducto.cs" />
     <Compile Include="DAO\Interfaces\DALIVenta.cs" />
+    <Compile Include="DAO\Interfaces\LogDAO.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Utilidades\BaseDAO.cs" />
     <Compile Include="DAO\Interfaces\DALICuentaUsuario.cs" />
     <Compile Include="DAO\Interfaces\DALIdioma.cs" />
     <Compile Include="Utilidades\Log4netExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilidades\SqlUtilidades.cs" />
+    <Compile Include="VeterinariaPatitasDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VeterinariaPatitasDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="VeterinariaPatitasDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VeterinariaPatitasDataSet1.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -97,7 +114,34 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="VeterinariaPatitasDataSet.xsc">
+      <DependentUpon>VeterinariaPatitasDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="VeterinariaPatitasDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VeterinariaPatitasDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="VeterinariaPatitasDataSet.xss">
+      <DependentUpon>VeterinariaPatitasDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="VeterinariaPatitasDataSet1.xsc">
+      <DependentUpon>VeterinariaPatitasDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="VeterinariaPatitasDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VeterinariaPatitasDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="VeterinariaPatitasDataSet1.xss">
+      <DependentUpon>VeterinariaPatitasDataSet1.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

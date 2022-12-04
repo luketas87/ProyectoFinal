@@ -52,6 +52,7 @@
     <Compile Include="Implementacion\BEFamilia.cs" />
     <Compile Include="Implementacion\BEFamiliaPatente.cs" />
     <Compile Include="Implementacion\BEFiltroBitacora.cs" />
+    <Compile Include="Implementacion\BELog.cs" />
     <Compile Include="Implementacion\BENuevaCadena.cs" />
     <Compile Include="Implementacion\BEProducto.cs" />
     <Compile Include="Implementacion\BEUsuarioFamilia.cs" />

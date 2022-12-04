@@ -75,7 +75,7 @@ namespace ProyectoFinal.Formularios
             this.traductor = traductor;
             InitializeComponent();
             dgusuario.AutoGenerateColumns = false;
-
+            KeyPreview = true;
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -517,20 +517,20 @@ namespace ProyectoFinal.Formularios
             }
         }
 
-        private void SetearBotonNegada(List<BEPatente> patentes)
-        {
-            if (UsuarioSeleccionado.Patentes?.Count > 0)
-            {
-                if (UsuarioSeleccionado.Patentes[0].Negada)
-                {
-                    btnNegarPat.Text = "Habilitar Patente";
-                }
-                else
-                {
-                    btnNegarPat.Text = "Negar Patente";
-                }
-            }
-        }
+        //private void SetearBotonNegada(List<BEPatente> patentes)
+        //{
+        //    if (UsuarioSeleccionado.Patentes?.Count > 0)
+        //    {
+        //        if (UsuarioSeleccionado.Patentes[0].Negada)
+        //        {
+        //            btnNegarPat.Text = "Habilitar Patente";
+        //        }
+        //        else
+        //        {
+        //            btnNegarPat.Text = "Negar Patente";
+        //        }
+        //    }
+        //}
 
         #region Eventos grids
         private void dgusuario_DataError(object sender, DataGridViewDataErrorEventArgs e)
@@ -561,6 +561,15 @@ namespace ProyectoFinal.Formularios
         {
             adminFam.ShowDialog();
             HacerLoad();
+        }
+
+        private void ABMusuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.F1)
+            {
+                FormAyuda ayuda = new FormAyuda();
+                ayuda.Show();
+            }
         }
     }
 }

@@ -324,5 +324,10 @@ namespace ProyectoFinal.Formularios
                 //this.Close();
             }
         }
+
+        private void panelChildForm_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

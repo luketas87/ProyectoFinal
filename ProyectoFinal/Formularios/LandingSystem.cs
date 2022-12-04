@@ -74,6 +74,7 @@ namespace ProyectoFinal.Formularios
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
+            log4net.Config.XmlConfigurator.Configure();
 
             try
             {

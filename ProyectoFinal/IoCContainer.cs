@@ -57,6 +57,7 @@ namespace UI
              ////contBuilder.Register((ctx) => Principal.GetInstancia()).As<IPrincipal>().SingleInstance();
              var contBuilder = new ContainerBuilder();
              contBuilder.RegisterType<MenuPrincipal>().As<IPrincipal>().SingleInstance();
+             contBuilder.RegisterType<MenuPrimcipal>().As<IPrimcipal>().SingleInstance();
              contBuilder.RegisterType<DALCuentaUsuario>().As<DALICuentaUsuario>().SingleInstance();
              contBuilder.RegisterType<BLLCuentaUsuario>().As<BLLICuentaUsuario>().SingleInstance();
              contBuilder.RegisterType<BLLVenta>().As<BLLIVenta>().SingleInstance();
@@ -66,6 +67,7 @@ namespace UI
              contBuilder.RegisterType<DALDigitoVerificador>().As<IDigitoVerificador>().InstancePerDependency();
              contBuilder.RegisterType<DetalleVenta>().As<IDetalleVenta>().SingleInstance();
              contBuilder.RegisterType<ABMusuario>().As<IABMUsuario>().SingleInstance();
+             contBuilder.RegisterType<ABMusers>().As<IABMUsers>().SingleInstance();
              contBuilder.RegisterType<Bitacora>().As<IBitacora>().SingleInstance();
              contBuilder.RegisterType<BLLBitacora>().As<BLLIBitacora>().InstancePerDependency();
              contBuilder.RegisterType<DALBitacora>().As<DALIBitacora>().InstancePerDependency();

@@ -117,18 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="richTextBox1.Text" xml:space="preserve">
-    <value>Usted podra seleccionar diferentes acciones dentro del programa. Si cuenta con permisos de administrador tendrá opciones extras que le podra gestionar usuarios.
-
-Al hacer clic en en el formulario en los formularios, se desplegara diferentes menus donde dependerá el permiso que tenga el usuario para poder visualizarla.
-
-
-Categorías: En esta sección del módulo el usuario podrá crear, modificar, borrar y consultar categorías de productos. Se cargan los datos en cada input y luego se da click en “Agregar”,” Modificar”,” Eliminar” según sea necesario. El sistema confirmará mediante un modal tanto si la operación fue un éxito como cuando haya algún error.
-
-
-
-
-
-</value>
-  </data>
 </root>

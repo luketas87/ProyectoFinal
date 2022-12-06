@@ -117,46 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="MSJ014" xml:space="preserve">
-    <value>Patent is in use and can not be deleted</value>
+  <data name="MSJ000" xml:space="preserve">
+    <value>Problema Base de datos</value>
   </data>
-  <data name="MSJ016" xml:space="preserve">
-    <value>At least one user must have this patent assigned</value>
+  <data name="MSJ037" xml:space="preserve">
+    <value>¿Esta seguro que quiere salir?</value>
   </data>
-  <data name="MSJ018" xml:space="preserve">
-    <value>Successful registration</value>
+  <data name="MSJ087" xml:space="preserve">
+    <value>Usted no es un usuario administrador</value>
   </data>
-  <data name="MSJ020" xml:space="preserve">
-    <value>Registration failed</value>
+  <data name="btn_salir" xml:space="preserve">
+    <value>SALIR</value>
   </data>
-  <data name="MSJ022" xml:space="preserve">
-    <value>Can't be 2 users with the same email</value>
+  <data name="btn_ingresar" xml:space="preserve">
+    <value>INGRESAR</value>
   </data>
-  <data name="MSJ024" xml:space="preserve">
-    <value>Successful modification
-</value>
+  <data name="Login" xml:space="preserve">
+    <value>ACCESO AL SISTEMA</value>
   </data>
-  <data name="MSJ026" xml:space="preserve">
-    <value>The modification has failed</value>
+  <data name="btn_CambiarBase" xml:space="preserve">
+    <value>Cambiar Base</value>
   </data>
-  <data name="MSJ028" xml:space="preserve">
-    <value>Successful deletion
-</value>
+  <data name="label1" xml:space="preserve">
+    <value>INGRESE USUARIO Y CONTRASEÑA PARA INGRESAR</value>
   </data>
-  <data name="MSJ030" xml:space="preserve">
-    <value>User deletion has failed
-</value>
+  <data name="label2" xml:space="preserve">
+    <value>USUARIO</value>
   </data>
-  <data name="MSJ032" xml:space="preserve">
-    <value>You can not perform actions on the active user
-</value>
+  <data name="label3" xml:space="preserve">
+    <value>CONTRASEÑA</value>
   </data>
-  <data name="MSJ034" xml:space="preserve">
-    <value>All data must be complete
-</value>
-  </data>
-  <data name="MSJ036" xml:space="preserve">
-    <value>You can not remove this family
-</value>
+  <data name="label4" xml:space="preserve">
+    <value>SELECCIONAR IDIOMA:</value>
   </data>
 </root>

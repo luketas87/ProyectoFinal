@@ -444,6 +444,7 @@ namespace ProyectoFinal.Formularios
             this.Name = "MenuPrincipal";
             this.Text = "MenuPrincipal";
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Ayuda_KeyDown);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PictureLogo)).EndInit();
             this.panelSideMenu.ResumeLayout(false);

@@ -197,6 +197,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\ABMusers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ABMusers.Designer.cs">
+      <DependentUpon>ABMusers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\ABMusuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,6 +270,12 @@
     </Compile>
     <Compile Include="Formularios\FormAyuda.Designer.cs">
       <DependentUpon>FormAyuda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\MenuPrimcipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\MenuPrimcipal.Designer.cs">
+      <DependentUpon>MenuPrimcipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\NuevaCadena.cs">
       <SubType>Form</SubType>
@@ -363,6 +375,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>VeterinariaPatitasDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Formularios\ABMusers.resx">
+      <DependentUpon>ABMusers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ABMusuario.resx">
       <DependentUpon>ABMusuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -395,6 +410,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormAyuda.resx">
       <DependentUpon>FormAyuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\MenuPrimcipal.resx">
+      <DependentUpon>MenuPrimcipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\NuevaCadena.resx">
       <DependentUpon>NuevaCadena.cs</DependentUpon>
@@ -465,7 +483,6 @@
     <None Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
-    <None Include="Log4net.config" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\UI.Clases.ModeloBitacora.datasource" />
     <None Include="Properties\Settings.settings">
@@ -531,6 +548,7 @@
     <None Include="Resources\ventas.png" />
     <None Include="Resources\icons8-exportación-de-base-de-datos-80.png" />
     <None Include="Resources\icons8-database-daily-import-80.png" />
+    <None Include="Resources\imagen.png" />
     <Content Include="secret.txt" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

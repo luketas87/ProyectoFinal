@@ -64,6 +64,7 @@
     <Compile Include="Implementacion\BEPatente.cs" />
     <Compile Include="Implementacion\BELineaDetalle.cs" />
     <Compile Include="Implementacion\BELineaVenta.cs" />
+    <Compile Include="Interfaces\IABMUsers.cs" />
     <Compile Include="Interfaces\IAdminFam.cs" />
     <Compile Include="Interfaces\IAdminPatentes.cs" />
     <Compile Include="Interfaces\IAdminPatFamilia.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Interfaces\INegarPat.cs" />
     <Compile Include="Interfaces\InputBox.cs" />
     <Compile Include="Interfaces\IPatente.cs" />
+    <Compile Include="Interfaces\IPrimcipal.cs" />
     <Compile Include="Interfaces\IPrincipal.cs" />
     <Compile Include="Interfaces\IProductos.cs" />
     <Compile Include="Interfaces\IRestore.cs" />

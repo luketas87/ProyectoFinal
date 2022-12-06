@@ -1,4 +1,8 @@
-﻿using System;
+﻿using BE.Implementacion;
+using BE.Interfaces;
+using BLL.Interfaces;
+using DAL.DAO.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,21 +11,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BE;
-using BE.Implementacion;
-using BE.Interfaces;
-using BLL.Interfaces;
-using DAL.DAO.Interfaces;
 using UI;
 
 namespace ProyectoFinal.Formularios
 {
-    public partial class MenuPrincipal : Form, IPrincipal
+    public partial class MenuPrimcipal : Form, IPrimcipal
     {
         private readonly IFormControl formControl;
         private readonly DALICuentaUsuario usuarioDAL;
         private readonly IDetalleVenta ventaDeProductos;
-        private readonly IABMUsuario abmUsuario;
+        private readonly IABMUsers abmUsuario;
         private readonly IBitacora bitacora;
         private readonly IFamilias familias;
         private readonly BLLIFamilia familiaBLL;
@@ -32,10 +31,9 @@ namespace ProyectoFinal.Formularios
         private readonly IVenta venta;
         private readonly BLLIIdioma idiomaBLL;
 
-
-        public MenuPrincipal(DALICuentaUsuario usuarioDAL,
+        public MenuPrimcipal(DALICuentaUsuario usuarioDAL,
             IDetalleVenta ventaDeProductos,
-            IABMUsuario abmUsuario,
+            IABMUsers abmUsuario,
             IBitacora bitacora,
             IFormControl formControl,
             IFamilias familias,
@@ -60,7 +58,7 @@ namespace ProyectoFinal.Formularios
             this.restore = restore;
             this.productos = productos;
             this.venta = venta;
-            KeyPreview = true;
+
             custimizeDesign();
         }
 
@@ -113,28 +111,28 @@ namespace ProyectoFinal.Formularios
             var patUsu = formControl.ObtenerPermisosUsuario();
 
             //Bloquear Toolstrip por patente.
-             if (!patUsu.Patentes.Any(x => x.Descripcion == "ABMFamilia"))
-             {
+            if (!patUsu.Patentes.Any(x => x.Descripcion == "ABMFamilia"))
+            {
                 btnFamilias.Enabled = false;
                 familias.MdiParent = this;
                 familias.Show();
 
             }
-             if (!patUsu.Patentes.Any(x => x.Descripcion == "ABMusuario"))
-             {
-                 btnAdministrarUsuarios.Enabled = false;
+            if (!patUsu.Patentes.Any(x => x.Descripcion == "ABMusuario"))
+            {
+                btnAdministrarUsuarios.Enabled = false;
 
-             }
-             if (!patUsu.Patentes.Any(x => x.Descripcion == "Bitacora"))
-             {
-                 btnBitacora.Enabled = false;
+            }
+            if (!patUsu.Patentes.Any(x => x.Descripcion == "Bitacora"))
+            {
+                btnBitacora.Enabled = false;
 
-             }
-             if (!patUsu.Patentes.Any(x => x.Descripcion == "Backup"))
-             {
-                 btnBackup.Enabled = false;
+            }
+            if (!patUsu.Patentes.Any(x => x.Descripcion == "Backup"))
+            {
+                btnBackup.Enabled = false;
 
-             }
+            }
 
             if (!patUsu.Patentes.Any(x => x.Descripcion == "Restore"))
             {
@@ -143,21 +141,21 @@ namespace ProyectoFinal.Formularios
             }
 
             if (!patUsu.Patentes.Any(x => x.Descripcion == "RealizarVentas"))
-             {
-                 btnRealizarVentas.Enabled = false;
+            {
+                btnRealizarVentas.Enabled = false;
 
-             }
-             if (!patUsu.Patentes.Any(x => x.Descripcion == "VerVentas"))
-             {
+            }
+            if (!patUsu.Patentes.Any(x => x.Descripcion == "VerVentas"))
+            {
                 btnVerVentas.Enabled = false;
 
-             }
-             if (!patUsu.Patentes.Any(x => x.Descripcion == "MenuVentas"))
-             {
-                 btnAdmVentas.Enabled = false;
+            }
+            if (!patUsu.Patentes.Any(x => x.Descripcion == "MenuVentas"))
+            {
+                btnAdmVentas.Enabled = false;
 
-             }
-        } 
+            }
+        }
 
         #region MostrarPanels
         public void ComprobarPrimerLogin(string usuario)
@@ -198,7 +196,7 @@ namespace ProyectoFinal.Formularios
         //no implementado
         private void btnVerSolicitudes_Click(object sender, EventArgs e)
         {
-            hideSubMenu(); 
+            hideSubMenu();
         }
 
         private void btnRegistrarDiagnostico_Click(object sender, EventArgs e)
@@ -216,7 +214,7 @@ namespace ProyectoFinal.Formularios
             hideSubMenu();
             //abmUsuario.MdiParent = this;
             abmUsuario.Show();
-           
+
         }
 
         private void btnBitacora_Click(object sender, EventArgs e)
@@ -245,25 +243,24 @@ namespace ProyectoFinal.Formularios
             hideSubMenu();
             FormAyuda mayuda = new FormAyuda();
             mayuda.Show();
+
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
             hideSubMenu();
-            var confirmation = MessageBox.Show("¿Esta seguro que desea salir del sistema?", "Salir del sistema", MessageBoxButtons.YesNo);
+            var confirmation = MessageBox.Show("Are you sure you want to log out?", "Get out of the system", MessageBoxButtons.YesNo);
             if (confirmation == DialogResult.Yes)
             {
                 Application.Exit();
+                this.Close();
             }
 
             return;
         }
         #endregion
 
-        private void MenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
+        //no implementado en el form principal
         private void btnProductos_Click(object sender, EventArgs e)
         {
             hideSubMenu();
@@ -277,6 +274,8 @@ namespace ProyectoFinal.Formularios
             datosUsuario.Show();
         }
 
+
+        //no implementado
         private void btnAdmPatenteFamilia_Click(object sender, EventArgs e)
         {
             hideSubMenu();
@@ -317,7 +316,7 @@ namespace ProyectoFinal.Formularios
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Seguro que desea actualizar?", "Actualizar modificaciones", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure you want to update?", "update modifications", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 this.MenuPrincipal_Load(sender, e);
                 //this.Close();
@@ -329,17 +328,14 @@ namespace ProyectoFinal.Formularios
 
         }
 
-        private void Ayuda_KeyDown(object sender, KeyEventArgs e)
+        private void MenuPrimcipal_FormClosing_1(object sender, FormClosingEventArgs e)
         {
-            {
-                if (e.KeyCode == Keys.F1)
-                {
-                    hideSubMenu();
-                    FormAyuda mayuda = new FormAyuda();
-                    mayuda.Show();
+            Application.Exit();
+        }
 
-                }
-            }
+        private void btnAdmPatenteFamilia(object sender, EventArgs e)
+        {
+
         }
     }
 }

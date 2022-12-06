@@ -27,6 +27,7 @@ namespace ProyectoFinal.Formularios
         private log4net.ILog log;
         BELog logueo;
         private IPrincipal PrincipalForm;
+        private IPrimcipal PrimcipalForm;
         private BLLICuentaUsuario usuarioBLL;
         private IFormControl formControl;
         private readonly BLLIIdioma idiomaBLL;
@@ -119,6 +120,7 @@ namespace ProyectoFinal.Formularios
             this.AcceptButton = btnLogin;
             log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
             PrincipalForm = IoCContainer.Resolve<IPrincipal>();
+            PrimcipalForm = IoCContainer.Resolve<IPrimcipal>();
             usuarioBLL = IoCContainer.Resolve<BLLICuentaUsuario>();
             patenteBLL = IoCContainer.Resolve<BLLIPatente>();
             ventaBLL = IoCContainer.Resolve<BLLIVenta>();
@@ -218,9 +220,19 @@ namespace ProyectoFinal.Formularios
                     if (ingresa)
                     {
                         this.Hide();
-                        formControl.GuardarDatosSesionUsuario(usuarioBLL.ObtenerUsuarioConEmail(usuario));
-                        PrincipalForm.ComprobarPrimerLogin(usuario);
-                        PrincipalForm.Show();
+                        formControl.GuardarDatosSesionUsuario(usuarioBLL.ObtenerUsuarioConEmail(usuario));                        
+                        if(formControl.LenguajeSeleccionado.IdIdioma == 1)
+                        {
+                            PrimcipalForm.ComprobarPrimerLogin(usuario);
+                            PrimcipalForm.Show();
+                        }
+                        else
+                        {
+                            PrincipalForm.ComprobarPrimerLogin(usuario);
+                            PrincipalForm.Show();
+                        }
+
+                      
                     }
 
                     else if (usuarioBLL.ObtenerUsuarioConEmail(usuario).ContadorIngresosIncorrectos < 3)

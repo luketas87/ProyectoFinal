@@ -61,7 +61,7 @@ namespace ProyectoFinal.Recursos {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Cambiar Base.
+        ///   Busca una cadena traducida similar a Change BD.
         /// </summary>
         internal static string btn_CambiarBase {
             get {
@@ -70,7 +70,7 @@ namespace ProyectoFinal.Recursos {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a INGRESAR.
+        ///   Busca una cadena traducida similar a LOG IN.
         /// </summary>
         internal static string btn_ingresar {
             get {
@@ -79,7 +79,7 @@ namespace ProyectoFinal.Recursos {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a SALIR.
+        ///   Busca una cadena traducida similar a EXIT.
         /// </summary>
         internal static string btn_salir {
             get {
@@ -88,7 +88,17 @@ namespace ProyectoFinal.Recursos {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Ingrese usuario y contraseña para ingresar.
+        ///   Busca una cadena traducida similar a Back.
+        /// </summary>
+        internal static string btnVolver {
+            get {
+                return ResourceManager.GetString("btnVolver", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a 
+        ///ENTER USER AND PASSWORD TO ENTER.
         /// </summary>
         internal static string label1 {
             get {
@@ -97,7 +107,7 @@ namespace ProyectoFinal.Recursos {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a USUARIO.
+        ///   Busca una cadena traducida similar a USER.
         /// </summary>
         internal static string label2 {
             get {
@@ -106,7 +116,7 @@ namespace ProyectoFinal.Recursos {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a CONTRASEÑA.
+        ///   Busca una cadena traducida similar a PASSWORD.
         /// </summary>
         internal static string label3 {
             get {
@@ -115,7 +125,7 @@ namespace ProyectoFinal.Recursos {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a SELECCIONAR IDIOMA:.
+        ///   Busca una cadena traducida similar a SELECT LANGUAGE.
         /// </summary>
         internal static string label4 {
             get {
@@ -124,7 +134,7 @@ namespace ProyectoFinal.Recursos {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a ACCESO AL SISTEMA.
+        ///   Busca una cadena traducida similar a LOG IN.
         /// </summary>
         internal static string Login {
             get {
@@ -133,7 +143,7 @@ namespace ProyectoFinal.Recursos {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Problema Base de datos.
+        ///   Busca una cadena traducida similar a Something was wrong with BD.
         /// </summary>
         internal static string MSJ000 {
             get {
@@ -142,7 +152,7 @@ namespace ProyectoFinal.Recursos {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a ¿Esta seguro que quiere salir?.
+        ///   Busca una cadena traducida similar a Are you sure want to exit?.
         /// </summary>
         internal static string MSJ037 {
             get {
@@ -151,7 +161,7 @@ namespace ProyectoFinal.Recursos {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Usted no es un usuario administrador.
+        ///   Busca una cadena traducida similar a You aren&apos;t an administrator.
         /// </summary>
         internal static string MSJ087 {
             get {

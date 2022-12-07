@@ -32,17 +32,20 @@ namespace BLL.implementacion
 
             if (ingresa)
             {
-                Log4netExtensions.Baja(log, "Usuario logueado correctamente");
+                bitacoraBLL.RegistarEnBitactoraTabla("Usuario logueado correctamente","BAJA", System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.ToString());
                 return ingresa;
             }
 
             if (usu.ContadorIngresosIncorrectos < 3)
             {
                 Log4netExtensions.Baja(log, "Login Incorrecto");
+                bitacoraBLL.RegistarEnBitactoraTabla("Login Incorrecto", "BAJA", System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.ToString());
+
             }
             else
             {
                 Log4netExtensions.Media(log, "Login Incorrecto, Cuenta bloqueada");
+                bitacoraBLL.RegistarEnBitactoraTabla("Login Incorrecto, Cuenta bloqueada", "MEDIA", System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.ToString());
             }
 
             return ingresa;

@@ -58,7 +58,7 @@ namespace ProyectoFinal.Formularios
             this.groupBox1.Size = new System.Drawing.Size(176, 200);
             this.groupBox1.TabIndex = 74;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "FAMILIAS USUARIO";
+            this.groupBox1.Text = "PATENTES USUARIO";
             // 
             // PatUsuario
             // 
@@ -77,7 +77,7 @@ namespace ProyectoFinal.Formularios
             this.groupBox2.Size = new System.Drawing.Size(176, 200);
             this.groupBox2.TabIndex = 76;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "FAMILIAS SISTEMA";
+            this.groupBox2.Text = "PATENTES SISTEMA";
             // 
             // PatSistema
             // 

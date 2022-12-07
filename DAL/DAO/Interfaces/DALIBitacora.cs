@@ -23,5 +23,7 @@ namespace DAL.DAO.Interfaces
         List<string> CargarUsuarios();
 
         void CargarDVHBitacora();
+
+        void RegistarEnBitactora(string mensaje, string logLevel, string logger);
     }
 }

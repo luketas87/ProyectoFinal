@@ -184,5 +184,30 @@ namespace DAL.DAO.Implementacion
                 return Exec<int>(queryString).FirstOrDefault();
             });
         }
+
+        public void RegistarEnBitactora(string mensaje, string logLevel, string logger)
+        {
+            
+            var queryString = "INSERT INTO Bitacora([Fecha], [Criticidad], [Actividad], [InformacionAsociada], [Usuario], [DVH]) VALUES(@log_date, @log_level, @logger, @message, 'Sistema', @dvh)"; /*'Sistema'*/
+            var date = DateTime.Now;
+            var dvh = this.GenerarDVH();
+                
+            CatchException(() =>
+                {
+                    Exec(
+                        queryString,
+                        new
+                        {
+                            @log_date = date ,
+                            @log_level = logLevel,
+                            @logger = logger,
+                            @message = DES.Encrypt(mensaje,Key, Code),
+                            //@usuario = musuario,
+                            @dvh = dvh
+                        });
+                });
+        }
+
+
     }
 }

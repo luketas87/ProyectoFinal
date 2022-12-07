@@ -56,6 +56,7 @@ namespace CustomControls
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.rjButton1);
             this.Name = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load_1);
             this.ResumeLayout(false);
 
         }

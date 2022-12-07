@@ -17,6 +17,7 @@ using System.Runtime.InteropServices;
 // para los componentes COM.  Si es necesario obtener acceso a un tipo en este ensamblado desde 
 // COM, establezca el atributo ComVisible en true en este tipo.
 [assembly: ComVisible(false)]
+//[assembly: log4net.Config.XmlConfigurator(ConfigFile = "log4net.config")]
 
 // El siguiente GUID sirve como id. de typelib si este proyecto se expone a COM.
 [assembly: Guid("c0afc49f-194f-4998-9fb9-451d774d2095")]

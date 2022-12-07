@@ -77,7 +77,7 @@ namespace DAL.DAO.Implementacion
         public bool ComprobarUsoFamilia(int IdFamilia)
         {
             var result = new List<int>();
-            var queryString = "SELECT FamiliaId FROM FamiliaUsuario WHERE IdFamilia = @idfamilia";
+            var queryString = "SELECT IdFamilia FROM FamiliaUsuario WHERE IdFamilia = @idfamilia";
 
             CatchException(() =>
             {
@@ -179,7 +179,7 @@ namespace DAL.DAO.Implementacion
 
         public int ObtenerIdFamiliaPorUsuario(int IdUsuario)
         {
-            var queryString = $"SELECT FamiliaId FROM FamiliaUsuario WHERE IdUsuario = {IdUsuario}";
+            var queryString = $"SELECT Familia FROM FamiliaUsuario WHERE IdUsuario = {IdUsuario}";
 
             return CatchException(() =>
             {

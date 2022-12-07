@@ -45,6 +45,11 @@ namespace BLL.implementacion
             return bitacoraDAL.LeerBitacoraPorUsuarioCriticidadYFecha(usuarios, criticidades, desde, hasta);
         }
 
+        public void RegistarEnBitactoraTabla(string mensaje, string logLevel, string logger)
+        {
+            bitacoraDAL.RegistarEnBitactora(mensaje, logLevel, logger);
+        }
+
         public void RegistrarEnBitacora(BECuentaUsuario usuario)
         {
             if (usuario.Email != null)
@@ -56,9 +61,9 @@ namespace BLL.implementacion
                 MDC.Set("usuario", "Sistema");
             }
 
-            var digitoVH = bitacoraDAL.GenerarDVH();
+            /////var digitoVH = bitacoraDAL.GenerarDVH();
 
-            GlobalContext.Properties["dvh"] = digitoVH;
+           //// GlobalContext.Properties["dvh"] = digitoVH;
 
             digitoVerificador.ActualizarDVVertical("Bitacora");
         }

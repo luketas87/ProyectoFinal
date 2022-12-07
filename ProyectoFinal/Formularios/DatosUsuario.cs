@@ -23,6 +23,7 @@ namespace ProyectoFinal.Formularios
         private readonly BLLICuentaUsuario usuarioBLL;
         private readonly IDigitoVerificador digitoVerificador;
         private readonly DALICuentaUsuario usuarioDAL;
+        private readonly BLLIBitacora bitacoraBLL;
         public const string key = "bZr2URKx";
         public const string iv = "HNtgQw0w";
         private const string entidad = "Usuario";
@@ -32,12 +33,13 @@ namespace ProyectoFinal.Formularios
         ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
 
-        public DatosUsuario(IFormControl formControl, BLLICuentaUsuario usuarioBLL, IDigitoVerificador digitoVerificador, DALICuentaUsuario usuarioDAL)
+        public DatosUsuario(IFormControl formControl, BLLICuentaUsuario usuarioBLL, IDigitoVerificador digitoVerificador, DALICuentaUsuario usuarioDAL, BLLIBitacora bitacoraBLL)
         {
             this.usuarioBLL = usuarioBLL;
             this.formControl = formControl;
             this.digitoVerificador = digitoVerificador;
             this.usuarioDAL = usuarioDAL;
+            this.bitacoraBLL = bitacoraBLL;
             InitializeComponent();
         }
 
@@ -70,6 +72,7 @@ namespace ProyectoFinal.Formularios
                 {
                     MessageBox.Show("Todos los datos deben estar completos", "Actualizacion de Contraseña");
                     Log4netExtensions.Baja(log, "Todos los datos deben estar completos");
+                    bitacoraBLL.RegistarEnBitactoraTabla("Todos los datos deben estar completos", "BAJA", System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.ToString());
                     returnValue = false;
                     break;
                 }

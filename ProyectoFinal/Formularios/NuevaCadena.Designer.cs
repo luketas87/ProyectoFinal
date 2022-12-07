@@ -48,6 +48,7 @@ namespace ProyectoFinal
             this.txtDatasource.Size = new System.Drawing.Size(159, 20);
             this.txtDatasource.TabIndex = 0;
             this.txtDatasource.Text = "localhost";
+            this.txtDatasource.TextChanged += new System.EventHandler(this.txtDatasource_TextChanged);
             // 
             // txtInitialCatalog
             // 
@@ -56,6 +57,7 @@ namespace ProyectoFinal
             this.txtInitialCatalog.Size = new System.Drawing.Size(159, 20);
             this.txtInitialCatalog.TabIndex = 1;
             this.txtInitialCatalog.Text = "VeterinariaPatitas";
+            this.txtInitialCatalog.TextChanged += new System.EventHandler(this.txtInitialCatalog_TextChanged);
             // 
             // txtUsuario
             // 
@@ -64,6 +66,7 @@ namespace ProyectoFinal
             this.txtUsuario.Size = new System.Drawing.Size(159, 20);
             this.txtUsuario.TabIndex = 2;
             this.txtUsuario.Text = "sa";
+            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
             // txtPassword
             // 
@@ -72,6 +75,7 @@ namespace ProyectoFinal
             this.txtPassword.Size = new System.Drawing.Size(159, 20);
             this.txtPassword.TabIndex = 3;
             this.txtPassword.Text = "Patitas2022";
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // label1
             // 
@@ -81,6 +85,7 @@ namespace ProyectoFinal
             this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "Datsource:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -90,6 +95,7 @@ namespace ProyectoFinal
             this.label2.Size = new System.Drawing.Size(70, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "InitialCatalog:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -99,6 +105,7 @@ namespace ProyectoFinal
             this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Usuario:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -108,6 +115,7 @@ namespace ProyectoFinal
             this.label4.Size = new System.Drawing.Size(56, 13);
             this.label4.TabIndex = 8;
             this.label4.Text = "Password:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // btnAceptar
             // 

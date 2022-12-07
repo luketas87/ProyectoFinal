@@ -46,7 +46,7 @@ namespace DAL.DAO.Implementacion
         {
 
             var usu = ObtenerUsuarioConEmail(objUpd.Email);                           //no carga el email en usu
-            var digitoVH = digitoVerificador.CalcularDVHorizontal(new List<string> {/* objUpd.Nombre,*/ objUpd.Email/*, objUpd.Contraseña*/ });
+            var digitoVH = digitoVerificador.CalcularDVHorizontal(new List<string> { objUpd.Nombre, objUpd.Email, usu.Contraseña });
 
             var queryString = $"UPDATE Usuario SET Nombre = @nombre, Apellido = @apellido, Email = @email, Telefono = @telefono, Domicilio = @domicilio, DVH = @dvh, PrimerLogin=@PrimerLogin WHERE IdUsuario = @IdUsuario";
 
@@ -59,7 +59,7 @@ namespace DAL.DAO.Implementacion
                         @IdUsuario = usu.IdUsuario,
                         @nombre = objUpd.Nombre,
                         @apellido = objUpd.Apellido,
-                        @contraseña = objUpd.Contraseña,
+                        @contraseña = usu.Contraseña,
                         @email = usu.Email,
                         @telefono = objUpd.Telefono,
                         @domicilio = objUpd.Domicilio,
@@ -329,12 +329,18 @@ namespace DAL.DAO.Implementacion
 
         public List<BECuentaUsuario> TraerUsuariosConPatentesYFamilias()
         {
-            var queryString = "SELECT * FROM Usuario WHERE Activo = 1;";
+            var usuarios = Cargar();
 
-            return CatchException(() =>
+            foreach (var usuario in usuarios)
             {
-                return Exec<BECuentaUsuario>(queryString);
-            });
+                usuario.Familia = new List<BEFamilia>();
+                usuario.Patentes = new List<BEPatente>();
+
+                usuario.Familia = familiaDAL.ObtenerFamiliasUsuario(usuario.IdUsuario);
+                usuario.Patentes = patenteDAL.ObtenerPatentesUsuario(usuario.IdUsuario);
+            }
+
+            return usuarios;
         }
 
         public BECuentaUsuario CargarPatentesYFamiliaUsuario(BECuentaUsuario usuario)

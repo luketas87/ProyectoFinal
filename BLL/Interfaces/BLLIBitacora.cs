@@ -22,5 +22,7 @@ namespace BLL.Interfaces
         List<string> CargarUsuarios();
 
         void CargarDVHBitacora();
+
+        void RegistarEnBitactoraTabla(string mensaje, string logLevel, string logger);
     }
 }

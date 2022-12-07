@@ -292,6 +292,7 @@ namespace ProyectoFinal.Formularios
             {
                 Alert.ShowSimpleAlert("No puede realizar acciones sobre el usuario activo", "MSJ031");
                 Log4netExtensions.Alta(log, "Se intento eliminar o modificar al usuario activo");
+                bitacoraBLL.RegistarEnBitactoraTabla("Se intento eliminar o modificar al usuario activo", "ALTA", System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.ToString());
                 returnValue = false;
             }
 
@@ -301,6 +302,7 @@ namespace ProyectoFinal.Formularios
                 {
                     Alert.ShowSimpleAlert("Todos los datos deben estar completos", "MSJ033");
                     Log4netExtensions.Baja(log, "Todos los datos deben estar completos");
+                    bitacoraBLL.RegistarEnBitactoraTabla("Todos los datos deben estar completos", "BAJA", System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.ToString());
                     returnValue = false;
                     break;
                 }
@@ -382,6 +384,7 @@ namespace ProyectoFinal.Formularios
                         }
 
                         Log4netExtensions.Media(log, "Se ha creado un nuevo usuario");
+                        bitacoraBLL.RegistarEnBitactoraTabla("Se ha creado un nuevo usuario", "MEDIA", System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.ToString());
                         bitacoraBLL.RegistrarEnBitacora(usu);
                         Alert.ShowSimpleAlert("Registro exitoso", "MSJ017");
                         CargarRefrescarDatagrid();
@@ -390,6 +393,7 @@ namespace ProyectoFinal.Formularios
                     else
                     {
                         Log4netExtensions.Baja(log, "El registro de nuevo usuario ha fallado");
+                        bitacoraBLL.RegistarEnBitactoraTabla("El registro de nuevo usuario ha fallado", "BAJA", System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.ToString());
                         bitacoraBLL.RegistrarEnBitacora(usu);
                         Alert.ShowSimpleAlert("El registro de nuevo usuario ha fallado", "MSJ019");
                     }
@@ -400,6 +404,8 @@ namespace ProyectoFinal.Formularios
 
                 Alert.ShowSimpleAlert("No pueden haber 2 usuarios con el mismo email", "MSJ021");
                 Log4netExtensions.Alta(log, "Se intento guardar o modificar un usuario con el mismo email");
+                bitacoraBLL.RegistarEnBitactoraTabla("Se intento guardar o modificar un usuario con el mismo email", "ALTA", System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.ToString());
+
             }
         }
 
@@ -445,6 +451,7 @@ namespace ProyectoFinal.Formularios
                     else
                     {
                         Log4netExtensions.Baja(log, "La modificacion ha fallado");
+                        bitacoraBLL.RegistarEnBitactoraTabla("La modificacion ha fallado", "BAJA", System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.ToString());
                         bitacoraBLL.RegistrarEnBitacora(UsuarioActivo);
                         Alert.ShowSimpleAlert("La modificacion ha fallado", "MSJ025");
                         CargarRefrescarDatagrid();
@@ -455,6 +462,8 @@ namespace ProyectoFinal.Formularios
             {
                 Alert.ShowSimpleAlert("No pueden haber 2 usuarios con el mismo email", "MSJ021");
                 Log4netExtensions.Alta(log, "Se intento guardar o modificar un usuario con el mismo email");
+                bitacoraBLL.RegistarEnBitactoraTabla("Se intento guardar o modificar un usuario con el mismo email", "ALTA", System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.ToString());
+
             }
         }
 
@@ -501,6 +510,7 @@ namespace ProyectoFinal.Formularios
                         Log4netExtensions.Alta(log, string.Format("Se borrado al usuario {0}", UsuarioSeleccionado.Email));
                         bitacoraBLL.RegistrarEnBitacora(UsuarioActivo);
                         Alert.ShowSimpleAlert("Borrado exitoso", "MSJ027");
+                        bitacoraBLL.RegistarEnBitactoraTabla("Se borrado al usuario {0}", "ALTA", System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.ToString());
                         //MessageBox.Show("Borrado exitoso", "Borrado de Usuario");
                         CargarRefrescarDatagrid();
                         LimpiarControles();
@@ -508,6 +518,7 @@ namespace ProyectoFinal.Formularios
                     else
                     {
                         Log4netExtensions.Baja(log, "El borrado de usuario ha fallado");
+                        bitacoraBLL.RegistarEnBitactoraTabla("El borrado de usuario ha fallado", "BAJA", System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.ToString());
                         bitacoraBLL.RegistrarEnBitacora(UsuarioActivo);
                         Alert.ShowSimpleAlert("El borrado de usuario ha fallado", "MSJ029");
                         CargarRefrescarDatagrid();
@@ -516,6 +527,7 @@ namespace ProyectoFinal.Formularios
                 else
                 {
                     Log4netExtensions.Media(log, "Una patente se encuentra en uso y no puede borrarse");
+                    bitacoraBLL.RegistarEnBitactoraTabla("Una patente se encuentra en uso y no puede borrarse", "MEDIA", System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.ToString());
                     bitacoraBLL.RegistrarEnBitacora(UsuarioActivo);
                     Alert.ShowSimpleAlert("Una patente se encuentra en uso y no puede borrarse", "MSJ013");
 

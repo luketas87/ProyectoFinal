@@ -14,7 +14,7 @@ namespace DAL.DAO.Implementacion
     {
         public bool ActivarProducto(string IdProducto)
         {
-            var queryString = $"UPDATE Producto SET Activo = 1 WHERE ProductoId = {IdProducto} ;";
+            var queryString = $"UPDATE Producto SET Activo = 1 WHERE IdProducto = {IdProducto} ;";
 
             return CatchException(() =>
             {
@@ -24,7 +24,7 @@ namespace DAL.DAO.Implementacion
 
         public bool Actualizar(BEProducto objUpd)
         {
-            var queryString = $"UPDATE Producto SET Descripcion = @descripcion, PUnitario = @pUnitario, PVenta = @pVenta, Stock = @stock, MinStock = @minStock WHERE ProductoId = @codigo";
+            var queryString = $"UPDATE Producto SET Descripcion = @descripcion, PUnitario = @pUnitario, PVenta = @pVenta, Stock = @stock, MinStock = @minStock WHERE IdProducto = @codigo";
 
             return CatchException(() =>
             {
@@ -44,7 +44,7 @@ namespace DAL.DAO.Implementacion
 
         public bool Borrar(BEProducto objDel)
         {
-            var queryString = $"UPDATE Producto SET Activo = 0 WHERE ProductoId = @codigo";
+            var queryString = $"UPDATE Producto SET Activo = 0 WHERE IdProducto = @codigo";
 
             return CatchException(() =>
             {
@@ -104,7 +104,7 @@ namespace DAL.DAO.Implementacion
 
         public BEProducto ObtenerProductoPorCodigo(string codigo)
         {
-            var queryString = $"SELECT * FROM Producto WHERE ProductoId = @codigo";
+            var queryString = $"SELECT * FROM Producto WHERE IdProducto = @codigo";
 
             return CatchException(() =>
             {

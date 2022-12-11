@@ -208,7 +208,7 @@ namespace ProyectoFinal.Formularios
             this.btnVolver.ForeColor = System.Drawing.Color.Gray;
             this.btnVolver.Location = new System.Drawing.Point(11, 12);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(108, 42);
+            this.btnVolver.Size = new System.Drawing.Size(68, 42);
             this.btnVolver.TabIndex = 60;
             this.btnVolver.Text = "Volver";
             this.btnVolver.TextColor = System.Drawing.Color.Gray;

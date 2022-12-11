@@ -175,5 +175,10 @@ namespace ProyectoFinal.Formularios
         {
             CargarChecks();
         }
+
+        private void btnCboFamilia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

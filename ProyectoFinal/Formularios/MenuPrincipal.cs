@@ -242,9 +242,10 @@ namespace ProyectoFinal.Formularios
 
         private void btnAyuda_Click(object sender, EventArgs e)
         {
-            hideSubMenu();
-            FormAyuda mayuda = new FormAyuda();
-            mayuda.Show();
+            //hideSubMenu();
+            //FormAyuda mayuda = new FormAyuda();
+            //mayuda.Show();
+            Help.ShowHelp(this, "C:/Users/lucas/source/repos/ProyectoFinal/ProyectoFinal/Manual/VeterinariaPatitas.chm");
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -311,7 +312,7 @@ namespace ProyectoFinal.Formularios
         private void btnRealizarVentas_Click(object sender, EventArgs e)
         {
             hideSubMenu();
-            ventaDeProductos.MdiParent = this;
+            //ventaDeProductos.MdiParent = this;
             ventaDeProductos.Show();
         }
 
@@ -335,8 +336,7 @@ namespace ProyectoFinal.Formularios
                 if (e.KeyCode == Keys.F1)
                 {
                     hideSubMenu();
-                    FormAyuda mayuda = new FormAyuda();
-                    mayuda.Show();
+                    Help.ShowHelp(this, "C:/Users/lucas/source/repos/ProyectoFinal/ProyectoFinal/Manual/VeterinariaPatitas.chm");
 
                 }
             }

@@ -32,13 +32,13 @@ namespace ProyectoFinal.Formularios
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblemail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.Domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Saldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTelefono = new System.Windows.Forms.Label();
-            this.ClienteId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgClientes = new System.Windows.Forms.DataGridView();
+            this.IdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Saldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblDomicilio = new System.Windows.Forms.Label();
             this.lblNombreCom = new System.Windows.Forms.Label();
             this.txtDomicilio = new System.Windows.Forms.TextBox();
@@ -57,7 +57,7 @@ namespace ProyectoFinal.Formularios
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(302, 20);
-            this.txtTelefono.TabIndex = 31;
+            this.txtTelefono.TabIndex = 4;
             // 
             // lblemail
             // 
@@ -75,39 +75,7 @@ namespace ProyectoFinal.Formularios
             this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(302, 20);
-            this.txtEmail.TabIndex = 29;
-            // 
-            // Domicilio
-            // 
-            this.Domicilio.DataPropertyName = "Domicilio";
-            this.Domicilio.HeaderText = "Domicilio";
-            this.Domicilio.Name = "Domicilio";
-            this.Domicilio.ReadOnly = true;
-            this.Domicilio.Width = 74;
-            // 
-            // Saldo
-            // 
-            this.Saldo.DataPropertyName = "Saldo";
-            this.Saldo.HeaderText = "LimiteCredito";
-            this.Saldo.Name = "Saldo";
-            this.Saldo.ReadOnly = true;
-            this.Saldo.Width = 92;
-            // 
-            // NombreCompleto
-            // 
-            this.NombreCompleto.DataPropertyName = "NombreCompleto";
-            this.NombreCompleto.HeaderText = "Nombre";
-            this.NombreCompleto.Name = "NombreCompleto";
-            this.NombreCompleto.ReadOnly = true;
-            this.NombreCompleto.Width = 69;
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            this.Email.Width = 57;
+            this.txtEmail.TabIndex = 3;
             // 
             // lblTelefono
             // 
@@ -119,14 +87,6 @@ namespace ProyectoFinal.Formularios
             this.lblTelefono.TabIndex = 32;
             this.lblTelefono.Text = "TELEFONO:";
             // 
-            // ClienteId
-            // 
-            this.ClienteId.DataPropertyName = "ClienteId";
-            this.ClienteId.HeaderText = "NumeroCliente";
-            this.ClienteId.Name = "ClienteId";
-            this.ClienteId.ReadOnly = true;
-            this.ClienteId.Width = 101;
-            // 
             // dgClientes
             // 
             this.dgClientes.AllowUserToAddRows = false;
@@ -135,7 +95,7 @@ namespace ProyectoFinal.Formularios
             this.dgClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ClienteId,
+            this.IdCliente,
             this.Email,
             this.NombreCompleto,
             this.Saldo,
@@ -148,6 +108,46 @@ namespace ProyectoFinal.Formularios
             this.dgClientes.Size = new System.Drawing.Size(520, 182);
             this.dgClientes.TabIndex = 27;
             this.dgClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgClientes_CellContentClick);
+            // 
+            // IdCliente
+            // 
+            this.IdCliente.DataPropertyName = "IdCliente";
+            this.IdCliente.HeaderText = "NumeroCliente";
+            this.IdCliente.Name = "IdCliente";
+            this.IdCliente.ReadOnly = true;
+            this.IdCliente.Width = 101;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Width = 57;
+            // 
+            // NombreCompleto
+            // 
+            this.NombreCompleto.DataPropertyName = "NombreCompleto";
+            this.NombreCompleto.HeaderText = "Nombre";
+            this.NombreCompleto.Name = "NombreCompleto";
+            this.NombreCompleto.ReadOnly = true;
+            this.NombreCompleto.Width = 69;
+            // 
+            // Saldo
+            // 
+            this.Saldo.DataPropertyName = "Saldo";
+            this.Saldo.HeaderText = "LimiteCredito";
+            this.Saldo.Name = "Saldo";
+            this.Saldo.ReadOnly = true;
+            this.Saldo.Width = 92;
+            // 
+            // Domicilio
+            // 
+            this.Domicilio.DataPropertyName = "Domicilio";
+            this.Domicilio.HeaderText = "Domicilio";
+            this.Domicilio.Name = "Domicilio";
+            this.Domicilio.ReadOnly = true;
+            this.Domicilio.Width = 74;
             // 
             // lblDomicilio
             // 
@@ -175,7 +175,7 @@ namespace ProyectoFinal.Formularios
             this.txtDomicilio.Margin = new System.Windows.Forms.Padding(2);
             this.txtDomicilio.Name = "txtDomicilio";
             this.txtDomicilio.Size = new System.Drawing.Size(302, 20);
-            this.txtDomicilio.TabIndex = 21;
+            this.txtDomicilio.TabIndex = 2;
             // 
             // txtNombre
             // 
@@ -183,7 +183,7 @@ namespace ProyectoFinal.Formularios
             this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(302, 20);
-            this.txtNombre.TabIndex = 20;
+            this.txtNombre.TabIndex = 1;
             // 
             // btnBorrar
             // 
@@ -319,12 +319,7 @@ namespace ProyectoFinal.Formularios
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label lblemail;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Domicilio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Saldo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCompleto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.Label lblTelefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClienteId;
         private System.Windows.Forms.DataGridView dgClientes;
         private System.Windows.Forms.Label lblDomicilio;
         private System.Windows.Forms.Label lblNombreCom;
@@ -335,5 +330,10 @@ namespace ProyectoFinal.Formularios
         private CustomControls.RJControls.RJButton btnNuevo;
         private CustomControls.RJControls.RJButton btnVolver;
         private CustomControls.RJControls.RJButton btnSeleccionar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCompleto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Saldo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Domicilio;
     }
 }

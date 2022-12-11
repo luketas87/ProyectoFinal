@@ -70,7 +70,7 @@ namespace DAL.DAO.Implementacion
                 cuentaId = Exec<int>(lastIndexString)[0];
             });
 
-            var queryString = "INSERT INTO Cliente(CuentaCorrienteId, NombreCompleto, Email, Telefono, Domicilio, Activo) VALUES (" + cuentaId + ", @nombre, @email, @telefono," +
+            var queryString = "INSERT INTO Cliente(IdCuentaCorriente, NombreCompleto, Email, Telefono, Domicilio, Activo) VALUES (" + cuentaId + ", @nombre, @email, @telefono," +
                 " @domicilio, @activo)";
 
             return CatchException(() =>

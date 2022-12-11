@@ -19,7 +19,7 @@ namespace ProyectoFinal.Formularios
     {
         private const string nombreForm = "Venta";
         private const string nomEntidad = "DetalleVenta";
-        private const string campoId = "DetalleId";
+        private const string campoId = "IdDetalle";
 
         private readonly BLLIVenta ventaBLL;
         private readonly BLLIDetalleVenta detalleVentaBLL;

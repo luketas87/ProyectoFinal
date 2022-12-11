@@ -53,7 +53,7 @@ namespace ProyectoFinal.Formularios
             this.dgDetalleVenta.Name = "dgDetalleVenta";
             this.dgDetalleVenta.ReadOnly = true;
             this.dgDetalleVenta.RowTemplate.Height = 24;
-            this.dgDetalleVenta.Size = new System.Drawing.Size(454, 199);
+            this.dgDetalleVenta.Size = new System.Drawing.Size(263, 199);
             this.dgDetalleVenta.TabIndex = 2;
             // 
             // Producto
@@ -104,7 +104,7 @@ namespace ProyectoFinal.Formularios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(480, 281);
+            this.ClientSize = new System.Drawing.Size(288, 280);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.dgDetalleVenta);
             this.Name = "DetalleRefForm";

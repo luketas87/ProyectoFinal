@@ -30,7 +30,7 @@ namespace ProyectoFinal.Formularios
         private void InitializeComponent()
         {
             this.dgVenta = new System.Windows.Forms.DataGridView();
-            this.VentaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,7 +51,7 @@ namespace ProyectoFinal.Formularios
             this.dgVenta.AllowUserToDeleteRows = false;
             this.dgVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.VentaId,
+            this.IdVenta,
             this.Fecha,
             this.Vendedor,
             this.Estado,
@@ -69,12 +69,12 @@ namespace ProyectoFinal.Formularios
             this.dgVenta.TabIndex = 6;
             this.dgVenta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgVenta_CellContentClick);
             // 
-            // VentaId
+            // IdVenta
             // 
-            this.VentaId.DataPropertyName = "VentaId";
-            this.VentaId.HeaderText = "ID Venta";
-            this.VentaId.Name = "VentaId";
-            this.VentaId.ReadOnly = true;
+            this.IdVenta.DataPropertyName = "IdVenta";
+            this.IdVenta.HeaderText = "ID Venta";
+            this.IdVenta.Name = "IdVenta";
+            this.IdVenta.ReadOnly = true;
             // 
             // Fecha
             // 
@@ -147,7 +147,7 @@ namespace ProyectoFinal.Formularios
             this.btnDetalle.FlatAppearance.BorderSize = 0;
             this.btnDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetalle.ForeColor = System.Drawing.Color.Teal;
-            this.btnDetalle.Location = new System.Drawing.Point(638, 16);
+            this.btnDetalle.Location = new System.Drawing.Point(761, 204);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(118, 40);
             this.btnDetalle.TabIndex = 62;
@@ -166,7 +166,7 @@ namespace ProyectoFinal.Formularios
             this.btnAprobar.FlatAppearance.BorderSize = 0;
             this.btnAprobar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAprobar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnAprobar.Location = new System.Drawing.Point(12, 335);
+            this.btnAprobar.Location = new System.Drawing.Point(761, 98);
             this.btnAprobar.Name = "btnAprobar";
             this.btnAprobar.Size = new System.Drawing.Size(118, 40);
             this.btnAprobar.TabIndex = 63;
@@ -185,7 +185,7 @@ namespace ProyectoFinal.Formularios
             this.btnRechazar.FlatAppearance.BorderSize = 0;
             this.btnRechazar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRechazar.ForeColor = System.Drawing.Color.Gray;
-            this.btnRechazar.Location = new System.Drawing.Point(323, 335);
+            this.btnRechazar.Location = new System.Drawing.Point(761, 151);
             this.btnRechazar.Name = "btnRechazar";
             this.btnRechazar.Size = new System.Drawing.Size(118, 40);
             this.btnRechazar.TabIndex = 64;
@@ -204,7 +204,7 @@ namespace ProyectoFinal.Formularios
             this.bntCancelar.FlatAppearance.BorderSize = 0;
             this.bntCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bntCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bntCancelar.Location = new System.Drawing.Point(638, 335);
+            this.bntCancelar.Location = new System.Drawing.Point(761, 257);
             this.bntCancelar.Name = "bntCancelar";
             this.bntCancelar.Size = new System.Drawing.Size(118, 40);
             this.bntCancelar.TabIndex = 65;
@@ -217,7 +217,7 @@ namespace ProyectoFinal.Formularios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 380);
+            this.ClientSize = new System.Drawing.Size(894, 345);
             this.Controls.Add(this.bntCancelar);
             this.Controls.Add(this.btnRechazar);
             this.Controls.Add(this.btnAprobar);
@@ -236,17 +236,17 @@ namespace ProyectoFinal.Formularios
         #endregion
 
         private System.Windows.Forms.DataGridView dgVenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn VentaId;
+        private CustomControls.RJControls.RJButton btnVolver;
+        private CustomControls.RJControls.RJButton btnDetalle;
+        private CustomControls.RJControls.RJButton btnAprobar;
+        private CustomControls.RJControls.RJButton btnRechazar;
+        private CustomControls.RJControls.RJButton bntCancelar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Vendedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
-        private CustomControls.RJControls.RJButton btnVolver;
-        private CustomControls.RJControls.RJButton btnDetalle;
-        private CustomControls.RJControls.RJButton btnAprobar;
-        private CustomControls.RJControls.RJButton btnRechazar;
-        private CustomControls.RJControls.RJButton bntCancelar;
     }
 }

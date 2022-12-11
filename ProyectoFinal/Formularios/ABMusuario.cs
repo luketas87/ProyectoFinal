@@ -28,6 +28,7 @@ namespace ProyectoFinal.Formularios
         private readonly INegarPat negarPat;
         private readonly IFormControl formControl;
         private readonly BLLIIdioma idiomaBLL;
+        private readonly IAdminPatFamilia adminPatFamilia;
 
         private const int formId = 3;
         private const string nombreForm = "ABMusuario";
@@ -60,7 +61,8 @@ namespace ProyectoFinal.Formularios
             IAdminPatentes adminPat,
             IAdminFam adminFam,
             INegarPat negarPat,
-            ITraductor traductor)
+            ITraductor traductor,
+            IAdminPatFamilia adminPatFamilia)
         {
             this.bitacoraBLL = bitacoraBLL;
             this.formControl = formControl;
@@ -68,6 +70,7 @@ namespace ProyectoFinal.Formularios
             this.patenteBLL = patenteBLL;
             this.digitoVerificador = digitoVerificador;
             this.bloqueoUsuario = bloqueoUsuario;
+            this.adminPatFamilia = adminPatFamilia;
             this.idiomaBLL = idiomaBLL;
             this.negarPat = negarPat;
             this.adminFam = adminFam;
@@ -583,5 +586,6 @@ namespace ProyectoFinal.Formularios
                 ayuda.Show();
             }
         }
+
     }
 }

@@ -191,5 +191,10 @@ namespace ProyectoFinal.Formularios
             };
             return venta;
         }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -40,7 +40,6 @@ namespace ProyectoFinal.Formularios
             this.txtMinStock = new System.Windows.Forms.TextBox();
             this.lblMinStock = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
-            this.lblNroProd = new System.Windows.Forms.Label();
             this.lblPecioVenta = new System.Windows.Forms.Label();
             this.lblPreUnitario = new System.Windows.Forms.Label();
             this.lblDesc = new System.Windows.Forms.Label();
@@ -53,8 +52,11 @@ namespace ProyectoFinal.Formularios
             this.btnBorrar = new CustomControls.RJControls.RJButton();
             this.btnSelVta = new CustomControls.RJControls.RJButton();
             this.btnInactivos = new CustomControls.RJControls.RJButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblNroProd = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgProd)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // Stock
@@ -105,7 +107,7 @@ namespace ProyectoFinal.Formularios
             this.dgProd.Location = new System.Drawing.Point(7, 235);
             this.dgProd.Name = "dgProd";
             this.dgProd.ReadOnly = true;
-            this.dgProd.Size = new System.Drawing.Size(815, 200);
+            this.dgProd.Size = new System.Drawing.Size(525, 200);
             this.dgProd.TabIndex = 49;
             this.dgProd.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgProd_CellClick);
             // 
@@ -123,7 +125,7 @@ namespace ProyectoFinal.Formularios
             this.groupBox1.Controls.Add(this.txtMinStock);
             this.groupBox1.Controls.Add(this.lblMinStock);
             this.groupBox1.Controls.Add(this.txtCantidad);
-            this.groupBox1.Location = new System.Drawing.Point(558, 11);
+            this.groupBox1.Location = new System.Drawing.Point(464, 79);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
@@ -168,20 +170,10 @@ namespace ProyectoFinal.Formularios
             this.txtCantidad.Size = new System.Drawing.Size(125, 20);
             this.txtCantidad.TabIndex = 19;
             // 
-            // lblNroProd
-            // 
-            this.lblNroProd.AutoSize = true;
-            this.lblNroProd.Location = new System.Drawing.Point(243, 13);
-            this.lblNroProd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblNroProd.Name = "lblNroProd";
-            this.lblNroProd.Size = new System.Drawing.Size(68, 13);
-            this.lblNroProd.TabIndex = 47;
-            this.lblNroProd.Text = "PRODUCTO";
-            // 
             // lblPecioVenta
             // 
             this.lblPecioVenta.AutoSize = true;
-            this.lblPecioVenta.Location = new System.Drawing.Point(139, 114);
+            this.lblPecioVenta.Location = new System.Drawing.Point(18, 94);
             this.lblPecioVenta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPecioVenta.Name = "lblPecioVenta";
             this.lblPecioVenta.Size = new System.Drawing.Size(107, 13);
@@ -191,7 +183,7 @@ namespace ProyectoFinal.Formularios
             // lblPreUnitario
             // 
             this.lblPreUnitario.AutoSize = true;
-            this.lblPreUnitario.Location = new System.Drawing.Point(139, 84);
+            this.lblPreUnitario.Location = new System.Drawing.Point(18, 64);
             this.lblPreUnitario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPreUnitario.Name = "lblPreUnitario";
             this.lblPreUnitario.Size = new System.Drawing.Size(105, 13);
@@ -201,7 +193,7 @@ namespace ProyectoFinal.Formularios
             // lblDesc
             // 
             this.lblDesc.AutoSize = true;
-            this.lblDesc.Location = new System.Drawing.Point(138, 53);
+            this.lblDesc.Location = new System.Drawing.Point(17, 33);
             this.lblDesc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDesc.Name = "lblDesc";
             this.lblDesc.Size = new System.Drawing.Size(83, 13);
@@ -210,15 +202,16 @@ namespace ProyectoFinal.Formularios
             // 
             // txtPcosto
             // 
-            this.txtPcosto.Location = new System.Drawing.Point(246, 111);
+            this.txtPcosto.Location = new System.Drawing.Point(125, 91);
             this.txtPcosto.Margin = new System.Windows.Forms.Padding(2);
             this.txtPcosto.Name = "txtPcosto";
             this.txtPcosto.Size = new System.Drawing.Size(292, 20);
             this.txtPcosto.TabIndex = 43;
+            this.txtPcosto.TextChanged += new System.EventHandler(this.txtPcosto_TextChanged);
             // 
             // txtPunitario
             // 
-            this.txtPunitario.Location = new System.Drawing.Point(246, 81);
+            this.txtPunitario.Location = new System.Drawing.Point(125, 61);
             this.txtPunitario.Margin = new System.Windows.Forms.Padding(2);
             this.txtPunitario.Name = "txtPunitario";
             this.txtPunitario.Size = new System.Drawing.Size(292, 20);
@@ -226,7 +219,7 @@ namespace ProyectoFinal.Formularios
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(246, 50);
+            this.txtDescripcion.Location = new System.Drawing.Point(125, 30);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(292, 20);
@@ -242,9 +235,9 @@ namespace ProyectoFinal.Formularios
             this.btnVolver.FlatAppearance.BorderSize = 0;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnVolver.Location = new System.Drawing.Point(7, 13);
+            this.btnVolver.Location = new System.Drawing.Point(7, 12);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(118, 40);
+            this.btnVolver.Size = new System.Drawing.Size(79, 40);
             this.btnVolver.TabIndex = 60;
             this.btnVolver.Text = "Volver";
             this.btnVolver.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -261,7 +254,7 @@ namespace ProyectoFinal.Formularios
             this.btnNuevo.FlatAppearance.BorderSize = 0;
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.ForeColor = System.Drawing.Color.Green;
-            this.btnNuevo.Location = new System.Drawing.Point(12, 185);
+            this.btnNuevo.Location = new System.Drawing.Point(564, 246);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(118, 40);
             this.btnNuevo.TabIndex = 61;
@@ -280,7 +273,7 @@ namespace ProyectoFinal.Formularios
             this.btnModificar.FlatAppearance.BorderSize = 0;
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.ForeColor = System.Drawing.Color.Teal;
-            this.btnModificar.Location = new System.Drawing.Point(300, 187);
+            this.btnModificar.Location = new System.Drawing.Point(564, 292);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(118, 40);
             this.btnModificar.TabIndex = 62;
@@ -299,7 +292,7 @@ namespace ProyectoFinal.Formularios
             this.btnBorrar.FlatAppearance.BorderSize = 0;
             this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnBorrar.Location = new System.Drawing.Point(674, 189);
+            this.btnBorrar.Location = new System.Drawing.Point(564, 338);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(118, 40);
             this.btnBorrar.TabIndex = 63;
@@ -337,7 +330,7 @@ namespace ProyectoFinal.Formularios
             this.btnInactivos.FlatAppearance.BorderSize = 0;
             this.btnInactivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInactivos.ForeColor = System.Drawing.Color.Gray;
-            this.btnInactivos.Location = new System.Drawing.Point(674, 446);
+            this.btnInactivos.Location = new System.Drawing.Point(564, 384);
             this.btnInactivos.Name = "btnInactivos";
             this.btnInactivos.Size = new System.Drawing.Size(118, 40);
             this.btnInactivos.TabIndex = 65;
@@ -346,11 +339,39 @@ namespace ProyectoFinal.Formularios
             this.btnInactivos.UseVisualStyleBackColor = false;
             this.btnInactivos.Click += new System.EventHandler(this.btnInactivos_Click);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtPcosto);
+            this.groupBox2.Controls.Add(this.txtDescripcion);
+            this.groupBox2.Controls.Add(this.txtPunitario);
+            this.groupBox2.Controls.Add(this.lblDesc);
+            this.groupBox2.Controls.Add(this.lblPreUnitario);
+            this.groupBox2.Controls.Add(this.lblPecioVenta);
+            this.groupBox2.Location = new System.Drawing.Point(12, 79);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Size = new System.Drawing.Size(430, 133);
+            this.groupBox2.TabIndex = 49;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "PRODUCTO";
+            // 
+            // lblNroProd
+            // 
+            this.lblNroProd.AutoSize = true;
+            this.lblNroProd.Location = new System.Drawing.Point(134, 52);
+            this.lblNroProd.Name = "lblNroProd";
+            this.lblNroProd.Size = new System.Drawing.Size(71, 13);
+            this.lblNroProd.TabIndex = 66;
+            this.lblNroProd.Text = "PRODUCTO:";
+            // 
             // Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(833, 498);
+            this.ClientSize = new System.Drawing.Size(733, 498);
+            this.Controls.Add(this.lblNroProd);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnInactivos);
             this.Controls.Add(this.btnSelVta);
             this.Controls.Add(this.btnBorrar);
@@ -359,13 +380,6 @@ namespace ProyectoFinal.Formularios
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.dgProd);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.lblNroProd);
-            this.Controls.Add(this.lblPecioVenta);
-            this.Controls.Add(this.lblPreUnitario);
-            this.Controls.Add(this.lblDesc);
-            this.Controls.Add(this.txtPcosto);
-            this.Controls.Add(this.txtPunitario);
-            this.Controls.Add(this.txtDescripcion);
             this.Name = "Productos";
             this.Text = "Productos";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Productos_FormClosing);
@@ -373,6 +387,8 @@ namespace ProyectoFinal.Formularios
             ((System.ComponentModel.ISupportInitialize)(this.dgProd)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -390,7 +406,6 @@ namespace ProyectoFinal.Formularios
         private System.Windows.Forms.TextBox txtMinStock;
         private System.Windows.Forms.Label lblMinStock;
         private System.Windows.Forms.TextBox txtCantidad;
-        private System.Windows.Forms.Label lblNroProd;
         private System.Windows.Forms.Label lblPecioVenta;
         private System.Windows.Forms.Label lblPreUnitario;
         private System.Windows.Forms.Label lblDesc;
@@ -403,5 +418,7 @@ namespace ProyectoFinal.Formularios
         private CustomControls.RJControls.RJButton btnBorrar;
         private CustomControls.RJControls.RJButton btnSelVta;
         private CustomControls.RJControls.RJButton btnInactivos;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label lblNroProd;
     }
 }

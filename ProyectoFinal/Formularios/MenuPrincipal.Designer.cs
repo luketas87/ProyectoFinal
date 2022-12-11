@@ -172,7 +172,7 @@ namespace ProyectoFinal.Formularios
             this.btnActualizar.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnActualizar.Size = new System.Drawing.Size(233, 40);
             this.btnActualizar.TabIndex = 11;
-            this.btnActualizar.Text = "Actualizar datos";
+            this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
@@ -225,7 +225,7 @@ namespace ProyectoFinal.Formularios
             this.btnVisualizarUsuarios.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnVisualizarUsuarios.Size = new System.Drawing.Size(233, 40);
             this.btnVisualizarUsuarios.TabIndex = 7;
-            this.btnVisualizarUsuarios.Text = "Visualizar Usuarios";
+            this.btnVisualizarUsuarios.Text = "Mis Datos";
             this.btnVisualizarUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVisualizarUsuarios.UseVisualStyleBackColor = true;
             this.btnVisualizarUsuarios.Click += new System.EventHandler(this.btnVisualizarUsuarios_Click);

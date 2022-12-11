@@ -15,7 +15,7 @@ namespace DAL.DAO.Implementacion
         private readonly DALIProducto ProductoDAL;
         public bool Actualizar(BEDetalleVenta objUpd)
         {
-            var queryString = string.Format("UPDATE  FROM DetalleVenta WHERE DetalleId = {0}", objUpd.IdVenta);
+            var queryString = string.Format("UPDATE  FROM DetalleVenta WHERE IdDetalle = {0}", objUpd.IdVenta);
 
             return CatchException(() =>
             {
@@ -29,7 +29,7 @@ namespace DAL.DAO.Implementacion
 
         public bool Borrar(BEDetalleVenta objDel)
         {
-            var queryString = $"DELETE FROM DetalleVenta WHERE VentaId = {objDel.IdVenta}";
+            var queryString = $"DELETE FROM DetalleVenta WHERE IdVenta = {objDel.IdVenta}";
 
             return CatchException(() =>
             {
@@ -73,7 +73,7 @@ namespace DAL.DAO.Implementacion
 
         public bool Crear(BEDetalleVenta objAlta)
         {
-            var queryString = "INSERT INTO DetalleVenta ([IdVenta] ,[ProductoId] ,[Importe] ,[Cantidad]) VALUES (@Idventa, @IdProducto, @Importe, @Cantidad)";
+            var queryString = "INSERT INTO DetalleVenta ([IdVenta] ,[IdProducto] ,[Importe] ,[Cantidad]) VALUES (@VentaId, @ProductoId, @Importe, @Cantidad)";
 
             CatchException(() =>
             {
@@ -83,10 +83,10 @@ namespace DAL.DAO.Implementacion
                         queryString,
                         new
                         {
-                            @ventaId = objAlta.IdVenta,
-                            @productoId = linea.Producto.IdProducto,
-                            @importe = linea.Importe,
-                            @cantidad = linea.Cantidad
+                            @VentaId = objAlta.IdVenta,
+                            @ProductoId = linea.Producto.IdProducto,
+                            @Importe = linea.Importe,
+                            @Cantidad = linea.Cantidad
                         });
                 }
             });

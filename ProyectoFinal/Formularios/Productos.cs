@@ -156,5 +156,10 @@ namespace ProyectoFinal.Formularios
             dgProd.DataSource = null;
             dgProd.DataSource = productoBLL.Cargar();
         }
+
+        private void txtPcosto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
